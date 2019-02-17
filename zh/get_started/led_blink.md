@@ -1,8 +1,8 @@
-点亮LLED
+点亮 LED
 ==========
 
 
-点灯程序作为学习所有开发板的第一个程序，就像 PC 语言的 hello world 一样，具有着神圣的意义
+点灯程序作为学习所有开发板的第一个程序，就像学所有编程语言都是先学 hello world 一样，具有着神圣的意义
 
 
 总所周知， 点亮一个 LED 需要一个电源， 一个电阻， 一个 LED 灯泡，
@@ -24,11 +24,13 @@
 
 from Maix import GPIO
 
-fm.registered(board_info.LED_R, fm.fpioa.GPIO0)
+fm.register(board_info.LED_R, fm.fpioa.GPIO0)
 
 led_r=GPIO(GPIO.GPIO0,GPIO.OUT)
 led_r.value(0)
 ```
+
+我们只需要将这写代码一次敲到终端里面键盘按确认来执行即可
 
 其中， 我们先从包 `Maix` 导入了 `GPIO` 这个类；
 
@@ -37,7 +39,11 @@ led_r.value(0)
 
 然后定义一个 `GPIO` 对象， 具体参数看 `GPIO` 模块的文档， 在左边侧边栏查找。
 
-使用 `value()` 函数来设置高低电平即可
+使用 `led_r.value(0)` 或者 `led_r.value(1)` 来设置高低电平即可
+
+
+到这里已经可以点灯了， 如果了解 Python 语法的小伙伴可以尝试 写个 for 循环来实现 LED 闪烁～
+
 
 
 

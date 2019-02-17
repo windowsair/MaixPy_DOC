@@ -25,7 +25,9 @@ Summary
     - [更新MaixPy固件](get_started/upgrade_firmware.md)
 - [点亮板子](get_started/power_on.md)
 - [点灯工程师(LED)](get_started/led_blink.md)
+- [编辑并运行文件](get_started/edit_file.md)
 - [上传脚本到开发板](get_started/upload_script.md)
+- [开机自启动](get_started/boot.md)
 - [如何正确阅读本文档](get_started/how_to_read.md)
 
 ## 快速查阅

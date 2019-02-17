@@ -5,7 +5,6 @@ output/
 .vscode/
 _book/
 *.epub
-*.pdf
 *.mobi
 serve.tmp
 *-lock.json

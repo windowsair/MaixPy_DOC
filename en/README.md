@@ -17,7 +17,7 @@ MaixPy is a [Micropython](http://micropython.org/) port on 64Bit Dual-Core RISC-
 
 Micropython make program on hardware(K210) easier, so we build this and open source on [github]((https://github.com/sipeed/MaixPy))
 
-For example if we want to find I2C device, we just need code:
+For example if we want to find **I2C** device, we just need code:
 ```python
 from machine import I2C
 
@@ -27,7 +27,7 @@ print(devices)
 ```
 
 
-If we want to make a `breathing light` by PWM, we just need code:
+If we want to make a **breathing light** by PWM, we just need code:
 ```python
 from machine import Timer,PWM
 import time
@@ -50,6 +50,23 @@ while True:
     time.sleep(0.05)
     ch.duty(duty)
 ```
+
+**Take picture**：
+```python
+import sensor
+import image
+import lcd
+****
+lcd.init()
+sensor.reset()
+sensor.set_pixformat(sensor.RGB565)
+sensor.set_framesize(sensor.QVGA)
+sensor.run(1)
+while True:
+    img=sensor.snapshot()
+    lcd.display(img)
+```
+
 
 ## About this documentation
 
@@ -94,6 +111,8 @@ Maintained by &copy;<a href="https://www.sipeed.com" style="color: #f14c42">Sipe
 Doumentation will be edit if code api changed,
 
 source of doc on [github](https://github.com/sipeed/MaixPy_DOC)
+
+You **MUST** read [convention](contribute/doc_convention.md) before edit doc!
 
 |   branch  |   page build status  |
 | --------- | --------------- |

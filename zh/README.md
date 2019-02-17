@@ -19,7 +19,7 @@ MaixPy 是将 [Micropython](http://micropython.org/) 移植到 [K210](https://ke
 
 Micropython 让我们在 K210 上编程更加简单快捷， 我们也将源代码开源在 [github](https://github.com/sipeed/MaixPy) 上
 
-比如我们需要寻找I2C总线上的设备，只需要使用如下代码即可实现：
+比如我们需要寻找**I2C**总线上的设备，只需要使用如下代码即可实现：
 
 ```python
 from machine import I2C
@@ -29,7 +29,7 @@ devices = i2c.scan()
 print(devices)
 ```
 
-同样，我们需要实现一个呼吸灯，只需要如下代码：
+同样，我们需要实现一个**呼吸灯**，只需要如下代码：
 
 ```python
 from machine import Timer,PWM
@@ -52,6 +52,22 @@ while True:
         dir = True
     time.sleep(0.05)
     ch.duty(duty)
+```
+
+**实时拍照**：
+```python
+import sensor
+import image
+import lcd
+****
+lcd.init()
+sensor.reset()
+sensor.set_pixformat(sensor.RGB565)
+sensor.set_framesize(sensor.QVGA)
+sensor.run(1)
+while True:
+    img=sensor.snapshot()
+    lcd.display(img)
 ```
 
 ## 这篇文档的内容
@@ -99,6 +115,8 @@ MaixPy 源码托管在 [github](https://github.com/sipeed/MaixPy)
 修改代码后，文档也会随之更新，
 
 文档源码托管在 [github](https://github.com/sipeed/MaixPy_DOC)
+
+注意： 在编辑文档前**必须**看[文档编写规范](contribute/doc_convention.md) 
 
 |   分支     |   文档自动构建状态  |
 | --------- | --------------- |

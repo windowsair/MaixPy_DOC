@@ -12,7 +12,7 @@
 主要是安装串口驱动，因为板子是通过 USB 转串口设备与电脑连接。
 根据板子的 USB 转串口芯片型号装驱动。
 
-比如 CH340：
+比如 Dan_Dock 开发板使用的 CH340 ：
 Linux 不需要装驱动，系统自带了，使用`ls /dev/ttyUSB*` 即可看到设备号
 Windows 在网上搜索一下下载安装即可，然后可以在`设备管理器`中看到串口设备
 
@@ -60,4 +60,6 @@ sudo python3 kflash.py -p /dev/ttyUSB0 -b 2000000 -B dan firmware.bin
 ### Windows
 
 双机运行下载的软件，运行后选择固件、串口等，点击下载即可
+
+![kflash windows](../../assets/kflash_win.png)
 
