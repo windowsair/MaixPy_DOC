@@ -214,7 +214,8 @@ GPIO.pull(PULL)
 
 ### DEMO1
 
-```import utime
+```python
+import utime
 from Maix import GPIO
 fm.register(board_info.LED_R,fm.fpioa.GPIO0)
 led_r=GPIO(GPIO.GPIO0,GPIO.OUT)
@@ -225,7 +226,7 @@ fm.unregister(board_info.LED_R,fm.fpioa.GPIO0)
 
 ### DEMO2
 
-```
+```python
 import utime
 from Maix import GPIO
 fm.register(board_info.LED_R,fm.fpioa.GPIO0)
@@ -237,14 +238,11 @@ fm.unregister(board_info.LED_R,fm.fpioa.GPIO0)
 
 ### DEMO3
 
-```
+```python
 import utime
 from Maix import GPIO
 def test_irq(GPIO,pin_num):
     print("key",pin_num,"\n")
-
-
-
 
 fm.register(board_info.BOOT_KEY,fm.fpioa.GPIOHS0)
 key=GPIO(GPIO.GPIOHS0,GPIO.IN,GPIO.PULL_NONE)
