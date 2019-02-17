@@ -55,11 +55,12 @@ while True:
 ```
 
 **实时拍照**：
+
 ```python
 import sensor
 import image
 import lcd
-****
+
 lcd.init()
 sensor.reset()
 sensor.set_pixformat(sensor.RGB565)

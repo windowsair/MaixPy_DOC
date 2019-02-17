@@ -52,11 +52,12 @@ while True:
 ```
 
 **Take picture**：
+
 ```python
 import sensor
 import image
 import lcd
-****
+
 lcd.init()
 sensor.reset()
 sensor.set_pixformat(sensor.RGB565)
