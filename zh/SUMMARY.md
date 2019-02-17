@@ -54,7 +54,12 @@ Summary
         - [Timer](libs/machine/timer.md)
         - [UART](libs/machine/uart.md)
     - [Maix](libs/Maix/README.md)
-        - [lcd](libs/Maix/lcd.md)
+        - [FPIOA](libs/Maix/fpioa.md)
+        - [GPIO](libs/Maix/gpio.md)
+    - [机器视觉](libs/machine_vision/README.md)
+        - [lcd](libs/machine_vision/lcd.md)
+        - [sensor](libs/machine_vision/sensor.md)
+        - [image](libs/machine_vision/image.md)
 
 ## 其它
 

@@ -2,6 +2,6 @@
 Maix库
 =======
 
-* [gpio](gpio.md)
-* [lcd](lcd.md)
+* [FPIOA](fpioa.md)
+* [GPIO](gpio.md)
 
