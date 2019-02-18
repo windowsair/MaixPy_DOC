@@ -61,6 +61,7 @@ Summary
 - [Contribute](contribute/README.md)
     - [doc convention](contribute/doc_convention.md)
     - [code convention](contribute/code_convention.md)
+    - [code compile](contribute/compile.md)
 - [Open Source Projects](others/open_projects.md)
 
 

@@ -70,6 +70,7 @@ Summary
 - [贡献](contribute/README.md)
     - [文档风格](contribute/doc_convention.md)
     - [代码风格](contribute/code_convention.md)
+    - [代码编译](contribute/compile.md)
 - [开源项目](others/open_projects.md)
 
 
