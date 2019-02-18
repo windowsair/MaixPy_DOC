@@ -3,7 +3,9 @@ machine.UART
 
 uart模块主要用于驱动开发板上的异步串口，可以自由对uart进行配置。k210一共有3个uart，每个uart可以进行自由的引脚映射。
 
-## 1. 引脚映射
+## 构造
+
+### 引脚映射
 
 在使用uart前，我们依旧需要使用fm来对芯片引脚进行映射。如下所示，将PIN10设置为uart2的发送引脚，PIN11设置为uart2的接收引脚
 ```
@@ -11,7 +13,7 @@ fm.registered(board_info.PIN10,fm.fpioa.UART2_TX)
 fm.registered(board_info.PIN11,fm.fpioa.UART2_RX)
 ```
 
-## 2. 构造函数
+### 构造函数
 
 ```
 uart = machine.UART(uart,baudrate,bits,parity,stop,timeout, read_buf_len)
@@ -19,7 +21,7 @@ uart = machine.UART(uart,baudrate,bits,parity,stop,timeout, read_buf_len)
 
 通过指定的参数新建一个 UART 对象
 
-#### 2.1. 参数
+#### 参数
 
 * `uart` UART号，使用指定的UART，可以通过 `machine.UART.` 按tab键来补全
 * `baudrate`: UART波特率 
@@ -33,9 +35,9 @@ uart = machine.UART(uart,baudrate,bits,parity,stop,timeout, read_buf_len)
 
 * UART对象
 
-## 3. 方法
+## 方法
 
-### 3.1. init
+### init
 
 用于初始化uart，一般在构造对象时已经初始化，这里用在重新初始化uart
 ```
@@ -49,7 +51,7 @@ uart.init(baudrate,bits,parity,stop,timeout, read_buf_len)
 
 无
 
-### 3.2. read
+### read
 
 用于读取串口缓冲中的数据
 
@@ -64,7 +66,7 @@ uart.read(num)
 
 * `bytes`类型的数据
 
-### 3.3. readline
+### readline
 
 用于读取串口缓冲数据的一航
 
@@ -78,7 +80,7 @@ uart.readline(num)
 *`bytes`类型的数据
 
 
-### 3.4. write
+### write
 
 用于使用串口发送数据
 
