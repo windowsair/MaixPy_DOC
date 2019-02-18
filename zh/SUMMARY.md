@@ -60,10 +60,18 @@ Summary
     - [Maix](libs/Maix/README.md)
         - [FPIOA](libs/Maix/fpioa.md)
         - [GPIO](libs/Maix/gpio.md)
+    - [内置类](libs/builtin_py/README.md)
+        - [fpioa_manager](libs/builtin_py/fm.md)
+        - [board_info](libs/builtin_py/board_info.md)
     - [机器视觉](libs/machine_vision/README.md)
         - [lcd](libs/machine_vision/lcd.md)
         - [sensor](libs/machine_vision/sensor.md)
         - [image](libs/machine_vision/image.md)
+
+## 进阶
+
+- [代码编译](advanced/compile.md)
+- [代码结构](advanced/code_struct.md)
 
 ## 其它
 
