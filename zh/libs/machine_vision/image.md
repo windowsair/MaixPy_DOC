@@ -3,6 +3,82 @@ image — 机器视觉
 
 移植于 `openmv`， 与 `openmv` 功能相同
 
+## 例程
+
+### 例程 1： 找绿色
+
+```python
+import sensor
+import image
+import lcd
+import time
+lcd.init()
+sensor.reset()
+sensor.set_pixformat(sensor.RGB565)
+sensor.set_framesize(sensor.QVGA)
+sensor.run(1)
+green_threshold   = (0,   80,  -70,   -10,   -0,   30)
+while True:
+	img=sensor.snapshot()
+	blobs = img.find_blobs([green_threshold])
+	if blobs:	
+		for b in blobs:
+			tmp=img.draw_rectangle(b[0:4]) 
+			tmp=img.draw_cross(b[5], b[6]) 
+			c=img.get_pixel(b[5], b[6])
+	lcd.display(img)
+```
+
+### 例程 2： 显示 fps
+
+```python
+import sensor
+import image
+import lcd
+import clock
+
+clock = clock.clock()
+lcd.init()
+sensor.reset()
+sensor.set_pixformat(sensor.RGB565)
+sensor.set_framesize(sensor.QVGA)
+sensor.run(1)
+sensor.skip_frames(30)
+while True:
+    clock.tick()
+    img = sensor.snapshot()
+    fps =clock.fps()
+    img.draw_string(2,2, ("%2.1ffps" %(fps)), color=(0,128,0), scale=2)
+    lcd.display(img)
+```
+
+
+### 例程 3： 扫描二维码
+
+```python
+import sensor
+import image
+import lcd
+import clock
+
+clock = clock.clock()
+lcd.init()
+sensor.reset()
+sensor.set_pixformat(sensor.RGB565)
+sensor.set_framesize(sensor.QVGA)
+sensor.set_vflip(1)
+sensor.run(1)
+sensor.skip_frames(30)
+while True:
+    clock.tick()
+    img = sensor.snapshot()
+    res = img.find_qrcodes()
+    fps =clock.fps()
+    if len(res) > 0:
+      img.draw_string(2,2, res[0].payload(), color=(0,128,0), scale=2)
+    lcd.display(img)
+
+```
 
 ## 函数
 
