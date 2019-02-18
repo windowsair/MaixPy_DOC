@@ -41,7 +41,7 @@ gitbook install
 Serve as a website:
 
 ```
-chmode +x serve.sh
+chmod +x serve.sh
 ./serve.sh
 ```
 

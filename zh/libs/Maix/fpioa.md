@@ -70,29 +70,6 @@ if pin == board_info.LED_G:
     print("set function ok")
 ```
 
-### 常量
-
-主要是所有外设的名称， 比如 `GPIOHS0`
-更多常量请参考 [附录： 外设表](#附录：-外设表) 的 `外设功能（func）` 列
-
-## 类 `fpioa_manager`
-
-像上面说的， 我们可以使用 `FPIOA`来管理外设功能 与 引脚 的映射关系。
-
-为了更加方便， 内置了一个 `fpioa_manager` 的类， 并在开机用它创建了一个对象，名字叫 `fm`
-
-所以我们可以直接在代码里面使用 `fm` 这个对象， 比如 `fm.fpioa.help()`， 其中 `fm.fpioa` 就是使用 `FPIOA` 类创建的一个对象，因此可以通过它操作 `FPIOA` 里面的方法
-
-### 方法
-
-#### register(pin, function)
-
-用法和 `FPIOA` 的 `set_function(pin, func)` 函数一模一样
-
-#### unregister(pin, function)
-
-
-
 
 ## 附录： 外设表
 
