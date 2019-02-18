@@ -251,6 +251,6 @@ key.value()
 key.irq(test_irq,GPIO.IRQ_BOTH,GPIO.WAKEUP_NOT_SUPPORT,7)
 
 key.disirq()
-fm.unregistered(board_info.BOOT_KEY,fm.fpioa.GPIOHS0)
+fm.unregister(board_info.BOOT_KEY,fm.fpioa.GPIOHS0)
 ```
 
