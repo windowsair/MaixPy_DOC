@@ -15,8 +15,8 @@ Summary
     - [BiT](hardware/bit.md)
     - [Go](hardware/go.md)
 - [外设模块](hardware/peripheral_modules.md)
-    - [麦克风阵列]()
-    - [双目摄像头]()
+    - [麦克风阵列](hardware/mic_array.md)
+    - [双目摄像头](hardware/binocular.md)
 
 ## 上手
 
