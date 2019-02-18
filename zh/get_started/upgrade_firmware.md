@@ -57,9 +57,13 @@ sudo python3 kflash.py -p /dev/ttyUSB0 -b 2000000 -B dan firmware.bin
 
 > 如果不想每次都使用`sudo`命令， 执行`sudo usermod -a -G dialout $(whoami)` 将自己添加到`dialout`用户组即可，可能需要注销或者重启才能生效
 
+如果开发板是 `Maix Go` 并且使用 `open-ec` 的固件， 目前只能使用 kflash.py 脚本进行下载， `-B` 参数请选择 `kd233`
+
 ### Windows
 
 双机运行下载的软件，运行后选择固件、串口等，点击下载即可
 
 ![kflash windows](../../assets/kflash_win.png)
+
+如果开发板是 `Maix Go` 并且使用 `open-ec` 的固件， 目前只能使用 kflash.py 脚本进行下载， `-B` 参数请选择 `kd233`
 
