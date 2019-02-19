@@ -75,10 +75,17 @@ while True:
     res = img.find_qrcodes()
     fps =clock.fps()
     if len(res) > 0:
-      img.draw_string(2,2, res[0].payload(), color=(0,128,0), scale=2)
+        img.draw_string(2,2, res[0].payload(), color=(0,128,0), scale=2)
+        print(res[0].payload())
     lcd.display(img)
 
 ```
+
+> 如果使用了镜头，画面会有扭曲，需要矫正画面
+> 使用 `lens_corr` 函数来矫正， 比如 `2.8`mm， `img.lens_corr(1.8)`
+
+
+
 
 ## 函数
 
