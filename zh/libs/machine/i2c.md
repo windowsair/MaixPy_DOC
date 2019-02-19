@@ -23,8 +23,8 @@ class machine.I2C(id, mode=Timer.MODE_MASTER, scl, sda, freq=400000, timeout=100
 
 * `id`： I2C ID, [0~2] \(I2C.I2C0~I2C.I2C2\)
 * `mode`： 模式， 主机(`I2C.MODE_MASTER`)和从机（`I2C.MODE_SLAVE`)模式
-* `scl`： SCL 引脚，直接传引脚编号即可，取值范围： [0,47]
-* `sda`： SDA 引脚，直接传引脚编号即可，取值范围： [0,47]
+* `scl`： SCL 引脚，直接传引脚编号即可，取值范围： [0,47]。 可以不设置，而是使用 [fm](../builtin_py/fm.md) 统一管理引脚映射。
+* `sda`： SDA 引脚，直接传引脚编号即可，取值范围： [0,47]。 可以不设置，而是使用 [fm](../builtin_py/fm.md) 统一管理引脚映射。
 * `freq`： I2C通信频率， 支持标准100Kb/s, 快速400Kb/s， 以及更高速率（硬件支持超快速模式1000Kb/s，以及高速模式3.4Mb/s）
 * `timeout`： 超时时间，目前这个参数保留，设置无效
 * `addr`： 从机地址，如果是主机模式不用设置， 从机模式则代表从机（本机）地址

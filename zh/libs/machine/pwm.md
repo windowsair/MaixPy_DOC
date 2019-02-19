@@ -18,6 +18,7 @@ class machine.PWM(tim, freq, duty, pin, enable=True)
 * `tim`: 每个PWM依赖一个定时器来产生波形， 所以这里需要传一个定时器对象，这个定时器对象必须初始化时必须指定定时器 ID 和通道号
 * `freq`： PWM 波形频率
 * `duty`： PWM 占空比， 指高电平占整个周期的百分比，取值：[0,100]
+* `[pin]`： PWM 输出引脚。 可以不设置，而是使用 [fm](../builtin_py/fm.md) 统一管理引脚映射。
 * `enable`： 是否立即开始产生波形，默认位`True`，及对象生成后立即开始在指定的引脚上产生 PWM 波形
 
 ## 方法
