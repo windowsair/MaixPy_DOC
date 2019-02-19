@@ -7,7 +7,7 @@ uart模块主要用于驱动开发板上的异步串口，可以自由对uart进
 
 ### 引脚映射
 
-在使用uart前，我们依旧需要使用fm来对芯片引脚进行映射。如下所示，将PIN10设置为uart2的发送引脚，PIN11设置为uart2的接收引脚
+在使用uart前，我们需要使用fm来对芯片引脚进行映射和管理。如下所示，将PIN10设置为uart2的发送引脚，PIN11设置为uart2的接收引脚
 ```
 fm.registered(board_info.PIN10,fm.fpioa.UART2_TX)
 fm.registered(board_info.PIN11,fm.fpioa.UART2_RX)
