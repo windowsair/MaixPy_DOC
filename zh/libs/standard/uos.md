@@ -134,9 +134,18 @@ index参数应为非负整数，并指定设置的复制槽。给定端口可以
 
 在block_dev上构建FAT文件系统。
 
+##  文件系统格式化
+
+在MaixPy中，我们提供了对flash进行文件系统格式化的操作。如果用户想要清空flash文件系统那么可以使用该接口 `flash_format` 来实现
+
+### uos.flash_format()
+
+该接口不需要传入参数，直接使用将对开发板的 flash 进行格式化。请注意，格式化将清空所有文件，在使用前请确认 flash 中文件都是需要删除的
+
 ## 块设备
 
 块设备是实现块协议的对象，块协议是由 `AbstractBlockDev` 类在下面描述的一组方法。该类的具体实现通常允许访问类似存储器的功能作为硬件（如闪存）。特定文件系统驱动程序可以使用块设备来存储其文件系统的数据。
+
 
 ### class uos.AbstractBlockDev()...)
 
@@ -160,7 +169,11 @@ index参数应为非负整数，并指定设置的复制槽。给定端口可以
 * 4  - 获取块数的计数，应该返回一个整数（arg未使用）
 * 5  - 获取块中的字节数，应该返回一个整数，或者“None”，在这种情况下使用默认值512（arg未使用）
 
-举例来说，下面的类将实现一个块设备，它使用`bytearray`将其数据存储在RAM中：
+### 例程
+
+#### 例程1
+
+以fat32举例，下面的类将实现一个块设备，它使用`bytearray`将其数据存储在RAM中：
 
 ```python
 class RAMBlockDev:
@@ -192,5 +205,38 @@ bdev = RAMBlockDev(512, 50)
 uos.VfsFat.mkfs(bdev)
 vfs = uos.VfsFat(bdev)
 uos.mount(vfs, '/ramdisk')
+```
+#### 例程2
+
+以spiffs举例，下面的类将实现一个块设备，它使用`bytearray`将其数据存储在RAM中：
+
+```python
+
+class RAMFlashDev:
+    def __init__(self):
+            self.fs_size = 256*1024
+            self.fs_data = bytearray(256*1024)
+            self.erase_block = 32*1024
+            self.log_block_size = 64*1024
+            self.log_page_size = 4*1024
+    def read(self,buf,size,addr):
+            for i in range(len(buf)):
+                buf[i] = self.fs_data[addr+i]
+    def write(self,buf,size,addr):
+            for i in range(len(buf)):
+                self.fs_data[addr+i] = buf[i]
+    def erase(self,size,addr):
+            for i in range(size):
+                self.fs_data[addr+i] = 0xff
+
+```
+
+```python
+
+blkdev = RAMFlashDev.RAMFlashDev()
+vfs = uos.VfsSpiffs(blkdev)
+vfs.mkfs(vfs)
+uos.mount(vfs,'/ramdisk')
+
 ```
 
