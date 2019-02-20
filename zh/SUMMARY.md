@@ -57,6 +57,7 @@ Summary
         - [SPI](libs/machine/spi.md)
         - [Timer](libs/machine/timer.md)
         - [UART](libs/machine/uart.md)
+        - [network](libs/machine/network.md)
     - [Maix](libs/Maix/README.md)
         - [FPIOA](libs/Maix/fpioa.md)
         - [GPIO](libs/Maix/gpio.md)
