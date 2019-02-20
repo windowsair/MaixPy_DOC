@@ -14,6 +14,7 @@
 * [uos](uos.md)
 * [ure](ure.md)
 * [uselect](uselect.md)
+* [usocket](usocket.md)
 * [ustruct](ustruct.md)
 * [utime](utime.md)
 * [uzlib](uzlib.md)

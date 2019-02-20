@@ -73,7 +73,7 @@ Summary
         - [clock](libs/machine_vision/clock.md)
         - [cpufreq](libs/machine_vision/cpufreq.md)
 
-## 进阶
+## 进阶 - 定制固件
 
 - [代码编译](advanced/compile.md)
 - [代码结构](advanced/code_struct.md)
