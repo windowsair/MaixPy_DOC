@@ -6,4 +6,5 @@
 
 
 * 购买： 淘宝
-* 资料下载：
+* 资料下载：[Mic Array](http://dl.sipeed.com/MAIX/HDK/Mic%20Array/)
+

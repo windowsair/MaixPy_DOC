@@ -17,6 +17,7 @@ Summary
 - [外设模块](hardware/peripheral_modules.md)
     - [麦克风阵列](hardware/mic_array.md)
     - [双目摄像头](hardware/binocular.md)
+    - [LCD](hardware/lcd.md)
 
 ## 上手
 
