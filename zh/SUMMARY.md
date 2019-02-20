@@ -49,6 +49,7 @@ Summary
         - [uos](libs/standard/uos.md) 
         - [ure](libs/standard/ure.md) 
         - [uselect](libs/standard/uselect.md) 
+        - [usocket](libs/standard/usocket.md)
         - [ustruct](libs/standard/ustruct.md) 
         - [utime](libs/standard/utime.md) 
         - [uzlib](libs/standard/uzlib.md) 
