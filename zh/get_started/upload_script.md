@@ -11,6 +11,8 @@
 
 [uPyLoader](https://github.com/BetaRavener/uPyLoader) 是一款开源软件，使用它可以方便地连接 MaixPy 并且上传、下载、执行文件，同时监控输出等等功能，功能比较完善
 
+下载可执行文件:[release](https://github.com/BetaRavener/uPyLoader/releases)
+
 ![uPyLoader](../../assets/uPyLoader.png)
 
 选择串口并点击 `Connect` 按钮来连接板子
