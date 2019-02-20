@@ -240,7 +240,7 @@ Read bytes into the buf. If nbytes is specified then read at most that many byte
 
 Return value: number of bytes read and stored into buf.
 
-### socket.readline()
+#### socket.readline()
 
 Read a line, ending in a newline character.
 

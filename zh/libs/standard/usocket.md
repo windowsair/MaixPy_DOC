@@ -235,7 +235,7 @@ if not res:
 
 返回值：读取并存储到buf中的字节数。
 
-### socket.readline()
+#### socket.readline()
 
 读一行，以换行符结尾。
 
