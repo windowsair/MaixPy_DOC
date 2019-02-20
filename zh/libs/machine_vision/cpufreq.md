@@ -44,7 +44,7 @@ kpu_freqlist = cpufreq.get_kpu_supported_frequencies()
 
 ### 设置频率
 
-设置 cpu 或者 kpu 频率
+设置 cpu 或者 kpu 频率，请注意在频率设置完毕后可能会导致某些外设性能改变
 
 ```python
 import cpufreq
@@ -53,6 +53,8 @@ kpu_freqlist = cpufreq.set_frequency(cpu = cpu_freq, kpu = kpu_freq)
 ```
 
 #### 参数
+
+参数可以输入 cpu 或 kpu 中的1个或2者都输入
 
 * `cpu_freq`：想要设置的cpu频率，范围[26,400]
 
