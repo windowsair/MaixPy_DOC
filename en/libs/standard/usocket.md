@@ -303,7 +303,7 @@ while True:
 print(len(img))
 img = img[img.find(b"\r\n\r\n")+4:]
 print(len(img))
-print("save to /flash/Alice.bmp")
+print("save to /sd/Alice.bmp")
 f = open("/sd/Alice.bmp","wb")
 f.write(img)
 f.close()
