@@ -59,6 +59,7 @@ Summary
         - [SPI](libs/machine/spi.md)
         - [Timer](libs/machine/timer.md)
         - [UART](libs/machine/uart.md)
+        - [network](libs/machine/network.md)
     - [Maix](libs/Maix/README.md)
         - [FPIOA](libs/Maix/fpioa.md)
         - [GPIO](libs/Maix/gpio.md)
@@ -69,6 +70,8 @@ Summary
         - [lcd](libs/machine_vision/lcd.md)
         - [sensor](libs/machine_vision/sensor.md)
         - [image](libs/machine_vision/image.md)
+        - [clock](libs/machine_vision/clock.md)
+        - [cpufreq](libs/machine_vision/cpufreq.md)
 
 ## 进阶
 
