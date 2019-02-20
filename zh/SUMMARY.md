@@ -67,6 +67,8 @@ Summary
         - [lcd](libs/machine_vision/lcd.md)
         - [sensor](libs/machine_vision/sensor.md)
         - [image](libs/machine_vision/image.md)
+        - [clock](libs/machine_vision/clock.md)
+        - [cpufreq](libs/machine_vision/cpufreq.md)
 
 ## 进阶
 
