@@ -1,7 +1,6 @@
 Peripheral Modules
 =====
 
-* [Microphone array]()
-* [Binocular camera]()
-
-
+* [Microphone array](mic_array.md)
+* [Binocular camera](binocular.md)
+* [LCD Module](lcd.md)
