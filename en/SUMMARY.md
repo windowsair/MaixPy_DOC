@@ -15,8 +15,9 @@ Summary
     - [BiT](hardware/bit.md)
     - [Go](hardware/go.md)
 - [Peripheral Modules](hardware/peripheral_modules.md)
-    - [Microphone array]()
-    - [Binocular camera]()
+    - [Microphone array](hardware/mic_array.md)
+    - [Binocular camera](hardware/binocular.md)
+    - [LCD Module](hardware/lcd.md)
 
 ## Getting Started
 
@@ -25,14 +26,16 @@ Summary
     - [Upgrade Firmware](get_started/upgrade_firmware.md)
 - [Power On](get_started/power_on.md)
 - [LED Blink](get_started/led_blink.md)
+- [Edit and run the file](get_started/edit_file.md)
 - [Upload Script To Dev Board](get_started/upload_script.md)
+- [Boot](get_started/boot.md)
 - [How To Read Docs](get_started/how_to_read.md)
 
 ## Reference
 
 - [Basic Syntax](mpy_basic_syntax/README.md)
 - [Libraries](libs/README.md)
-    - [standard](libs/standard/README.md)
+    - [Standard library](libs/standard/README.md)
         - [cmath](libs/standard/cmath.md) 
         - [gc](libs/standard/gc.md) 
         - [math](libs/standard/math.md) 
@@ -50,12 +53,29 @@ Summary
         - [ustruct](libs/standard/ustruct.md) 
         - [utime](libs/standard/utime.md) 
         - [uzlib](libs/standard/uzlib.md) 
-    - [machine](libs/machine/README.md)
+    - [Machine](libs/machine/README.md)
         - [I2C](libs/machine/i2c.md)
         - [PWM](libs/machine/pwm.md)
         - [SPI](libs/machine/spi.md)
         - [Timer](libs/machine/timer.md)
         - [UART](libs/machine/uart.md)
+    - [Maix](libs/Maix/README.md)
+        - [FPIOA](libs/Maix/fpioa.md)
+        - [GPIO](libs/Maix/gpio.md)
+    - [Built-in class](libs/builtin_py/README.md)
+        - [fpioa_manager](libs/builtin_py/fm.md)
+        - [Board_info](libs/builtin_py/board_info.md)
+    - [Machine vision](libs/machine_vision/README.md)
+        - [LCD](libs/machine_vision/lcd.md)
+        - [Sensor](libs/machine_vision/sensor.md)
+        - [Image](libs/machine_vision/image.md)
+        - [Clock](libs/machine_vision/clock.md)
+        - [CPUfreq](libs/machine_vision/cpufreq.md)
+
+## Advanced - Custom Firmware
+
+- [Code compilation](advanced/compile.md)
+- [Code structure](advanced/code_struct.md)
 
 ## Others
 
