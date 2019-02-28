@@ -160,29 +160,19 @@ layer0=info[0]
 ##### 返回
 
 * `netinfo list`：所有层的信息list, 包含信息为：
-
+```
 index：当前层在网络中的层数
-
 wi：输入宽度
-
 hi：输入高度
-
 wo：输出宽度
-
 ho：输出高度
-
 chi：输入通道数
-
 cho：输出通道数
-
 dw：是否为depth wise layer
-
 kernel_type：卷积核类型，0为1x1， 1为3x3
-
 pool_type：池化类型，0不池化; 1：2x2 max pooling; 2:...
-
 para_size：当前层的卷积参数字节数
-
+```
 
 ## 例程
 
@@ -218,14 +208,12 @@ a = kpu.deinit(task)
 模型下载地址：http://dl.sipeed.com/MAIX/MaixPy/model/face.kfpkg
 
 该模型是8bit定点模型，约380KB大小，层信息为：
-
-1 2			   :160x120
-
-3 4	5 6		:80x60
-
-7 8 9 10	:40x30
-
-11~16		  :20x15
+```
+1 2        :160x120
+3 4 5 6	   :80x60
+7 8 9 10   :40x30
+11~16      :20x15
+```
 
 ```python
 import sensor
@@ -238,7 +226,7 @@ sensor.reset()
 sensor.set_pixformat(sensor.RGB565)
 sensor.set_framesize(sensor.QVGA)
 sensor.run(1)
-task=kpu.load(0x200000,0x280000)
+task=kpu.load(0xd00000)
 img=image.Image()
 info=kpu.netinfo(task)
 layer=info[index]
