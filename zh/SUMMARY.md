@@ -63,6 +63,7 @@ Summary
     - [Maix](libs/Maix/README.md)
         - [FPIOA](libs/Maix/fpioa.md)
         - [GPIO](libs/Maix/gpio.md)
+        - [KPU](libs/Maix/kpu.md)
     - [内置类](libs/builtin_py/README.md)
         - [fpioa_manager](libs/builtin_py/fm.md)
         - [board_info](libs/builtin_py/board_info.md)
