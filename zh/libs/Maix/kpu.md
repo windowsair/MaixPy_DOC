@@ -24,7 +24,7 @@ task = kpu.load(offset or file_path)
 
 #### 参数
 
-* `offt_set`: 模型在 flash 中的偏移大小，如 `0xd00000` 表示模型烧录在13M起始的地方
+* `offtset`: 模型在 flash 中的偏移大小，如 `0xd00000` 表示模型烧录在13M起始的地方
 * `file_path`: 模型在文件系统中为文件名， 如 `“/sd/xxx.kmodel”`
 
 ##### 返回
@@ -88,7 +88,106 @@ kpu.run_yolo2(task, img) #此处不对，请参考例程
 
 * `list`: kpu_yolo2_find 的列表 
 
+### 网络前向运算(forward)
+
+计算已加载的网络模型到指定层数，输出目标层的特征图
+
+```python
+import KPU as kpu
+task = kpu.load(offset or file_path)
+……
+fmap=kpu.forward(task,img,3)
+```
+
+#### 参数
+
+* `kpu_net`: kpu_net 对象
+* `image_t`: 从 sensor 采集到的图像
+* `int`: 指定计算到网络的第几层
+
+##### 返回
+
+* `fmap`: 特征图对象，内含当前层所有通道的特征图
+
+
+### fmap 特征图
+
+取特征图的指定通道数据到image对象
+
+```python
+img=kpu.fmap(fmap,1)
+```
+
+#### 参数
+
+* `fmap`: 特征图 对象
+* `int`: 指定特征图的通道号
+
+##### 返回
+
+* `img_t`: 特征图对应通道生成的灰度图
+
+
+### fmap_free 释放特征图
+
+释放特征图对象
+
+```python
+kpu.fmap_free(fmap)
+```
+
+#### 参数
+
+* `fmap`: 特征图 对象
+
+##### 返回
+
+* 无
+
+### netinfo 
+
+获取模型的网络结构信息
+
+```python
+info=kpu.netinfo(task)
+layer0=info[0]
+```
+
+#### 参数
+
+* `kpu_net`: kpu_net 对象
+
+##### 返回
+
+* `netinfo list`：所有层的信息list, 包含信息为：
+
+index：当前层在网络中的层数
+
+wi：输入宽度
+
+hi：输入高度
+
+wo：输出宽度
+
+ho：输出高度
+
+chi：输入通道数
+
+cho：输出通道数
+
+dw：是否为depth wise layer
+
+kernel_type：卷积核类型，0为1x1， 1为3x3
+
+pool_type：池化类型，0不池化; 1：2x2 max pooling; 2:...
+
+para_size：当前层的卷积参数字节数
+
+
 ## 例程
+
+#### 运行人脸识别demo
+模型下载地址：http://dl.sipeed.com/MAIX/MaixPy/model/face.kfpkg
 
 ```python
 import sensor
@@ -113,4 +212,52 @@ while(True):
             a = img.draw_rectangle(i.rect())
     a = lcd.display(img)
 a = kpu.deinit(task)
+```
+
+#### 运行特征图
+模型下载地址：http://dl.sipeed.com/MAIX/MaixPy/model/face.kfpkg
+
+该模型是8bit定点模型，约380KB大小，层信息为：
+
+1 2			   :160x120
+
+3 4	5 6		:80x60
+
+7 8 9 10	:40x30
+
+11~16		  :20x15
+
+```python
+import sensor
+import image
+import lcd
+import KPU as kpu
+index=3  
+lcd.init()
+sensor.reset()
+sensor.set_pixformat(sensor.RGB565)
+sensor.set_framesize(sensor.QVGA)
+sensor.run(1)
+task=kpu.load(0x200000,0x280000)
+img=image.Image()
+info=kpu.netinfo(task)
+layer=info[index]
+w=layer.wo()
+h=layer.ho()
+num=int(320*240/w/h)
+list=[None]*num
+x_step=int(320/w)
+y_step=int(240/h)
+img_lcd=image.Image()
+while True:
+    img=sensor.snapshot()
+    fmap=kpu.forward(task,img,index)
+    for i in range(0,num):
+        list[i]=kpu.fmap(fmap,i)
+    for i in range(0,num):
+        list[i].stretch(64,255)
+    for i in range(0,num):
+        a=img_lcd.draw_image(list[i],((i%x_step)*w,(int(i/x_step))*h))
+	   lcd.display(img_lcd)
+   	kpu.fmap_free(fmap)
 ```
