@@ -74,8 +74,9 @@ The length of current frame( video )
 
 ### Example 1: Play `avi` video
 
-首先保证视频是 `320x240` 大小， 视频压缩格式为 `mjpeg`， 音频压缩格式位 `PCM`
 Encode a video with format: screen size `320x240`， `MJEPG` compress format, `PCM` format audio
+
+You can download `avi` video here: [badapple.avi](http://dl.sipeed.com/MAIX/MaixPy/assets/badapple_320_240_15fps.avi)
 
 ```python
 import video,time
