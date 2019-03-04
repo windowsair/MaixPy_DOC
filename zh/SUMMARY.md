@@ -73,6 +73,7 @@ Summary
         - [image](libs/machine_vision/image.md)
         - [clock](libs/machine_vision/clock.md)
         - [cpufreq](libs/machine_vision/cpufreq.md)
+        - [video](libs/machine_vision/video.md)
 
 ## 进阶 - 定制固件
 

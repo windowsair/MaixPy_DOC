@@ -71,6 +71,7 @@ Summary
         - [Image](libs/machine_vision/image.md)
         - [Clock](libs/machine_vision/clock.md)
         - [CPUfreq](libs/machine_vision/cpufreq.md)
+        - [video](libs/machine_vision/video.md)
 
 ## Advanced - Custom Firmware
 
