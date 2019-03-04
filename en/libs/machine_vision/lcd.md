@@ -5,7 +5,7 @@ Lcd screen display driver
 
 ## function
 
-### lcd.init(type=1)
+### lcd.init(type=1, freq=15000000)
 
 Initialize the `LCD` screen to display black
 
@@ -15,6 +15,8 @@ Initialize the `LCD` screen to display black
   * `0`: None
   * `1`: lcd shield (default)
 > type is a key-value parameter that must be explicitly called by writing type= in the function call
+
+* `freq`: frequency of lcd ( actually maybe SPI )
 
 ### lcd.deinit()
 
@@ -37,6 +39,17 @@ Returns the type of `LCD` (reserved for future use):
 0: None
 1: lcd Shield
 
+### lcd.freq(freq)
+
+Set or get frequency of LCD (SPI)
+
+#### Paremeters
+
+* `freq`: frequency of LCD (SPI)
+
+#### Return
+
+frequency of LCD
 
 ### lcd.set_backlight(state)
 

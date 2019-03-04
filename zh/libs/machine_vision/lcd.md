@@ -16,6 +16,8 @@ lcd 屏幕显示驱动
   * `1`: lcd shield（默认值）
 > type 是键值参数，必须在函数调用中通过写入 type= 来显式地调用
 
+* `freq`： `LCD` （实际上指 `SPI` 的通讯速率） 的频率
+
 ### lcd.deinit()
 
 注销 `LCD` 驱动，释放I/O引脚
@@ -36,6 +38,18 @@ lcd 屏幕显示驱动
 
 0: None
 1: lcd Shield
+
+### lcd.freq(freq)
+
+设置或者获取 `LCD` （SPI） 的频率
+
+#### Paremeters
+
+* `freq`: LCD (SPI) 的频率
+
+#### Return
+
+LCD 的频率
 
 
 ### lcd.set_backlight(state)
