@@ -98,6 +98,15 @@ Empty the LCD screen to black or other color.
 * `color`： `LCD` initialized color, 16 bits `RGB565` color, e.g. `0xFFFF`; or `RGB888` tuple, e.g. `(236, 36, 36)`
 
 
+### lcd.direction(dir)
+
+Set LCD direction and mirror
+> parameters maybe change in the future
+
+#### Parameters
+
+* `dir`： nomally `lcd.YX_LRUD` or `lcd.YX_RLDU`， other values just exchange `XY` or `LR` or `DU`
+* 
 
 
 ## Routine
