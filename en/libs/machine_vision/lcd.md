@@ -18,6 +18,9 @@ Initialize the `LCD` screen to display black
 
 * `freq`: frequency of lcd ( actually maybe SPI )
 
+* `color`： `LCD` initialized color, 16 bits `RGB565` color, e.g. `0xFFFF`; or `RGB888` tuple, e.g. `(236, 36, 36)`
+
+
 ### lcd.deinit()
 
 Unregister the `LCD` driver to release the I/O pins
@@ -87,7 +90,12 @@ If the roi height is greater than the lcd height, roi is at the center of the sc
 
 ### lcd.clear()
 
-Empty the LCD screen to black.
+Empty the LCD screen to black or other color.
+
+
+#### Parameters
+
+* `color`： `LCD` initialized color, 16 bits `RGB565` color, e.g. `0xFFFF`; or `RGB888` tuple, e.g. `(236, 36, 36)`
 
 
 
