@@ -5,9 +5,9 @@ lcd 屏幕显示驱动
 
 ## 函数
 
-### lcd.init(type=1)
+### lcd.init(type=1, freq=15000000, color=lcd.BLACK)
 
-初始化 `LCD` 屏幕显示黑色
+初始化 `LCD` 屏幕显示
 
 #### 参数
 
@@ -18,7 +18,7 @@ lcd 屏幕显示驱动
 
 * `freq`： `LCD` （实际上指 `SPI` 的通讯速率） 的频率
 
-* `color`： `LCD` 初始化的颜色， 可以是 16 位的 `RGB565` 颜色值，比如 `0xFFFF`； 或者 `RGB888` 元组， 比如 `(236, 36, 36)`
+* `color`： `LCD` 初始化的颜色， 可以是 16 位的 `RGB565` 颜色值，比如 `0xFFFF`； 或者 `RGB888` 元组， 比如 `(236, 36, 36)`， 默认 `lcd.BLACK`
 
 ### lcd.deinit()
 

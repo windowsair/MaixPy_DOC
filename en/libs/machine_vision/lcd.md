@@ -5,9 +5,9 @@ Lcd screen display driver
 
 ## function
 
-### lcd.init(type=1, freq=15000000)
+### lcd.init(type=1, freq=15000000, color=lcd.BLACK)
 
-Initialize the `LCD` screen to display black
+Initialize the `LCD` screen to display 
 
 #### Parameters
 
@@ -18,7 +18,7 @@ Initialize the `LCD` screen to display black
 
 * `freq`: frequency of lcd ( actually maybe SPI )
 
-* `color`： `LCD` initialized color, 16 bits `RGB565` color, e.g. `0xFFFF`; or `RGB888` tuple, e.g. `(236, 36, 36)`
+* `color`： `LCD` initialized color, 16 bits `RGB565` color, e.g. `0xFFFF`; or `RGB888` tuple, e.g. `(236, 36, 36)`, default `lcd.BLACK`
 
 
 ### lcd.deinit()
