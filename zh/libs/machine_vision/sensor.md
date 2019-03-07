@@ -1,15 +1,14 @@
 sensor
 =========
-传感器模块，进行摄像头配置及图像抓取等，用于控制开发板摄像头完成摄像任务
-
+传感器模块，进行摄像头配置及图像抓取等，用于控制开发板摄像头完成摄像任务。
 ## 方法
 
-### 重置函数
+### 单目摄像头重置函数
 
 重置并初始化摄像头。这里会自动扫描并获取摄像头地址
-```
+```python
 import sensor
-sensor.reset()
+sensor.reset() #初始化单目摄像头
 ```
 
 #### 参数
@@ -20,9 +19,27 @@ sensor.reset()
 
 无
 
+### 双目摄像头重置函数
+
+芯片只有一个dvp接口，所以通过pwdn引脚来选择sensor。pwdn引脚可以通过shutdown接口来控制。指定sensor后其余操作不变。详细请见例程2
+
+```python
+import sensor
+sensor.binocular_reset()#初始化单目摄像头
+```
+
+#### 参数
+
+无
+
+#### 返回值
+
+无
+
+
 ### 启动函数
 
-启动摄像头
+启动/关闭芯片捕获图像
 
 ```
 import sensor
@@ -105,14 +122,18 @@ img = sensor.snapshot()
 
 ### 关闭摄像头
 
-关闭摄像头
+关闭摄像头/切换摄像头
 
 ```
-sensor.shutdown(enable)
+sensor.shutdown(enable/select)
 ```
 #### 参数
 
+单目摄像头
 * `enable`: 1 表示开启摄像头 0 表示关闭摄像头
+
+双目摄像头
+* `select`: 通过写入0或1来切换摄像头
 
 #### 返回值
 
@@ -358,4 +379,31 @@ sensor.run(1)
 while 1:
     img = sensor.snapshot()
     lcd.display(img)
+```
+
+### 例程 2
+
+```python
+import sensor
+import image
+import lcd
+import time
+lcd.init()
+sensor.binocular_reset()
+sensor.shutdown(False)#选择sensor并初始化
+sensor.set_pixformat(sensor.RGB565)
+sensor.set_framesize(sensor.QVGA)
+sensor.shutdown(True)#选择sensor并初始化
+sensor.set_pixformat(sensor.RGB565)
+sensor.set_framesize(sensor.QVGA)
+sensor.run(1)
+while True:
+    sensor.shutdown(False) #选择sensor
+    img=sensor.snapshot()
+    lcd.display(img)
+    time.sleep_ms(100)
+    sensor.shutdown(True) #选择sensor
+    img=sensor.snapshot()
+    lcd.display(img)
+    time.sleep_ms(100)
 ```
