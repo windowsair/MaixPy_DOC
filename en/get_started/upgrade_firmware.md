@@ -7,11 +7,31 @@ Update MaixPy firmware
 
 Connect the Type C cable, one end to the development board, one end to the computer
 
+
 ## Install the driver
 
 The main reason is to install the serial port driver, because the board is connected to the computer through the USB to serial device. Install the driver according to the board's USB to serial port chip model.
 
-For example, the CH340 used by the Dan_Dock development board: Linux does not need to install the driver. The system comes with it. You `ls /dev/ttyUSB*` can see the device number by using Windows. You can search and download the installation on the Internet, and then you can `Device manager` see the serial device in it.
+> Operate the serial port under `Linux` or `Mac`. If you don't want to use the `sudo` command every time, execute `sudo usermod -a -G dialout $(whoami)` to add yourself to the `dialout` user group. May need to be logged off or restarted to take effect
+
+### For `Dan Dock` or `Maix Bit`
+
+the CH340 used by the Dan_Dock development board: Linux does not need to install the driver. The system comes with it. You `ls /dev/ttyUSB*` can see the device number by using Windows. You can search and download the installation on the Internet, and then you can `Device manager` see the serial device in it.
+
+
+### For `Maix Go`
+
+The development board uses a `STM32` to implement the analog serial port and the `JTAG` function.
+
+The firmware of this `STM32` chip is factory defaulted to [open-ec](https://github.com/sipeed/open-ec) firmware. If there is no problem, one or two serial ports will appear, such as `Linux` Two serial ports `/dev/ttyUSB0` and `/dev/ttyUSB1` appear below. Please use `/dev/ttyUSB1` when downloading and accessing the serial port. Windows is similar.
+
+If you need to re-burn this firmware, you can download it from [github](https://github.com/sipeed/open-ec/releases) or [open-ec firmware](http://dl.sipeed.com/ MAIX/tools/flash-zero.bin), then use the `STM32`'s `SW` pins (`GND`, `SWDIO`, `SWCLK`) from the `ST-LINK` connection board for programming. (The `STM32` on the current version of the `Go` board does not support serial port burning. It can only be burned using `ST-LINK`. Please purchase it if you need it, or use a board with 'IO` simulation. Such as the Raspberry Pi))
+
+In addition to `open-ec` and `CMSIS-DAP` firmware, compared to `open-ec` can simulate `JTAG` to debug the board, `open-ec` does not currently support emulation `JTAG`, can [from Download the firmware on the official website](http://dl.sipeed.com/MAIX/tools/maix_go_cmsisdap_new.hex), use `ST-LINK` to burn it, and ``dev/ttyACM0` device will appear under `Linux`
+
+> ST-LINK has a very complete description of the burning method of `STM32`, please search for yourself.
+
+
 
 ## Get the upgrade tool
 
@@ -32,9 +52,16 @@ K-Flash: Download from [github](https://github.com/kendryte/kendryte-flash-windo
 
 Or download from the official [kendryte](https://kendryte.com/downloads/) page
 
+If it is the `Maix Go` development board, currently only the `kflash.py` script can be used for burning, so you need to install `python3` on your computer.
+
+Then download [kflash.py](https://github.com/sipeed/kflash.py)
+
+
 ## Get the firmware
 
 Download from [github](https://github.com/sipeed/MaixPy/releases) page
+
+Firmware endup with `.bin` or `.kfpkg`
 
 
 ## Download the firmware to the development board
@@ -47,13 +74,13 @@ Use the following command to burn, you can use it `python3 kflash.py --help` to 
 sudo python3 kflash.py -p /dev/ttyUSB0 -b 2000000 -B dan firmware.bin
 ```
 
-> Which `-p` is the specified device, you can `ls /dev/ttyUSB*` view the device 
-> `-b` is specified baud rate, if the download fails, you can try again to reduce the baud rate 
-> `-B` is specified board, without the support of the model do not worry, you can still download, but may need to download after Manual reset to start
+* Which `-p` is the specified device, you can `ls /dev/ttyUSB*` view the device 
+* `-b` is specified baud rate, if the download fails, you can try again to reduce the baud rate 
+* `-B` is specified board, without the support of the model do not worry, you can still download, but may need to download after Manual reset to start.  Where `Maix Go` uses `-B goD` (`STM32` has burned `SMSIS-DAP` firmware) or `-B goE` (`STM32` has burned `open-ec` firmware)
 
-> If you don't want to use the `sudo` command every time , you can `sudo usermod -a -G dialout $(whoami)` add yourself to the `dialout` user group, you may need to log out or restart to take effect.
+> `Maix Go` If the confirmation option is correct and still cannot be downloaded, you can try to dial the three-phase dial button to the position of `Down` and keep downloading again.
+![Go Key Down](../../assets/Go_Key_Down.png)
 
-If the board is to develop `Maix Go` and use `open-ec` firmware is currently available for download kflash.py script, `-B` parameters, please choose `kd233`
 
 ### Windows
 
@@ -61,5 +88,5 @@ Run the downloaded software in two machines, select firmware, serial port, etc. 
 
 ![kflash windows](../../assets/kflash_win.png)
 
-If the board is to develop `Maix Go` and use `open-ec` firmware is currently available for download kflash.py script, `-B` parameters, please choose `kd233`
+If the development board is `Maix Go`, you can only use `kflash.py` to download it. The download method is the same as the method on `Linux`, see above.
 
