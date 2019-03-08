@@ -10,7 +10,7 @@ MaixPy 文档
 
 ## 什么是 MaixPy
 
-MaixPy 是将 [Micropython](http://micropython.org/) 移植到 [K210](https://kendryte.com/)（ 一款64位双核 RISC-V CPU,  ） 的一个项目。
+MaixPy 是将 [Micropython](http://micropython.org/) 移植到 [K210](https://kendryte.com/)（ 一款64位双核带硬件FPU和卷积加速器的 RISC-V CPU,  ） 的一个项目， 支持 MCU 常规操作， 更集成了机器视觉和麦克风阵列， 以快速开发具有极低成本和体积实用的 `AIOT` 领域智能应用。
 
 > MicroPython 是基于 Python3 的语法做的一款解析器，包含了 Python3 的大多数基础语法， 主要运行在性能和内存有限的嵌入式芯片上。（注意 Micropython 不包含 Python3 的所有语法）
 

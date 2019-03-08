@@ -84,7 +84,7 @@ sudo python3 kflash.py -p /dev/ttyUSB0 -b 2000000 -B dan firmware.bin
 ```
 *  `-p` 是指定设备， 可以通过`ls /dev/ttyUSB*`来查看设备
 * `-b`是指定波特率， 如果下载失败，可以降低波特率再次尝试
-* `-B`是指定板子，如果没有支持的型号也不用担心，仍然可以下载，只是下载完后可能需要手动复位才能启动。 其中 `Maix Go` 使用 `-B goD`(`STM32` 烧录了 `SMSIS-DAP` 固件) 或者 `-B goE`(`STM32` 烧录了 `open-ec` 固件)
+* `-B`是指定板子，如果没有支持的型号也不用担心，仍然可以下载，只是下载完后可能需要手动复位才能启动。 其中 `Maix Go` 使用 `-B goD`(`STM32` 烧录了 `CMSIS-DAP` 固件) 或者 `-B goE`(`STM32` 烧录了 `open-ec` 固件)
 
 > `Maix Go` 如果确认选项是对的，仍然无法下载， 可以尝试将三相拨轮按键拨向 `Down` 的位置并保持再下载
 ![Go Key Down](../../assets/Go_Key_Down.png)

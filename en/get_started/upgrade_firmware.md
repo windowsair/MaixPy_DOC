@@ -76,7 +76,7 @@ sudo python3 kflash.py -p /dev/ttyUSB0 -b 2000000 -B dan firmware.bin
 
 * Which `-p` is the specified device, you can `ls /dev/ttyUSB*` view the device 
 * `-b` is specified baud rate, if the download fails, you can try again to reduce the baud rate 
-* `-B` is specified board, without the support of the model do not worry, you can still download, but may need to download after Manual reset to start.  Where `Maix Go` uses `-B goD` (`STM32` has burned `SMSIS-DAP` firmware) or `-B goE` (`STM32` has burned `open-ec` firmware)
+* `-B` is specified board, without the support of the model do not worry, you can still download, but may need to download after Manual reset to start.  Where `Maix Go` uses `-B goD` (`STM32` has burned `CMSIS-DAP` firmware) or `-B goE` (`STM32` has burned `open-ec` firmware)
 
 > `Maix Go` If the confirmation option is correct and still cannot be downloaded, you can try to dial the three-phase dial button to the position of `Down` and keep downloading again.
 ![Go Key Down](../../assets/Go_Key_Down.png)
