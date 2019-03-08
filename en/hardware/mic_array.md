@@ -6,5 +6,4 @@ Microphone array
 
 
 * Buy: Taobao
-* Download：[Mic Array](http://dl.sipeed.com/MAIX/HDK/Mic%20Array/)
-
+* Docs: [dl.sipeed.com](dl.sipeed.com)

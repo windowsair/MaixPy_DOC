@@ -6,3 +6,6 @@ Sipeed M1 (Lichee Dan)
 
 ![Dan dock](../../assets/Dan_Dock.png)
 
+* Docs: [dl.sipeed.com](dl.sipeed.com)
+
+

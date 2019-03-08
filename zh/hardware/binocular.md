@@ -5,6 +5,6 @@
 
 
 * 购买： 淘宝
-* 资料下载：
+* 资料下载： [dl.sipeed.com](dl.sipeed.com)
 
 

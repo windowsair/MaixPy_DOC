@@ -7,7 +7,7 @@ Sipeed M1 (Lichee Dan) Dock Board
 ![Dan dock](../../assets/Dan_Dock.png)
 
 
-* 资料下载： [Maix Dock](http://dl.sipeed.com/MAIX/HDK/Maix-Dock/)
+* 资料下载： [dl.sipeed.com](dl.sipeed.com)
 
 
 

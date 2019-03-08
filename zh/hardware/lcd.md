@@ -2,7 +2,7 @@ LCD Module
 ========
 
 
-* 资料下载： [Maix LCD](http://dl.sipeed.com/MAIX/HDK/Maix-LCD/)
+* 资料下载： [dl.sipeed.com](dl.sipeed.com)
 
 
 
