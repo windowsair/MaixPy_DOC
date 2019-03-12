@@ -209,7 +209,7 @@ def on_timer(timer,param):
     print("time up:",timer)
     print("param:",param)
 
-tim = Timer(Timer.TIMER0, Timer.CHANNEL0, mode=Timer.MODE_ONE_SHOT, period=3000, callback=on_timer, param=on_timer)
+tim = Timer(Timer.TIMER0, Timer.CHANNEL0, mode=Timer.MODE_ONE_SHOT, period=3000, callback=on_timer, arg=on_timer)
 print("period:",tim.period())
 tim.start()
 ```
@@ -226,7 +226,7 @@ def on_timer(timer,param):
     print("time up:",timer)
     print("param:",param)
 
-tim = Timer(Timer.TIMER0, Timer.CHANNEL0, mode=Timer.MODE_PERIODIC, period=1, unit=Timer.UNIT_S, callback=on_timer, param=on_timer, start=False, priority=1, div=0)
+tim = Timer(Timer.TIMER0, Timer.CHANNEL0, mode=Timer.MODE_PERIODIC, period=1, unit=Timer.UNIT_S, callback=on_timer, arg=on_timer, start=False, priority=1, div=0)
 print("period:",tim.period())
 tim.start()
 time.sleep(5)
