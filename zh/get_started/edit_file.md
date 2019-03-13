@@ -50,11 +50,17 @@ Windows 下也一样， 根据自己使用的工具上网搜设置方法， 比�
 
 使用 `os.chdir()` 切换当前目录到文件的目录，比如 `os.chdir("/flash")`
 
+### 方法一： `import`
+
 然后执行 `import hello`
 
 即可看到输出 `hello maixpy`
 
-或者使用 `exec()` 函数来执行
+使用此方法简单易用，但是需要注意的是， 目前 `import` 只能使用一次， 如果第二次 `import`， 则文件不会再执行， 如果需要多次执行，建议使用下面的方法
+
+### 方法二： `exec()`
+
+使用 `exec()` 函数来执行
 
 ```python
 with open("hello.py") as f:

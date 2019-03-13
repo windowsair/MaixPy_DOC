@@ -49,11 +49,17 @@ Change the delete and backspace sequences to ASCII 127.
 
 Use `os.chdir()` Change directory to the directory of the current file, such as `os.chdir("/flash")`
 
+### Way A: `import`
+
 Then execute `import hello`
 
 You can see the output `hello maixpy`
 
-Or use `exec()` to perform the functions
+But be attention, `import` command can only use once, if you want to execute code more than once, please use the `Way B`
+
+### Way B: `exec()`
+
+Use `exec()` to perform the functions
 
 ```python
 with open("hello.py") as f:
