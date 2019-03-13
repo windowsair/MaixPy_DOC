@@ -48,6 +48,12 @@ Timer.init(id, channel, mode=Timer.MODE_ONE_SHOT, period=1000, unit=Timer.UNIT_M
 
 无
 
+
+### callback_arg
+
+获取设置的传给回调函数的参数，只能是 `Timer` 对象调用， 类 `Timer` 不能调用
+
+
 ### callback
 
 获取或者设置回调函数
@@ -67,9 +73,9 @@ Timer.callback(callback)
 #### 例子
 
 ```python
-def on_timer(timer,param):
+def on_timer(timer):
     print("time up:",timer)
-    print("param:",param)
+    print("param:",timer.callback_arg())
 
 tim.callback(on_timer)
 print(on_timer, tim.callback())
@@ -205,13 +211,12 @@ del tim
 ```python
 from machine import Timer
 
-def on_timer(timer,param):
+def on_timer(timer):
     print("time up:",timer)
-    print("param:",param)
+    print("param:",timer.callback_arg())
 
 tim = Timer(Timer.TIMER0, Timer.CHANNEL0, mode=Timer.MODE_ONE_SHOT, period=3000, callback=on_timer, arg=on_timer)
 print("period:",tim.period())
-tim.start()
 ```
 
 ### 例程 2

@@ -37,6 +37,10 @@ Same to constructor
 Timer.init(id, channel, mode=Timer.MODE_ONE_SHOT, period=1000, unit=Timer.UNIT_MS, callback=None, arg=None, start=True, priority=1, div=0)
 ```
 
+### callback_arg
+
+callback arg of timer obj
+
 ### callback
 
 Get or set callback
@@ -45,7 +49,7 @@ e.g.
 ```python
 def on_timer(timer,param):
     print("time up:",timer)
-    print("param:",param)
+    print("param:",timer.callback_arg())
 
 tim.callback(on_timer)
 print(on_timer, tim.callback())
@@ -118,13 +122,12 @@ Print data after 3s just once
 ```python
 from machine import Timer
 
-def on_timer(timer,param):
+def on_timer(timer):
     print("time up:",timer)
-    print("param:",param)
+    print("param:",timer.callback_arg())
 
 tim = Timer(Timer.TIMER0, Timer.CHANNEL0, mode=Timer.MODE_ONE_SHOT, period=3000, callback=on_timer, arg=on_timer)
 print("period:",tim.period())
-tim.start()
 ```
 
 ### Demo 2
