@@ -149,8 +149,8 @@ import sensor, lcd
 sensor.reset()
 sensor.set_pixformat(sensor.RGB565)
 sensor.set_framesize(sensor.QVGA)
-sensor.skip_frames()
 sensor.run(1)
+sensor.skip_frames()
 lcd.init()
 
 while(True):
