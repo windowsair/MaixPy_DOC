@@ -116,7 +116,7 @@ roi 是一个感兴趣区域的矩形元组(x, y, w, h)。若未指定，即为�
 import lcd
 
 lcd.init()
-lcd.lcd.draw_string(100, 100, "hello maixpy", lcd.RED, lcd.BLACK)
+lcd.draw_string(100, 100, "hello maixpy", lcd.RED, lcd.BLACK)
 
 ```
 

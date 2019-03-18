@@ -1,13 +1,17 @@
 sensor
 =========
+
+
 传感器模块，进行摄像头配置及图像抓取等，用于控制开发板摄像头完成摄像任务。
+
+
 ## 方法
 
 ### 单目摄像头重置函数
 
 重置并初始化摄像头。这里会自动扫描并获取摄像头地址
+
 ```python
-import sensor
 sensor.reset() #初始化单目摄像头
 ```
 
@@ -24,7 +28,6 @@ sensor.reset() #初始化单目摄像头
 芯片只有一个dvp接口，所以通过pwdn引脚来选择sensor。pwdn引脚可以通过shutdown接口来控制。指定sensor后其余操作不变。详细请见例程2
 
 ```python
-import sensor
 sensor.binocular_reset()#初始化单目摄像头
 ```
 
@@ -41,14 +44,13 @@ sensor.binocular_reset()#初始化单目摄像头
 
 启动/关闭芯片捕获图像
 
-```
-import sensor
-sensor.run(enbale)
+```python
+sensor.run(enable)
 ```
 
 #### 参数
 
-* enbale: 1表示开启，0 表示停止
+* enable: 1表示开启，0 表示停止
 
 #### 返回值
 
