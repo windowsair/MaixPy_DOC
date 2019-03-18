@@ -9,8 +9,8 @@ uart模块主要用于驱动开发板上的异步串口，可以自由对uart进
 
 在使用uart前，我们需要使用fm来对芯片引脚进行映射和管理。如下所示，将PIN10设置为uart2的发送引脚，PIN11设置为uart2的接收引脚
 ```
-fm.registered(board_info.PIN10,fm.fpioa.UART2_TX)
-fm.registered(board_info.PIN11,fm.fpioa.UART2_RX)
+fm.register(board_info.PIN10,fm.fpioa.UART2_TX)
+fm.register(board_info.PIN11,fm.fpioa.UART2_RX)
 ```
 
 ### 构造函数
@@ -24,7 +24,7 @@ uart = machine.UART(uart,baudrate,bits,parity,stop,timeout, read_buf_len)
 #### 参数
 
 * `uart` UART号，使用指定的UART，可以通过 `machine.UART.` 按tab键来补全
-* `baudrate`: UART波特率 
+* `baudrate`: UART波特率
 * `bits`: UART数据宽度，支持5/6/7/8
 * `parity`: 奇偶校验位，支持0/1/2，0为不校验，1为奇校验，2为偶校验
 * `stop`: 停止位，支持0/1/2,0为1位停止位，1为1.5为停止位，2为2为停止位
@@ -114,7 +114,7 @@ UART.deinit()
 ## 例程
 
 
-### 例程 1 
+### 例程 1
 
 在运行里程之前，请确认 `PIN15` 已经连接到 `PIN10`， `PIN17` 已经连接到 `PIN9`
 
