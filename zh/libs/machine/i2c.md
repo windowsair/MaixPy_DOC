@@ -14,7 +14,7 @@ I2C 总线协议，简单地使用两条线（SCL，SDA）可以控制多个从�
 ## 构造函数
 
 ```python
-class machine.I2C(id, mode=Timer.MODE_MASTER, scl, sda, freq=400000, timeout=1000, addr=0, addr_size=7, on_recieve=None, on_transmit=None, on_event=None)
+class machine.I2C(id, mode=I2C.MODE_MASTER, scl=None, sda=None, freq=400000, timeout=1000, addr=0, addr_size=7, on_recieve=None, on_transmit=None, on_event=None)
 ```
 
 通过指定的参数新建一个 I2C 对象
