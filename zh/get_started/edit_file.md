@@ -4,7 +4,7 @@
 
 ## MaixPy 内置了文件系统
 
-支持 Flash 使用的 `SPIFFS`（目前不支持创建目录）， 默认分配了 6MB 给 `SPIFFS`， 开机自动挂在到 `/flash` 目录下
+支持 Flash 使用的 `SPIFFS`（目前不支持创建目录）， 默认分配了 `3MB` 给 `SPIFF`（从`flash` `0xD00000`地址开始 `3M`）， 开机自动挂在到 `/flash` 目录下
 
 也支持 FAT 格式的 SD （TF）卡 ，开机自动挂在到 `/sd` 目录下
 

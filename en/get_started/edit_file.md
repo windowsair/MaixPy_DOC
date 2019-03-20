@@ -4,7 +4,7 @@ Edit and execute the file
 
 ## MaixPy has a built-in file system
 
-Support Flash to use `SPIFFS` (not currently support creating directories), by default assigned to 6MB `SPIFFS`, boot automatically hang on to `/flash` the directory
+Support Flash to use `SPIFFS` (not currently support creating directories), by default assigned to `3MB` `SPIFFS` ( start at flash address `0xD00000`), boot automatically hang on to `/flash` the directory
 
 Also supports the FAT format SD (TF) card, boot automatically linked in to `/sd` the directory
 
