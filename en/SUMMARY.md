@@ -82,6 +82,7 @@ Summary
 
 ## Others
 
+- [Demo Scripts](https://github.com/sipeed/MaixPy_scripts)
 - [Contribute](contribute/README.md)
     - [doc convention](contribute/doc_convention.md)
     - [code convention](contribute/code_convention.md)

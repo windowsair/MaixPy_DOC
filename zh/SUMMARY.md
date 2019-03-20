@@ -84,6 +84,7 @@ Summary
 
 ## 其它
 
+- [示例脚本](https://github.com/sipeed/MaixPy_scripts)
 - [贡献](contribute/README.md)
     - [文档风格](contribute/doc_convention.md)
     - [代码风格](contribute/code_convention.md)
