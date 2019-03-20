@@ -74,9 +74,12 @@ Summary
     - [Clock](libs/machine_vision/clock.md)
     - [CPUfreq](libs/machine_vision/cpufreq.md)
     - [video](libs/machine_vision/video.md)
-- [外设模块](libs/peripheral_modules/README.md)
+- [Peripheral Modules](libs/peripheral_modules/README.md)
     - [touchscreen](libs/peripheral_modules/touchscreen.md)
-
+- [Integrated Apps](application/README.md)
+    - [Micropython Editor](application/pye.md)
+    - [nes](application/nes.md)
+    - [lvgl](application/lvgl.md)
 
 ## Advanced - Custom Firmware
 

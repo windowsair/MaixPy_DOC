@@ -78,6 +78,10 @@ Summary
     - [video](libs/machine_vision/video.md)
 - [外设模块](libs/peripheral_modules/README.md)
     - [touchscreen](libs/peripheral_modules/touchscreen.md)
+- [内置应用](application/README.md)
+    - [Micropython Editor](application/pye.md)
+    - [nes](application/nes.md)
+    - [lvgl](application/lvgl.md)
 
 
 ## 进阶 - 定制固件
