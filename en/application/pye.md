@@ -1,4 +1,4 @@
-pye ([Micropython Editor](https://github.com/robert-hh/Micropython-Editor))
+pye [Micropython Editor](https://github.com/robert-hh/Micropython-Editor)
 ======
 
 A file editor written by py, integrated to MaixPy firmware
