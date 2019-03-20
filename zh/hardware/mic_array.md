@@ -6,4 +6,4 @@
 
 
 * 购买： 淘宝
-* 资料下载： [dl.sipeed.com](dl.sipeed.com)
+* 资料下载： [dl.sipeed.com](http://dl.sipeed.com/)
