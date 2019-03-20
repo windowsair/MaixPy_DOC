@@ -74,6 +74,9 @@ Summary
     - [Clock](libs/machine_vision/clock.md)
     - [CPUfreq](libs/machine_vision/cpufreq.md)
     - [video](libs/machine_vision/video.md)
+- [外设模块](libs/peripheral_modules/README.md)
+    - [touchscreen](libs/peripheral_modules/touchscreen.md)
+
 
 ## Advanced - Custom Firmware
 

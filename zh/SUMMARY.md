@@ -76,6 +76,9 @@ Summary
     - [clock](libs/machine_vision/clock.md)
     - [cpufreq](libs/machine_vision/cpufreq.md)
     - [video](libs/machine_vision/video.md)
+- [外设模块](libs/peripheral_modules/README.md)
+    - [touchscreen](libs/peripheral_modules/touchscreen.md)
+
 
 ## 进阶 - 定制固件
 
