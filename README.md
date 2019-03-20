@@ -4,7 +4,6 @@ Documentation Of MaixPy
 
 |[Read me online](https://maixpy.sipeed.com/en/)  | [在线阅读](https://maixpy.sipeed.com/zh/) |
 | ------------------------ | ----------- |
-|  |  |
 
 [![Build Status](https://travis-ci.org/sipeed/MaixPy_DOC.svg?branch=master)](https://travis-ci.org/sipeed/MaixPy_DOC)
 
