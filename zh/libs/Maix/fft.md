@@ -17,7 +17,7 @@ res = FFT.run(data, points, shift)
 
 * `data`: 输入的时域数据，`bytearray`类型  
 
-* `points`: FFT, 128，256和512点
+* `points`: FFT运算点数，仅支持64, 128，256和512点
 
 * `shift`: 偏移，默认为0  
 
