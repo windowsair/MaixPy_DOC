@@ -6,4 +6,4 @@ Microphone array
 
 
 * Buy: Taobao
-* Docs: [dl.sipeed.com](dl.sipeed.com)
+* Docs: [dl.sipeed.com](http://dl.sipeed.com/)
