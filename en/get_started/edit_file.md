@@ -19,6 +19,8 @@ But in most cases, we would like to write the script to a file and then execute 
 
 ## Edit and save the file
 
+### Way A: Edit by [Micropython Editor(pye)](https://github.com/robert-hh/Micropython-Editor) that integrated in maixpy
+
 In MaixPy, we have a built-in open source editor [Micropython Editor(pye)](https://github.com/robert-hh/Micropython-Editor)
 
 Use `os.listdir()` can view the files in the current directory,
@@ -44,6 +46,38 @@ File → Properties → Terminal → Keyboard,
 Change the delete and backspace sequences to ASCII 127.
 ```
 
+### Way B: Read files to PC by [uPyLoader](https://github.com/BetaRavener/uPyLoader), then download to board after edit
+
+[uPyLoader](https://github.com/BetaRavener/uPyLoader)
+
+Download the executable: [release](https://github.com/BetaRavener/uPyLoader/releases)
+
+![uPyLoader](../../assets/uPyLoader.png)
+
+Select the serial port and click the `Connect` button to connect the board
+
+The first time you run the software, you need to initialize it. Click `File->Init transfer files` to complete the initialization. This will create two files in the board, `__upload.py` and `__download.py`.
+
+Then double click file name to read and edit, click `save` button to download file to board
+
+### Way C: Read files to PC by [rshell](https://github.com/dhylands/rshell), edit, and then save back to board
+
+Install [rshell](https://github.com/dhylands/rshell) fisrt according to the doc of `rshell`
+
+```python
+sudo apt-get install python3-pip
+sudo pip3 install rshell
+rshell -p /dev/ttyUSB1 # select board serial
+```
+
+Edit file
+
+```python
+ls /flash
+edit /flash/boot.py
+# the edit use vim
+```
+
 
 ## Execution documents
 
@@ -67,5 +101,13 @@ with open("hello.py") as f:
 
 ```
 
+### Way C: Run in uPyLoader
 
+Just select the file, then click `excute` button
+
+### Way D: Run with ampy
+
+[ampy](https://github.com/pycampers/ampy) 
+
+run script by command `ampy run file_in_PC.py`
 

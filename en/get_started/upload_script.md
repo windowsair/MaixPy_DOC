@@ -25,6 +25,31 @@ On the right is the file inside the board, click `List files` to refresh the fil
 
 Click on `View -> terminal ` above to open the terminal to view the runtime output or send a command
 
+## Using Tool rshell
+
+正如使用 `linux` 终端一样， 使用 [rshell](https://github.com/dhylands/rshell) 的 `cp` 命令即可简单地复制文件到开发板
+
+Just like Linux terminal do, use [rshell](https://github.com/dhylands/rshell) to copy files to board, use `cp` command~
+
+Install rshell first
+
+```python
+sudo apt-get install python3-pip
+sudo pip3 install rshell
+rshell -p /dev/ttyUSB1 # 这里根据实际情况选择串口
+```
+
+Then copy file~
+
+```python
+ls /flash
+cp ./test.py /flash/ #复制电脑当前目录的文件 test.py 到开发板 flash 根目录
+```
+
+More about rshell: [rshell on github](https://github.com/dhylands/rshell)
+
+
+
 ## Using the command line tool ampy
 
 [ampy](https://github.com/pycampers/ampy) is an easy-to-use command line tool for uploading, downloading, and executing files, and open source
