@@ -5,6 +5,6 @@ Binocular camera
 
 
 * Buy: Taobao
-* Download： [dl.sipeed.com](dl.sipeed.com)
+* Download： [dl.sipeed.com](http://dl.sipeed.com/)
 
 
