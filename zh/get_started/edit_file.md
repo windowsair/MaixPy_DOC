@@ -102,5 +102,15 @@ with open("hello.py") as f:
 
 ```
 
+### 方法三： 使用 uPyLoader 来执行
+
+连接好后选中文件， 点击 `excute` 按钮来执行文件
+
+
+### 方法四： 使用 ampy 来直接运行电脑上的文件
+
+[ampy](https://github.com/pycampers/ampy) 
+
+执行命令 `ampy run file_in_PC.py` 来执行位于电脑上的文件（文件不会保存到开发板）
 
 

@@ -105,9 +105,9 @@ with open("hello.py") as f:
 
 Just select the file, then click `excute` button
 
-### Way D: Run with ampy
+### Way D: Directly run files on PC with ampy
 
 [ampy](https://github.com/pycampers/ampy) 
 
-run script by command `ampy run file_in_PC.py`
+run script by command `ampy run file_in_PC.py` to execute files on PC (file won't transmit to board)
 
