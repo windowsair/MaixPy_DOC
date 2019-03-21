@@ -28,7 +28,7 @@ sensor.reset() #初始化单目摄像头
 芯片只有一个dvp接口，所以通过pwdn引脚来选择sensor。pwdn引脚可以通过shutdown接口来控制。指定sensor后其余操作不变。详细请见例程2
 
 ```python
-sensor.binocular_reset()#初始化单目摄像头
+sensor.binocular_reset()#初始化双目摄像头
 ```
 
 #### 参数
