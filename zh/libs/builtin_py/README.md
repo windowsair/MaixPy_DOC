@@ -11,8 +11,12 @@
 
 ```python
 from board import board_info
-from fpioa_manager import *
+from fpioa_manager import fm
+```
 
-board_info=board_info()
+或者
 
+只导入
+```python
+from fpioa_manager import fm, board_info
 ```

@@ -2,6 +2,8 @@ fpioa_manager
 ===============
 fpioa_manager：简称`fm`，该模块用于注册芯片内部功能和引脚，帮助用户管理内部功能和引脚，如果功能和引脚已经被注册，将无法使用该内部功能和引脚。
 
+fm 实际上是使用 `Fpioa_Manager` 类定义的一个对象， 使用 `Micropython` 编写并集成带固件中， 源码看 [board.py](https://github.com/sipeed/MaixPy/blob/master/ports/k210-freertos/mpy_support/builtin-py/board.py)
+
 ## 方法
 
 ### 注册函数

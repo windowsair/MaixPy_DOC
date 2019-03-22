@@ -23,6 +23,19 @@ K210上有高速gpio和通用gpio
     * 每个 IO 可以分配到 FPIOA 上 48 个管脚之一
 
 
+**注意**:
+
+一下 GPIOHS 默认已经被使用， 程序中如非必要尽量不要使用：
+
+| GPIOHS | 功能|
+| ------ | --- |
+| GPIOHS31 | LCD_DC      |
+| GPIOHS30 | LCD_RST     |
+| GPIOHS29 | SD_CS       |
+| GPIOHS28 | MIC_LED_CLK |
+| GPIOHS27 | MIC_LED_DATA |
+
+
 
 ## 构造函数
 

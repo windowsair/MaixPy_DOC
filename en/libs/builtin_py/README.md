@@ -12,9 +12,12 @@ Be attention, theses class imported at the start up by `_boot.py`, so we can dir
 
 ```python
 from board import board_info
-from fpioa_manager import *
+from fpioa_manager import fm
+```
 
-board_info=board_info()
+or
 
+```python
+from fpioa_manager import fm, board_info
 ```
 

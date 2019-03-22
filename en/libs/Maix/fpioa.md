@@ -3,6 +3,18 @@ FPIOA (Field Programmable Input and Output Array)
 
 The K210 supports each peripheral to be randomly mapped to any pin, using the FPIOA function.
 
+**Attention**:
+
+Some GPIOHS used by default, don't use these GPIOHS if you don't have to, GPIOHS used as follows:
+
+| GPIOHS | Function |
+| ------ | -------- |
+| GPIOHS31 | LCD_DC      |
+| GPIOHS30 | LCD_RST     |
+| GPIOHS29 | SD_CS       |
+| GPIOHS28 | MIC_LED_CLK |
+| GPIOHS27 | MIC_LED_DATA |
+
 
 ## Class `FPIOA`
 

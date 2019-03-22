@@ -3,6 +3,19 @@ FPIOA (现场可编程 IO 阵列， Field Programmable Input and Output Array)
 
 K210 支持每个外设随意映射到任意引脚， 使用 FPIOA 功能来实现。
 
+**注意**:
+
+一下 GPIOHS 默认已经被使用， 程序中如非必要尽量不要使用：
+
+| GPIOHS | 功能|
+| ------ | --- |
+| GPIOHS31 | LCD_DC      |
+| GPIOHS30 | LCD_RST     |
+| GPIOHS29 | SD_CS       |
+| GPIOHS28 | MIC_LED_CLK |
+| GPIOHS27 | MIC_LED_DATA |
+
+
 
 ## 类 `FPIOA`
 

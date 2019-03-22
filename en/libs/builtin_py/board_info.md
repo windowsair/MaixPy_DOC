@@ -1,6 +1,12 @@
-Board_info
+board_info
 ===============
-Board_info: Mainly used for user-friendly development board pin configuration, built-in user-friendly naming and interface, which allows users to reduce the dependence on the electrical connection schematic.
+
+`board_info`: Mainly used for user-friendly development board pin configuration, built-in user-friendly naming and interface, which allows users to reduce the dependence on the electrical connection schematic.
+
+
+`board_info` is a global variable defined with `Board_Info` class, written by `MicroPython` and integrated to firmware, source code see [fpioa_manager.py](https://github.com/sipeed/MaixPy/blob/master/ports/k210-freertos/mpy_support/builtin-py/fpioa_manager.py)
+
+
 
 ## Members
 

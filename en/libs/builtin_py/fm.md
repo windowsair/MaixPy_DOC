@@ -1,6 +1,10 @@
 FPIOA Manager
 ===============
-Fpioa_manager: referred to as `fm`, this module is used to register internal functions and pins of the chip, to help users manage internal functions and pins. If the functions and pins are already registered, the internal functions and pins will not be available.
+
+`fpioa_manager`: referred to as `fm`, this module is used to register internal functions and pins of the chip, to help users manage internal functions and pins. If the functions and pins are already registered, the internal functions and pins will not be available.
+
+Actually `fm` is global variable define with `Fpioa_Manager` class, written by `Micropython` and integrated to firmware, source code see [board.py](https://github.com/sipeed/MaixPy/blob/master/ports/k210-freertos/mpy_support/builtin-py/board.py)
+
 
 ## method
 
