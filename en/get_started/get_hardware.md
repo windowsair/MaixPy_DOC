@@ -33,3 +33,19 @@ Use ov2640 by default
 
 Buy from Taobao official can ask if it contains
 
+
+
+### Micro SD Card (TF Card) (optional)
+
+Not applicable SD card can also manipulate files. Some of the internal Flash has been reserved as a file system, but Flash is very slow!
+
+In order to facilitate the quick operation of the picture file, you can choose to purchase a `Micro SD` card, MaixPy has built-in SPI SD card protocol driver.
+
+When purchasing, try to choose a new Micro SD card with fast speed, such as SD 2 generation protocol, Class10 memory card.
+
+Of course, the quality of SD cards on the market is uneven, and the SPI mode may not be compatible. Try to buy a regular card. Or maybe you should customize the driver code ~~
+
+As shown below, the two cards on the left are not supported by the MaixPy driver. Both the middle and the right are supported, but the class10 card in the middle is the fastest.
+
+![](../../assets/TF.png)
+
