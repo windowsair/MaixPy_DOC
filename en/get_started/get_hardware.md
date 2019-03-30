@@ -49,3 +49,14 @@ As shown below, the two cards on the left are not supported by the MaixPy driver
 
 ![](../../assets/TF.png)
 
+
+### ST-Link (used to update the firmware of the STM32 on the development board Maix Go) (optional)
+
+If you purchase `Maix Go`, it integrates a `STM32` chip to simulate the 'USB to serial' tool, and simulate `JTAG`. If you want to update its firmware later, it is recommended to buy a `ST-Link` Spare
+
+### JTAG Debugger (optional)
+
+`K210` This chip supports `JTAG` debugging. If you need debugging function, you need to use `JTAG` debugger. Please consult the official `Sipeed` Taobao shop.
+
+If you are a `Maix Go` development board, you don't need to purchase the `JTAG` debugger separately. The `Max Go` development board has an integrated `STM32` chip that can emulate `JTAG` (`STM32` uses `CMSIS-DAP` or `open-ec` firmware), `open-ec` firmware is not currently supported, will be supported later, please refer to the `open-ec` github project home page description
+
