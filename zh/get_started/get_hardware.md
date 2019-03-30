@@ -3,7 +3,7 @@
 
 
 
-从Sipeed官方淘宝店获得心仪的硬件： [淘宝](https://shop152705481.taobao.com/)
+从Sipeed官方淘宝店获得心仪的硬件： [淘宝](https://shop365481095.taobao.com/)
 
 
 

@@ -3,7 +3,7 @@ Get development board
 
 
 
-Get your favorite hardware from Sipeed's official Taobao store： [Taobao](https://shop152705481.taobao.com/)
+Get your favorite hardware from Sipeed's official Taobao store： [Taobao](https://shop365481095.taobao.com/)
 
 
 
