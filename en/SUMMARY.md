@@ -4,6 +4,7 @@ Summary
 ## Introduction
 
 - [Introduction](README.md)
+- [What Maix Can Do](others/what_maix_do.md)
 
 ## Hardware
 

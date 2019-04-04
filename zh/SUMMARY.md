@@ -4,6 +4,7 @@ Summary
 ## 简介
 
 - [关于MaixPy](README.md)
+- [Maix能做哪些事](others/what_maix_do.md)
 
 ## 硬件
 
