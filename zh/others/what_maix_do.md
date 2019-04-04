@@ -4,7 +4,7 @@ Powerful Maix Board(k210) Can Do
 大多数是在 MaixPy 上已经有 API， 部分可能来自 [Maixduino](https://Maixduino.sipeed.com) 或者其它开发者～
 
 
-部分视频暂时只在 YouTube 上，有条件看 Youtube 视频的可以看本页[英文界面](/en/others/what_maix_do.md)
+部分视频暂时只在 YouTube 上，有条件看 Youtube 视频的可以看本页[英文界面](https://maixpy.sipeed.com/en/others/what_maix_do.html)
 
 * draw picture Turorial
 
