@@ -24,10 +24,10 @@ uart = machine.UART(uart,baudrate,bits,parity,stop,timeout, read_buf_len)
 #### 参数
 
 * `uart` UART号，使用指定的UART，可以通过 `machine.UART.` 按tab键来补全
-* `baudrate`: UART波特率
-* `bits`: UART数据宽度，支持5/6/7/8
-* `parity`: 奇偶校验位，支持0/1/2，0为不校验，1为奇校验，2为偶校验
-* `stop`: 停止位，支持0/1/2,0为1位停止位，1为1.5为停止位，2为2为停止位
+* `baudrate`: UART 波特率
+* `bits`: UART 数据宽度，支持 `5/6/7/8` (默认的 REPL 使用的串口（UARTHS）只支持 8 位模式)， 默认 `8`
+* `parity`: 奇偶校验位，支持 `None`, `machine.UART.PARITY_ODD`,  `machine.UART.PARITY_EVEN` （默认的 REPL 使用的串口（UARTHS）只支持 None）， 默认 `None`
+* `stop`: 停止位， 支持 `1`， `1.5`, `2`， 默认 `1`
 * `timeout`: 串口接收超时时间
 * `read_buf_len`： 串口接收缓冲，串口通过中断来接收数据，如果缓冲满了，将自动停止数据接收
 
