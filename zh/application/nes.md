@@ -14,13 +14,13 @@ NES 游戏模拟器
 
 #### 参数
 
-* `tc_type`： 遥控器类型， 键盘（`nes.KEYBOARD`）（注意是串口与电脑通信，而不是直接接USB键盘到开发板）或者手柄（`nes.JOTSTICK`）。 
+* `tc_type`： 遥控器类型， 键盘（`nes.KEYBOARD`）（注意是串口与电脑通信，而不是直接接USB键盘到开发板）或者手柄（`nes.JOYSTICK`）。 
 > 建议使用`PS2`手柄，体验会更好， 键盘通过串口工具输入可能不能同时按多个按键，当然也可以通过自己在PC写一个脚本来转发键值就能解决（去[这里](https://github.com/sipeed/MaixPy_scripts/tree/master/tools_on_PC)找找？）
 
-* `cs`： 如果使用 `SPI` 接口的 `PS2` 手柄， 传入 `cs` 引脚
-* `mosi`： 如果使用 `SPI` 接口的 `PS2` 手柄， 传入 `mosi` 引脚
-* `miso`： 如果使用 `SPI` 接口的 `PS2` 手柄， 传入 `miso` 引脚
-* `clk`： 如果使用 `SPI` 接口的 `PS2` 手柄， 传入 `clk` 引脚
+* `cs`： 如果使用 `SPI` 接口的 `PS2` 手柄， 传入 `cs` 外设编号（注意不是引脚号，需要先映射引脚）
+* `mosi`： 如果使用 `SPI` 接口的 `PS2` 手柄， 传入 `mosi` 外设编号（注意不是引脚号，需要先映射引脚）
+* `miso`： 如果使用 `SPI` 接口的 `PS2` 手柄， 传入 `miso` 外设编号（注意不是引脚号，需要先映射引脚）
+* `clk`： 如果使用 `SPI` 接口的 `PS2` 手柄， 传入 `clk` 外设编号（注意不是引脚号，需要先映射引脚）
 * `repeat`： 这个参数只对使用键盘（/串口）时， 指按键的重复率
 * `vol`： 初始化时的音量， 后面可以通过按键调整
 
@@ -80,6 +80,12 @@ nes.run("/sd/mario.nes")
 
 ```python
 import nes, lcd
+from fpioa_manager import fm
+
+fm.register(19, fm.fpioa.GPIOHS19)
+fm.register(18, fm.fpioa.GPIOHS18)
+fm.register(23, fm.fpioa.GPIOHS23)
+fm.register(21, fm.fpioa.GPIOHS21)
 
 lcd.init(freq=15000000)
 nes.init(nes.JOYSTICK, cs=19, clk=18, mosi=23, miso=21)
