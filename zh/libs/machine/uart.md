@@ -161,3 +161,25 @@ fm.register(board_info.WIFI_RX,fm.fpioa.UART2_TX)
 fm.register(board_info.WIFI_TX,fm.fpioa.UART2_RX)
 uart = machine.UART(machine.UART.UART2,115200,timeout=1000, read_buf_len=4096)
 ```
+### 例程 3 
+
+修改 REPL 串口波特率
+
+```python
+from machine import UART
+repl = UART.repl_uart()
+repl.init(1500000, 8, None, 1, read_buf_len=2048)
+```
+
+### 例程 3 
+
+修改 REPL 串口
+
+```python
+from machine import UART
+
+fm.register(board_info.PIN15,fm.fpioa.UART1_TX)
+fm.register(board_info.PIN17,fm.fpioa.UART1_RX)
+uart = machine.UART(UART.UART1, 115200)
+UART.set_repl_uart(uart)
+```
