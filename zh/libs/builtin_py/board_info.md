@@ -58,6 +58,9 @@ board_info.pin_map(pin_num)
 ### 例程 1
 
 ```python
+
+from board import board_info
+
 wifi_en_pin = board_info.WIFI_EN
 print(wifi_en_pin)#输出为8
 board_info.pin_map()#打印所有

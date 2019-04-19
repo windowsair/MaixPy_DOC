@@ -61,6 +61,8 @@ When the parameters are passed in, only the board-level electrical connection in
 ### Routine 1
 
 ```python
+from board import board_info
+
 Wifi_en_pin = board_info.WIFI_EN
 Print(wifi_en_pin)# output is 8
 Board_info.pin_map()# print all

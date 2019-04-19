@@ -52,6 +52,8 @@ This method can pass 1 or 2 parameters. When passing in 1 parameter, you need to
 ## Routine
 
 ```python
+from fpioa_manager import fm, board_info
+
 fm.register(board_info.WIFI_RX,fm.fpioa.UART2_TX)
 fm.register(board_info.WIFI_RX,fm.fpioa.UART2_TX)#Register again
 fm.register(board_info.WIFI_RX,fm.fpioa.SPI0_SS0)#Register the same pin

@@ -50,6 +50,8 @@ fm.unregister(pin,function)
 ## 例程 
 
 ```python
+from fpioa_manager import fm, board_info
+
 fm.register(board_info.WIFI_RX,fm.fpioa.UART2_TX)
 fm.register(board_info.WIFI_RX,fm.fpioa.UART2_TX)#再注册一次
 fm.register(board_info.WIFI_RX,fm.fpioa.SPI0_SS0)#注册同个引脚
@@ -80,3 +82,5 @@ fm.unregister(pin = board_info.WIFI_RX)#注销引脚
 ### REPL
 * `功能`：UARTHS_RX/UARTHS_TX
 * `引脚`：PIN4/PIN5
+
+
