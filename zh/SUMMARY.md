@@ -24,6 +24,7 @@ Summary
 
 - [获得开发板](get_started/get_hardware.md)
 - [更新MaixPy固件](get_started/upgrade_firmware.md)
+- [安装MaixPyIDE](get_started/maixpyide.md)
 - [Micropython 基础语法](mpy_basic_syntax/README.md)
 
 
