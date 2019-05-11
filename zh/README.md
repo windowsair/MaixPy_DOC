@@ -85,26 +85,26 @@ while True:
 
 * 使用了 Sipeed M1(荔枝丹) 模块的 Dan dock
 
-![Dan dock](../assets/Dan_Dock.png)
+<img src="../assets/Dan_Dock.png" alt="BiT" style="width: 450px;">
 
 * Sipeed Maix BiT
 
-![BiT](../assets/BiT.png)
+<img src="../assets/BiT.png" alt="BiT" style="width: 500px;">
 
 * Sipeed Go
 
-![Go](../assets/Go.jpg)
+<img src="../assets/Go.jpg" alt="BiT" style="width: 500px;">
 
 
 要获得这些板子，可以访问Sipeed（矽速）官网[Sipeed official website](https://sipeed.com/)，或者[官方淘宝店](https://shop152705481.taobao.com/)
 
 更多硬件的资料点击[这里](en/hardware/hardware.md)查看
 
-然后[开始探索如何使用MaixPy吧](en/get_started.md)
+然后请**仔细查看左边目录**，然后开始使用吧～～
 
 ## MaixPy 源码
 
-MaixPy 源码是指 运行在 K210 上的 Micropython 的解析器， 使用 `C语言` 编写，如果只是想使用MaixPy，不需要了解源码；
+`MaixPy` 源码是指 运行在 `K210` 上的 `Micropython` 的解析器， 使用 `C语言` 编写，如果只是想使用MaixPy，不需要了解源码；
 如果想参与开发MaixPy的内置功能，可以下载进行开发，欢迎大家提交`PR`
 
 MaixPy 源码托管在 [github](https://github.com/sipeed/MaixPy)
