@@ -119,7 +119,7 @@ roi 是一个感兴趣区域的矩形元组(x, y, w, h)。若未指定，即为�
 
 当前方向，取值[0,3]
 
-### lcd.invert(invert)
+### lcd.mirror(invert)
 
 设置 `LCD` 是否镜面显示
 
