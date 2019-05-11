@@ -42,27 +42,9 @@ Windows 在网上搜索一下下载安装即可，然后可以在`设备管理�
 
 ## 获得升级工具
 
-### Ubuntu(Linux)
+下载 [kflash_gui](https://github.com/sipeed/kflash_gui/releases), 会得到一个压缩包
 
-下载工具：[kflash.py](https://github.com/sipeed/kflash.py)
-
-```bash
-sudo apt update
-sudo apt install git python3 python3-pip
-sudo pip3 install pyserial
-git clone https://github.com/sipeed/kflash.py
-```
-
-### Windows
-
-K-Flash： 从 [github](https://github.com/kendryte/kendryte-flash-windows/releases) 下载
-
-或者从 [kendryte](https://kendryte.com/downloads/) 官方页面下载
-
-如果是 `Maix Go` 开发板， 目前只能使用 `kflash.py` 脚本进行烧录， 所以需要电脑安装 `python3`，
-
-然后下载[kflash.py](https://github.com/sipeed/kflash.py)
-
+解压到一个文件夹，双机 `kflash_gui.exe`(/`kflsh_gui`) 即可运行， `Windows`下建议右键`固定到开始页面` 或者`固定到任务栏`， `Linux` 下可以自己新建一个[kflash_gui.desktop](https://github.com/sipeed/kflash_gui/blob/master/kflash_gui.desktop)， 修改文件地址， 使用管理员身份复制到`/usr/share/application`目录，然后在系统菜单界面就可以看到`kflash_gui`这款应用了
 
 
 ## 获得固件
@@ -71,31 +53,33 @@ K-Flash： 从 [github](https://github.com/kendryte/kendryte-flash-windows/relea
 
 固件为 `.bin` 结尾或者 `.kfpkg` 的文件
 
+如何打包`kfpkg`见 [这里](http://blog.sipeed.com/p/390.html)
+
+固件命名说明：
+
+* maixpy_v*_no_lvgl.bin： MaixPy固件, 不带LVGL版本.(LVGL是嵌入式GUI框架, 写界面的时候需要用到)
+* maixpy_v*_full.bin： 完整版的MaixPy固件(MicroPython + OpenMV API + lvgl )
+* maixpy_v0.3.1_minimum.bin： MaixPy固件最小集合，不支持 `MaixPy IDE`， 不包含`OpenMV`的相关算法
+* face_model_at_0x300000.kfpkg： 人脸模型，放置在地址位 0x300000， 可以和`.bin`分开多次下载，不冲突
+* elf.7z： elf 文件，普通用户不用关心，用于死机调试
+
 
 
 ## 下载固件到开发板
 
-### Linux
+* 打开 `kflash_gui` 应用
 
-使用如下命令来进行烧录，可以使用`python3 kflash.py --help`来获取帮助
+* 然后选择固件、设置选项， 点击下载即可， 更多特性介绍、使用说明见[kflash_gui 项目主页](https://github.com/sipeed/kflash_gui)
 
-```
-sudo python3 kflash.py -p /dev/ttyUSB0 -b 2000000 -B dan firmware.bin
-```
-*  `-p` 是指定设备， 可以通过`ls /dev/ttyUSB*`来查看设备
-* `-b`是指定波特率， 如果下载失败，可以降低波特率再次尝试
-* `-B`是指定板子，如果没有支持的型号也不用担心，仍然可以下载，只是下载完后可能需要手动复位才能启动。 其中 `Maix Go` 使用 `-B goD`(`STM32` 烧录了 `CMSIS-DAP` 固件) 或者 `-B goE`(`STM32` 烧录了 `open-ec` 固件)
+![](../../assets/kflash_gui_screenshot_1.png)
 
-> `Maix Go` 如果确认选项是对的，仍然无法下载， 可以尝试将三相拨轮按键拨向 `Down` 的位置并保持再下载
+![](../../assets/kflash_gui_screenshot_download.png)
+
+
+
+
+> 对于早期的 `Maix Go`， 如果确认选项是对的，仍然无法下载， 可以尝试将三相拨轮按键拨向 `Down` 的位置并保持再下载
 ![Go Key Down](../../assets/Go_Key_Down.png)
 
-
-### Windows
-
-双机运行下载的软件，运行后选择固件、串口等，点击下载即可
-
-![kflash windows](../../assets/kflash_win.png)
-
-如果开发板是 `Maix Go`， 目前只能使用 `kflash.py` 进行下载， 下载方法同 `Linux` 上的方法， 参见上面所述
 
 

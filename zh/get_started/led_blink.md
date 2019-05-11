@@ -22,6 +22,7 @@
 
 ```python
 
+from fpioa_manager import *
 from Maix import GPIO
 
 fm.register(board_info.LED_R, fm.fpioa.GPIO0)
