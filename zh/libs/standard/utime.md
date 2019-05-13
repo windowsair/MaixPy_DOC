@@ -132,5 +132,59 @@ elif ticks_diff(scheduled_time, now) < 0:
 在 CPython 中，此函数返回自 Unix 纪元（1970-01-01 00:00 UTC）以来的秒数，作为浮点数，通常具有微秒精度。 使用 MicroPython，只有 Unix 移植版本使用相同的纪元，如果浮点精度允许，则返回亚秒精度。 嵌入式硬件通常没有浮点精度来表示长时间范围和亚秒精度，因此它们使用具有第二精度的整数值。 某些嵌入式硬件也缺少电池供电的 RTC，因此返回自上次上电或其他相对硬件特定点（例如复位）以来的秒数。
 
 
+### time.ticks()
+
+等同于 `time.ticks_ms` 
+
+
+### time.clock()
+
+获取 `clock` 对象
+
+#### 返回值
+
+`clock` 对象
+
+## clock 对象
+
+由 `time.clock()` 返回
+
+### clock.tick()
+
+记录开始时间（ms）， 与`clock.fps()`搭配使用可以计算`fps`
+
+#### 返回值
+
+None
+
+### clock.fps()
+
+根据上一个调用`clock.tick()`到现在的时间计算出帧率（`fps`）
+
+比如：
+
+```python
+import sensor
+import time
+clock = time.clock()
+sensor.reset()
+sensor.set_pixformat(sensor.RGB565)
+sensor.set_framesize(sensor.QVGA)
+while True:
+	clock.tick()
+	sensor.snapshot()
+	print("fps = ",clock.fps())
+```
+
+
+
+### clock.reset()
+
+重置所有标记
+
+### clock.avg()
+
+根据上一个调用`clock.tick()`到现在的时间计算出每帧消耗的时间
+
 
 
