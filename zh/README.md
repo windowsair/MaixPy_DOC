@@ -96,9 +96,9 @@ while True:
 <img src="../assets/Go.jpg" alt="BiT" style="width: 500px;">
 
 
-要获得这些板子，可以访问Sipeed（矽速）官网[Sipeed official website](https://sipeed.com/)，或者[官方淘宝店](https://shop152705481.taobao.com/)
+要获得这些板子，可以访问Sipeed（矽速）官网[www.sipeed.com](https://sipeed.com/)，或者[官方淘宝店](https://shop365481095.taobao.com/)
 
-更多硬件的资料点击[这里](en/hardware/hardware.md)查看
+更多硬件的资料请看左边目录中的硬件部分
 
 然后请**仔细查看左边目录**，然后开始使用吧～～
 
