@@ -109,6 +109,11 @@ while True:
 
 MaixPy 源码托管在 [github](https://github.com/sipeed/MaixPy)
 
+|   分支     |   自动构建状态  |
+| --------- | --------------- |
+| master |  [![Build Status](https://travis-ci.org/sipeed/MaixPy.svg?branch=master)](https://travis-ci.org/sipeed/MaixPy)   |
+
+
 本项目主要由 &copy;<a href="https://www.sipeed.com" style="color: #f14c42">Sipeed</a> Co.,Ltd. 维护， 并接受来自开源社区的贡献， 具体贡献这见[贡献者列表](https://github.com/sipeed/MaixPy/graphs/contributors)
 
 ## MaixPy 文档源码
