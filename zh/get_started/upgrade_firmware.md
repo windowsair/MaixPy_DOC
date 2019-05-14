@@ -49,7 +49,10 @@ Windows 在网上搜索一下下载安装即可，然后可以在`设备管理�
 
 ## 获得固件
 
-从 [github](https://github.com/sipeed/MaixPy/releases) 页面下载
+* 发布版本的固件从 [github](https://github.com/sipeed/MaixPy/releases) 页面下载
+* 最新提交的代码自动构建生成的固件下载： [master 分支](http://dl.sipeed.com/MAIX/MaixPy/release/master/)
+
+
 
 固件为 `.bin` 结尾或者 `.kfpkg` 的文件
 
