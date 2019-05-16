@@ -29,6 +29,7 @@ Summary
 
 ## Getting Started
 
+- [Getting Started Tutorial video](get_started/maixpy_get_started_video.md)
 - [Power On](get_started/power_on.md)
 - [LED Blink](get_started/led_blink.md)
 - [Edit and run the file](get_started/edit_file.md)

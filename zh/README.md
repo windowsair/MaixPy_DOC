@@ -102,6 +102,21 @@ while True:
 
 然后请**仔细查看左边目录**，然后开始使用吧～～
 
+## 视频入门教程
+
+视频简单介绍了基本的上手内容，事实上文档上会更加详细， 视频只是提供一个比较直观的入门参考：
+
+<iframe width="800" height="600" src="//player.bilibili.com/player.html?aid=52613549&cid=92076022&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+<br / >
+<br / >
+
+
+<iframe width="800" height=600" src="https://www.youtube.com/embed/K46kFRur-Hw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br / >
+<br / >
+
 ## MaixPy 源码
 
 `MaixPy` 源码是指 运行在 `K210` 上的 `Micropython` 的解析器， 使用 `C语言` 编写，如果只是想使用MaixPy，不需要了解源码；
