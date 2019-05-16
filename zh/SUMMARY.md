@@ -30,6 +30,7 @@ Summary
 
 ## 上手
 
+- [上手视频教程](get_started/maixpy_get_started_video.md)
 - [点亮板子](get_started/power_on.md)
 - [点灯工程师(LED)](get_started/led_blink.md)
 - [编辑并运行文件](get_started/edit_file.md)
