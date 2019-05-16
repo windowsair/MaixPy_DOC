@@ -105,7 +105,7 @@ Then we can write software, refer to [get started](en/get_started.md)
 ## MaixPy Getting Started Tutorial video
 
 
-## 视频入门教程
+## Getting Started Tutorial video
 
 The video briefly introduces the basics of getting started. In fact, the documentation will be more detailed, and the video just provides a more intuitive introduction.
 
