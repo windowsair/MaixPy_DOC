@@ -1,7 +1,6 @@
 How to use (/read) this article correctly
 ==========
 
-
 * Just contact, you can look carefully from the top to the next page according to the directory on the left sidebar.
 
 * Then learn how to update the firmware, how to write code
@@ -27,6 +26,3 @@ Correct url:
 http://localhost:4000/zh/get_started/how_to_read.html
 
 so just change the wrong url, or just back to (`maixpy.sipeed.com`) refresh page
-
-
-
