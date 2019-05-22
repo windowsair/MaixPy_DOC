@@ -4,14 +4,14 @@ Summary
 ## Introduction
 
 - [Introduction](README.md)
-- [What Maix Can Do](others/what_maix_do.md)
+- [What can MaixPy do?](others/what_maix_do.md)
 
 ## Hardware
 
-- [K210](hardware/k210.md)
+- [K210 chip](hardware/k210.md)
 - [Module](hardware/module.md)
     - [Sipeed M1](hardware/m1.md)
-- [Board](hardware/board.md)
+- [Boards](hardware/board.md)
     - [Dan Dock](hardware/dan_dock.md)
     - [BiT](hardware/bit.md)
     - [Go](hardware/go.md)
@@ -22,20 +22,20 @@ Summary
 
 ## Prepare
 
-- [Get Hardware](get_started/get_hardware.md)
-- [Upgrade Firmware](get_started/upgrade_firmware.md)
-- [Basic Syntax](mpy_basic_syntax/README.md)
+- [Get the hardware](get_started/get_hardware.md)
+- [Upgrade the firmware](get_started/upgrade_firmware.md)
+- [Basic syntax](mpy_basic_syntax/README.md)
 
 
 ## Getting Started
 
-- [Getting Started Tutorial video](get_started/maixpy_get_started_video.md)
-- [Power On](get_started/power_on.md)
-- [LED Blink](get_started/led_blink.md)
-- [Edit and run the file](get_started/edit_file.md)
-- [Upload Script To Dev Board](get_started/upload_script.md)
+- [Getting started video tutorial](get_started/maixpy_get_started_video.md)
+- [Power on](get_started/power_on.md)
+- [LED blink](get_started/led_blink.md)
+- [Edit and execute files](get_started/edit_file.md)
+- [Upload the script to the development board](get_started/upload_script.md)
 - [Boot](get_started/boot.md)
-- [How To Read Docs](get_started/how_to_read.md)
+- [How to read the documentation](get_started/how_to_read.md)
 
 ## Modules/Libs
 
@@ -63,24 +63,30 @@ Summary
     - [SPI](libs/machine/spi.md)
     - [Timer](libs/machine/timer.md)
     - [UART](libs/machine/uart.md)
+    - [Network](libs/machine/network.md)
 - [Maix](libs/Maix/README.md)
     - [FPIOA](libs/Maix/fpioa.md)
     - [GPIO](libs/Maix/gpio.md)
+    - [KPU](libs/Maix/kpu.md)
+    - [FFT](libs/Maix/fft.md)
+    - [I2S](libs/Maix/i2s.md)
+    - [Audio](libs/Maix/audio.md)
+    - [Frequency](libs/Maix/freq.md)
 - [Built-in class](libs/builtin_py/README.md)
     - [fpioa_manager](libs/builtin_py/fm.md)
-    - [Board_info](libs/builtin_py/board_info.md)
+    - [board_info](libs/builtin_py/board_info.md)
 - [Machine vision](libs/machine_vision/README.md)
     - [LCD](libs/machine_vision/lcd.md)
     - [Sensor](libs/machine_vision/sensor.md)
     - [Image](libs/machine_vision/image.md)
     - [Clock](libs/machine_vision/clock.md)
     - [CPUfreq](libs/machine_vision/cpufreq.md)
-    - [video](libs/machine_vision/video.md)
+    - [Video](libs/machine_vision/video.md)
 - [Peripheral Modules](libs/peripheral_modules/README.md)
-    - [touchscreen](libs/peripheral_modules/touchscreen.md)
+    - [Touchscreen](libs/peripheral_modules/touchscreen.md)
 - [Integrated Apps](application/README.md)
-    - [Micropython Editor](application/pye.md)
-    - [nes](application/nes.md)
+    - [MicroPython Editor](application/pye.md)
+    - [NES Simulator](application/nes.md)
     - [lvgl](application/lvgl.md)
 
 ## Advanced - Custom Firmware
@@ -90,14 +96,8 @@ Summary
 
 ## Others
 
-- [Demo Scripts](https://github.com/sipeed/MaixPy_scripts)
+- [Example Scripts](https://github.com/sipeed/MaixPy_scripts)
 - [Contribute](contribute/README.md)
-    - [doc convention](contribute/doc_convention.md)
-    - [code convention](contribute/code_convention.md)
+    - [Documentation convention](contribute/doc_convention.md)
+    - [Code convention](contribute/code_convention.md)
 - [Open Source Projects](others/open_projects.md)
-
-
-
-
-
-

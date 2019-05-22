@@ -1,8 +1,7 @@
 Edit and execute the file
 =====
 
-
-## MaixPy has a built-in file system
+## MaixPy built-in file system
 
 Support Flash to use `SPIFFS` (not currently support creating directories), by default assigned to `3MB` `SPIFFS` ( start at flash address `0xD00000`), boot automatically hang on to `/flash` the directory
 
@@ -10,14 +9,14 @@ Also supports the FAT format SD (TF) card, boot automatically linked in to `/sd`
 
 It should be noted that the root directory is only used to mount the SD card or Flash, specific file `/flash` or `/sd` directory
 
-## Why do I need to edit and execute the file?
+## Why do I need to edit and execute files?
 
 In the front [powering LED](led_blink.md) experiment, we performed a one directly inside the terminal entering code, so that also simple, we will enter the command executed immediately and promptly returns the data, this interaction is called `REPL（Read Eval Print Loop：Interactive interpreter）`, in this way The advantage is that it is simple and convenient, and it is very similar to the Linux terminal, except that the syntax used is replaced by the MaixPy (Micropython) syntax.
 
 But in most cases, we would like to write the script to a file and then execute the file, so that we don't have to type the code every time, which reduces a lot of trouble.
 
 
-## Edit and save the file
+## Edit and save files
 
 ### Way A: Edit by [Micropython Editor(pye)](https://github.com/robert-hh/Micropython-Editor) that integrated in maixpy
 
@@ -79,7 +78,7 @@ edit /flash/boot.py
 ```
 
 
-## Execution documents
+## Execution of documents
 
 Use `os.chdir()` Change directory to the directory of the current file, such as `os.chdir("/flash")`
 

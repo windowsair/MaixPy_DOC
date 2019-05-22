@@ -1,13 +1,11 @@
 Lighting the LED
 ==========
 
-
 The lighting program is the first program to learn all the development boards. Just like learning all programming languages, learning the hello world is a sacred meaning.
 
 It is well known that lighting an LED requires a power supply, a resistor, and an LED bulb. On the Dan Dock development board, there are three LEDs, the lines are as follows:
 
 ![](./assets/LED.png)
-
 
 For example, we want to red light, i.e., `LED_R` connected to the LED, the LED can be seen in FIG positive 3.3V power supply has been connected, so long as we can LED_R LED lighting is low.
 
@@ -42,8 +40,3 @@ Then define a `GPIO` subject, specific parameters to see `GPIO` the module's doc
 Use `led_r.value(0)` or `led_r.value(1)` to set high to low
 
 It is already possible to light up here. If you know the Python syntax, you can try to write a for loop to achieve LED flashing~
-
-
-
-
-

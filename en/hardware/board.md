@@ -1,9 +1,9 @@
 Board
 =======
 
-there's three kind of board as follow:
+There are three types of board:
 
-* Dan dock with Sipeed M1(Dan) module
+* Dan dock with Sipeed M1 (Dan) module
 
 [![Dan dock](../../assets/Dan_Dock.png)](dan_dock.md)
 
