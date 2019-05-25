@@ -61,7 +61,15 @@ Then download [kflash.py](https://github.com/sipeed/kflash.py)
 
 Download from [github](https://github.com/sipeed/MaixPy/releases) page
 
-Firmware endup with `.bin` or `.kfpkg`
+Firmware ends with `.bin` or `.kfpkg`
+
+Firmware naming instructions:
+
+* maixpy_v###_full.bin: The full version of MaixPy firmware (MicroPython + OpenMV API + lvgl)
+* maixpy_v###_no_lvgl.bin: MaixPy firmware without LVGL version. (LVGL is an embedded GUI framework, you need to use when writing the interface)
+* maixpy_v###_minimum.bin: MaixPy firmware minimum set. Does not support `MaixPy IDE`, does not include `LVGL` nor `OpenMV`
+* face_model_at_0x300000.kfpkg: Face model, placed in address 0x300000, can be downloaded multiple times from `.bin` without conflict
+* elf.7z: elf file, ordinary users do not care, used for crash debugging
 
 
 ## Download the firmware to the development board
