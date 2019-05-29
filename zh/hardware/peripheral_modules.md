@@ -3,5 +3,5 @@
 
 * [麦克风阵列](mic_array.md)
 * [双目摄像头](binocular.md)
-
+* [LCD](lcd.md)
 
