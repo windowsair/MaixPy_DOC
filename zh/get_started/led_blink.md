@@ -8,7 +8,7 @@
 众所周知， 点亮一个 LED 需要一个电源， 一个电阻， 一个 LED 灯泡，
 在 Dan Dock 开发板上， 有三个 LED， 线路如下：
 
-![](./assets/LED.png)
+![](../../assets/LED_sch.png)
 
 
 比如我们希望红灯点亮， 即 `LED_R` 连接的这个 LED， 图中可以看到 LED 的正极已经连接了 3.3V 电源， 所以我们只要让 LED_R 为低电平 LED 即可点亮。

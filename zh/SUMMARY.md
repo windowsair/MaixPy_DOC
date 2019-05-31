@@ -5,39 +5,24 @@ Summary
 
 - [关于MaixPy](README.md)
 - [Maix能做哪些事](others/what_maix_do.md)
-
-## 硬件
-
-- [芯片K210](hardware/k210.md)
-- [模组](hardware/module.md)
-    - [Sipeed M1](hardware/m1.md)
-- [开发板](hardware/board.md)
-    - [Dan Dock](hardware/dan_dock.md)
-    - [BiT](hardware/bit.md)
-    - [Go](hardware/go.md)
-    - [Maixduino](hardware/maixduino.md)
-- [外设模块](hardware/peripheral_modules.md)
-    - [麦克风阵列](hardware/mic_array.md)
-    - [双目摄像头](hardware/binocular.md)
-    - [LCD](hardware/lcd.md)
+- [如何正确阅读本文档](get_started/how_to_read.md)
 
 ## 准备
 
 - [获得开发板](get_started/get_hardware.md)
+- [必备基础知识](get_started/prepare_knowledge.md)
+- [上手视频教程](get_started/maixpy_get_started_video.md)
 - [更新MaixPy固件](get_started/upgrade_firmware.md)
 - [安装MaixPyIDE](get_started/maixpyide.md)
-- [Micropython 基础语法](mpy_basic_syntax/README.md)
 
 
 ## 上手
 
-- [上手视频教程](get_started/maixpy_get_started_video.md)
-- [点亮板子](get_started/power_on.md)
+- [点亮板子(开机)](get_started/power_on.md)
 - [点灯工程师(LED)](get_started/led_blink.md)
 - [编辑并运行文件](get_started/edit_file.md)
 - [上传脚本到开发板](get_started/upload_script.md)
-- [开机自启动](get_started/boot.md)
-- [如何正确阅读本文档](get_started/how_to_read.md)
+- [开机自动运行脚本](get_started/boot.md)
 
 ## 功能/库
 

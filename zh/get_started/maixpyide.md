@@ -16,7 +16,7 @@ MaixPy IDE
 
 ## MaixPy 固件
 
-要使用`MaixPy IDE` , 固件必须是`v0.3.1` 版本以上, 否则MaixPyIDE上会连接不上.
+要使用`MaixPy IDE` , 固件必须是`v0.3.1` 版本以上, 否则MaixPyIDE上会连接不上， 使用前尽量检查固件版本和 IDE 版本，都更新到最新版以保障能正常使用
 
 
 ## 下载安装包
