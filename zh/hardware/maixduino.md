@@ -4,6 +4,8 @@
 ![](../../assets/maixduino_0.png)
 ![](../../assets/maixduino_1.png)
 ![](../../assets/maixduino_3.jpg)
+![](https://cdn.sipeed.com/wiki/maix/maixduino/maixduino_pins_1920_914.png)
+
 
 * Maix M1 模组
 * ESP32-WROOM-32 WiFi 模组（2.4G WiFi+蓝牙）
@@ -19,7 +21,7 @@
 * 1 个 1.25mm 音频输出母座
 
 
-更多板子介绍请看 [Wiki 页面](https://wiki.sipeed.com/zh/k210/board/maixduino.html)
+更多板子介绍请看 [Wiki 页面](https://wiki.sipeed.com/zh/maix/board/maixduino.html)
 
 ## 资料
 

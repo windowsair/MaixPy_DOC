@@ -26,7 +26,7 @@ Sipeed Maix Go 外壳 组装视频:
 
 [打开 BIlibili 观看](https://player.bilibili.com/player.html?aid=41016793&cid=72048223&page=1)
 
-更多关于 Go 开发版信息请看 [Wiki 页面](https://wiki.sipeed.com/zh/k210/board/go.html)
+更多关于 Go 开发版信息请看 [Wiki 页面](https://wiki.sipeed.com/zh/maix/board/go.html)
 
 * 硬件资料： [dl.sipeed.com](http://dl.sipeed.com/MAIX/HDK/Maix-GO/)
 

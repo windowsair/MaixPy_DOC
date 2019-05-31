@@ -1,6 +1,8 @@
 Board
 =======
 
+所有 Maix 系列开发板对比请看 [Wiki 页面](https://wiki.sipeed.com/zh/maix/board/)
+
 there's three kind of board as follow:
 
 * Dan dock with Sipeed M1(Dan) module

@@ -18,7 +18,7 @@ Sipeed M1 (Lichee Dan) Dock Board
 * 1 个 Mic
 * 1 个音频功放（PAM8403）
 
-更多关系开发板信息请看[Wiki 页面](https://wiki.sipeed.com/zh/k210/board/dock.html)
+更多关系开发板信息请看[Wiki 页面](https://wiki.sipeed.com/zh/maix/board/dock.html)
 
 
 * 资料下载： [dl.sipeed.com](http://dl.sipeed.com/)
