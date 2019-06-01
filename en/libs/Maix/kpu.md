@@ -18,8 +18,8 @@ KPU is a general-purpose neural network processor, which can do convolutional ne
 Load a model from flash or file system
 
 ```python
-Import KPU as kpu
-Task = kpu.load(offset or file_path)
+import KPU as kpu
+task = kpu.load(offset or file_path)
 ```
 
 #### Parameters
@@ -36,10 +36,10 @@ Task = kpu.load(offset or file_path)
 Passing initialization parameters for the yolo2 network model
 
 ```python
-Import KPU as kpu
-Task = kpu.load(offset or file_path)
-Anchor = (1.889, 2.5245, 2.9465, 3.94056, 3.99987, 5.3658, 5.155437, 6.92275, 6.718375, 9.01025)
-Kpu.init_yolo2(task, 0.5, 0.3, 5, anchor)
+import KPU as kpu
+task = kpu.load(offset or file_path)
+anchor = (1.889, 2.5245, 2.9465, 3.94056, 3.99987, 5.3658, 5.155437, 6.92275, 6.718375, 9.01025)
+kpu.init_yolo2(task, 0.5, 0.3, 5, anchor)
 ```
 
 #### Parameters
@@ -57,9 +57,9 @@ Kpu.init_yolo2(task, 0.5, 0.3, 5, anchor)
 ### initialization
 
 ```python
-Import KPU as kpu
-Task = kpu.load(offset or file_path)
-Kpu.deinit(task)
+import KPU as kpu
+task = kpu.load(offset or file_path)
+kpu.deinit(task)
 ```
 
 #### Parameters
@@ -70,13 +70,13 @@ Kpu.deinit(task)
 ### Running yolo2 network
 
 ```python
-Import KPU as kpu
-Import image
-Task = kpu.load(offset or file_path)
-Anchor = (1.889, 2.5245, 2.9465, 3.94056, 3.99987, 5.3658, 5.155437, 6.92275, 6.718375, 9.01025)
-Kpu.init_yolo2(task, 0.5, 0.3, 5, anchor)
-Img = image.Image()
-Kpu.run_yolo2(task, img) #This is not right, please refer to the routine
+import KPU as kpu
+import image
+task = kpu.load(offset or file_path)
+anchor = (1.889, 2.5245, 2.9465, 3.94056, 3.99987, 5.3658, 5.155437, 6.92275, 6.718375, 9.01025)
+kpu.init_yolo2(task, 0.5, 0.3, 5, anchor)
+img = image.Image()
+kpu.run_yolo2(task, img) #This is not right, please refer to the routine
 ```
 
 #### Parameters
@@ -93,10 +93,10 @@ Kpu.run_yolo2(task, img) #This is not right, please refer to the routine
 Calculate the loaded network model to the specified number of layers 3, and output the feature map of the target layer
 
 ```python
-Import KPU as kpu
-Task = kpu.load(offset or file_path)
-......
-Fmap=kpu.forward(task,img,3)
+import KPU as kpu
+task = kpu.load(offset or file_path)
+……
+fmap=kpu.forward(task,img,3)
 ```
 
 #### Parameters
@@ -115,7 +115,7 @@ Fmap=kpu.forward(task,img,3)
 Take the specified channel data of the feature map to the image object
 
 ```python
-Img=kpu.fmap(fmap,1)
+img=kpu.fmap(fmap,1)
 ```
 
 #### Parameters
@@ -133,7 +133,7 @@ Img=kpu.fmap(fmap,1)
 Release feature map object
 
 ```python
-Kpu.fmap_free(fmap)
+kpu.fmap_free(fmap)
 ```
 
 #### Parameters
@@ -149,8 +149,8 @@ Kpu.fmap_free(fmap)
 Get the network structure information of the model
 
 ```python
-Info=kpu.netinfo(task)
-Layer0=info[0]
+info=kpu.netinfo(task)
+layer0=info[0]
 ```
 
 #### Parameters
@@ -181,25 +181,25 @@ Para_size: the number of bytes of the convolution parameter of the current layer
 Model download address: http://dl.sipeed.com/MAIX/MaixPy/model/face_model_at_0x300000.kfpkg
 
 ```python
-Import sensor
-Import image
-Import lcd
-Import KPU as kpu
+import sensor
+import image
+import lcd
+import KPU as kpu
 
-Lcd.init()
-Sensor.reset()
-Sensor.set_pixformat(sensor.RGB565)
-Sensor.set_framesize(sensor.QVGA)
-Sensor.run(1)
-Task = kpu.load(0x300000) #Download kmodel and maixpy ​​firmware package to flash using kfpkg
-Anchor = (1.889, 2.5245, 2.9465, 3.94056, 3.99987, 5.3658, 5.155437, 6.92275, 6.718375, 9.01025)
+lcd.init()
+sensor.reset()
+sensor.set_pixformat(sensor.RGB565)
+sensor.set_framesize(sensor.QVGA)
+sensor.run(1)
+task = kpu.load(0x300000) #使用kfpkg将 kmodel 与 maixpy 固件打包下载到 flash
+anchor = (1.889, 2.5245, 2.9465, 3.94056, 3.99987, 5.3658, 5.155437, 6.92275, 6.718375, 9.01025)
 a = kpu.init_yolo2(task, 0.5, 0.3, 5, anchor)
-While(True):
-    Img = sensor.snapshot()
-    Code = kpu.run_yolo2(task, img)
-    If code:
-        For i in code:
-            Print(i)
+while(True):
+    img = sensor.snapshot()
+    code = kpu.run_yolo2(task, img)
+    if code:
+        for i in code:
+            print(i)
             a = img.draw_rectangle(i.rect())
     a = lcd.display(img)
 a = kpu.deinit(task)
@@ -218,36 +218,36 @@ The model is an 8-bit fixed-point model, about 380KB in size, and the layer info
 ```
 
 ```python
-Import sensor
-Import image
-Import lcd
-Import KPU as kpu
-Index=3
-Lcd.init()
-Sensor.reset()
-Sensor.set_pixformat(sensor.RGB565)
-Sensor.set_framesize(sensor.QVGA)
-Sensor.run(1)
-Task=kpu.load(0x300000)
-Img=image.Image()
-Info=kpu.netinfo(task)
-Layer=info[index]
+import sensor
+import image
+import lcd
+import KPU as kpu
+index=3  
+lcd.init()
+sensor.reset()
+sensor.set_pixformat(sensor.RGB565)
+sensor.set_framesize(sensor.QVGA)
+sensor.run(1)
+task=kpu.load(0x300000)
+img=image.Image()
+info=kpu.netinfo(task)
+layer=info[index]
 w=layer.wo()
 h=layer.ho()
-Num=int(320*240/w/h)
-List=[None]*num
-X_step=int(320/w)
-Y_step=int(240/h)
-Img_lcd=image.Image()
-While True:
-    Img=sensor.snapshot()
-    Fmap=kpu.forward(task,img,index)
-    For i in range(0,num):
-        List[i]=kpu.fmap(fmap,i)
-    For i in range(0,num):
-        List[i].stretch(64,255)
-    For i in range(0,num):
+num=int(320*240/w/h)
+list=[None]*num
+x_step=int(320/w)
+y_step=int(240/h)
+img_lcd=image.Image()
+while True:
+    img=sensor.snapshot()
+    fmap=kpu.forward(task,img,index)
+    for i in range(0,num):
+        list[i]=kpu.fmap(fmap,i)
+    for i in range(0,num):
+        list[i].stretch(64,255)
+    for i in range(0,num):
         a=img_lcd.draw_image(list[i],((i%x_step)*w,(int(i/x_step))*h))
-Lcd.display(img_lcd)
-   Kpu.fmap_free(fmap)
+	   lcd.display(img_lcd)
+   	kpu.fmap_free(fmap)
 ```
