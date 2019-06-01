@@ -9,8 +9,8 @@ The FFT fast Fourier transform module performs Fourier transform on the input da
 Enter time domain data and perform Fourier transform
 
 ```
-Import FFT
-Res = FFT.run(data, points, shift)
+import FFT
+res = FFT.run(data, points, shift)
 ```
 
 #### Parameters
@@ -30,7 +30,7 @@ Res = FFT.run(data, points, shift)
 FFT
 
 ```
-Res = FFT.freq(points, sample_rate)
+res = FFT.freq(points, sample_rate)
 ```
 
 #### Parameters
@@ -48,7 +48,7 @@ Res = FFT.freq(points, sample_rate)
 It is used to calculate the amplitude of each frequency point after the FFT operation. It is currently used as a test. Users can write their own amplitude processing functions in python.
 
 ```
-Amp = FFT.amplitude(FFT_res)
+amp = FFT.amplitude(FFT_res)
 ```
 
 #### Parameters
@@ -65,45 +65,45 @@ Amp = FFT.amplitude(FFT_res)
 Acquire sound and perform FFT operation, and display the calculated data on the screen as a histogram
 
 ```python
-From Maix import GPIO
-From Maix import I2S
-From Maix import AUDIO
-From Maix import FFT
-Import image
-Import lcd
-Lcd.init()
-Fm.register(8, fm.fpioa.GPIO0)
-Wifi_en=GPIO(GPIO.GPIO0, GPIO.OUT)
-Wifi_en.value(0)
-Fm.register(20,fm.fpioa.I2S0_IN_D0)
-Fm.register(19,fm.fpioa.I2S0_WS)
-Fm.register(18,fm.fpioa.I2S0_SCLK)
-Rx = I2S(I2S.DEVICE_0)
-Rx.channel_config(rx.CHANNEL_0, rx.RECEIVER, align_mode = I2S.STANDARD_MODE)
-Sample_rate = 38640
-Rx.set_sample_rate(sample_rate)
-Img = image.Image()
-Sample_points = 1024
+from Maix import GPIO
+from Maix import I2S
+from Maix import AUDIO
+from Maix import FFT
+import image
+import lcd
+lcd.init()
+fm.register(8,  fm.fpioa.GPIO0)
+wifi_en=GPIO(GPIO.GPIO0,GPIO.OUT)
+wifi_en.value(0)
+fm.register(20,fm.fpioa.I2S0_IN_D0)
+fm.register(19,fm.fpioa.I2S0_WS)
+fm.register(18,fm.fpioa.I2S0_SCLK)
+rx = I2S(I2S.DEVICE_0)
+rx.channel_config(rx.CHANNEL_0, rx.RECEIVER, align_mode = I2S.STANDARD_MODE)
+sample_rate = 38640
+rx.set_sample_rate(sample_rate)
+img = image.Image()
+sample_points = 1024
 FFT_points = 512
-Lcd_width = 320
-Lcd_height = 240
-Hist_num = FFT_points #changeable
-If hist_num > 320:
-    Hist_num = 320
-Hist_width = int(320 / hist_num)#changeable
-X_shift = 0
-While True:
-    Audio = rx.record(sample_points)
-    FFT_res = FFT.run(audio.tobyte(), FFT_points)
+lcd_width = 320
+lcd_height = 240
+hist_num = FFT_points #changeable
+if hist_num > 320:
+    hist_num = 320
+hist_width = int(320 / hist_num)#changeable
+x_shift = 0
+while True:
+    audio = rx.record(sample_points)
+    FFT_res = FFT.run(audio.tobyte(),FFT_points)
     FFT_amp = FFT.amplitude(FFT_res)
-    Img = img.clear()
-    X_shift = 0
-    For i in range(hist_num):
-        If FFT_amp[i] > 240:
-            Hist_height = 240
-        Else:
-            Hist_height = FFT_amp[i]
-        Img = img.draw_rectangle((x_shift,240-hist_height,hist_width,hist_height),[255,255,255],2,True)
-        X_shift = x_shift + hist_width
-    Lcd.display(img)
+    img = img.clear()
+    x_shift = 0
+    for i in range(hist_num):
+        if FFT_amp[i] > 240:
+            hist_height = 240
+        else:
+            hist_height = FFT_amp[i]
+        img = img.draw_rectangle((x_shift,240-hist_height,hist_width,hist_height),[255,255,255],2,True)
+        x_shift = x_shift + hist_width
+    lcd.display(img)
 ```
