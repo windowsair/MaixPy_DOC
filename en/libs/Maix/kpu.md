@@ -24,7 +24,7 @@ Task = kpu.load(offset or file_path)
 
 #### Parameters
 
-* `offtset`: The offset of the model in flash, such as `0xd00000` indicates that the model is burned at the beginning of 13M
+* `offtset`: The offset of the model in flash, such as `0xd00000` indicates that the model is flashed at the beginning of 13M
 * `file_path`: The model is the file name in the file system, such as `"/sd/xxx.kmodel"`
 
 ##### Back
