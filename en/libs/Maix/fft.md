@@ -67,7 +67,6 @@ Acquire sound and perform FFT operation, and display the calculated data on the 
 ```python
 from Maix import GPIO
 from Maix import I2S
-from Maix import AUDIO
 from Maix import FFT
 import image
 import lcd
@@ -94,7 +93,7 @@ hist_width = int(320 / hist_num)#changeable
 x_shift = 0
 while True:
     audio = rx.record(sample_points)
-    FFT_res = FFT.run(audio.tobyte(),FFT_points)
+    FFT_res = FFT.run(audio.to_bytes(),FFT_points)
     FFT_amp = FFT.amplitude(FFT_res)
     img = img.clear()
     x_shift = 0
