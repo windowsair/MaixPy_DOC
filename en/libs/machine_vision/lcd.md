@@ -117,7 +117,7 @@ Set LCD direction and mirror
 import lcd
 
 lcd.init()
-lcd.lcd.draw_string(100, 100, "hello maixpy", lcd.RED, lcd.BLACK)
+lcd.draw_string(100, 100, "hello maixpy", lcd.RED, lcd.BLACK)
 
 ```
 
