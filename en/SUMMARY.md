@@ -78,7 +78,6 @@ Summary
     - [LCD](libs/machine_vision/lcd.md)
     - [Sensor](libs/machine_vision/sensor.md)
     - [Image](libs/machine_vision/image.md)
-    - [Clock](libs/machine_vision/clock.md)
     - [CPUfreq](libs/machine_vision/cpufreq.md)
     - [Video](libs/machine_vision/video.md)
 - [Peripheral Modules](libs/peripheral_modules/README.md)

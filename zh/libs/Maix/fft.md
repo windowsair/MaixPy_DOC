@@ -67,7 +67,6 @@ amp = FFT.amplitude(FFT_res)
 ```python
 from Maix import GPIO
 from Maix import I2S
-from Maix import AUDIO
 from Maix import FFT
 import image
 import lcd

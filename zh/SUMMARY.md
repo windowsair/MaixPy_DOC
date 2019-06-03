@@ -66,7 +66,6 @@ Summary
     - [lcd](libs/machine_vision/lcd.md)
     - [sensor](libs/machine_vision/sensor.md)
     - [image](libs/machine_vision/image.md)
-    - [clock](libs/standard/utime.md#time.clock())
     - [video](libs/machine_vision/video.md)
 - [外设模块](libs/peripheral_modules/README.md)
     - [touchscreen](libs/peripheral_modules/touchscreen.md)
