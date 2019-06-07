@@ -3,7 +3,7 @@ Edit and execute the file
 
 ## MaixPy file system
 
-MaixPy has an internal file system which can access both internal and external memories.  During boot the device will mount any external memory cards formatted with the SPIFFS or FAT file systems, and add them to the interlan file system as the '/flash' or '/sd' directories respectively.  
+MaixPy has an internal file system which can access both internal and external memories.  During boot, the device will mount any external memory cards formatted with the SPIFFS or FAT file systems, and add them to the internal file system as the '/flash' or '/sd' directories respectively.  
 
 NOTES:
 
@@ -11,9 +11,9 @@ SPIFFS cards are by default assigned to `3MB` `SPIFFS` (starting at flash addres
 
 Currently the `SPIFFS` implementation on MaixPy does not support creating directories. 
 
-FAT formatted SD (TF) cards are supported, but FAT32 or exFAT formatted cards are not currently supported.  When detected at boot, FAT formatted sd cards will be automatically mounted and appear as the `/sd` directory in the device's internal file system.  
+FAT formatted SD (TF) cards are supported, but FAT32 or exFAT formatted cards are not currently supported.  When detected at boot, FAT formatted cards will be automatically mounted and appear as the `/sd` directory in the device's internal file system.  
 
-It should be noted that the root directory is only used to mount the SD card or SPIFFS flash card.  All file operations will operate in the `/flash` or `/sd` directories depending on the format of the memory card.  One exception is the '/boot.py' file which will operate from the root directory.
+It should be noted that the root directory is only used to mount the SD card or SPIFFS flash card.  All file operations will operate in the `/flash` or `/sd` directories depending on the format of the memory card.  
 
 
 
