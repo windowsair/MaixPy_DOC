@@ -1,11 +1,15 @@
 Editing, saving and executing files
 =====
 
+This section teaches you how to edit, save and execute files.
+
+
 ## REPL interface
 
 To keep things simple in the previous [powering LED](led_blink.md) example, we entered code directly in the terminal at the Maix prompt, which was immediately executed upon entry. Such command line interfaces are often referred to as `REPL（Read Eval Print Loop)` where the the entered commands are immediately executed upon pressing Enter and the results get displayed. MaixPy's REPL interface operates similar to other command line interfaces except that the supported syntax is MicroPython.
 
 While MaixPy's REPL interface is simple and convenient for small tasks, it soon becomes annoying to re-enter your code each time you want to run it. The answer is to save your code to a file, then execute the file.  The remainder of this page describes that process.
+
 
 ## MaixPy file system
 
@@ -49,13 +53,17 @@ print("hello maixpy")
 
 Then press the `Ctrl+S` press `Enter` button to save, and `Ctrl+Q` to exit the editor.
 
-**Note** : The pye editor has certain requirements of the connected terminal. The `BackSpace` key should be sent as a `DEL`, otherwise the `BackSpace` will function as `Ctrl+H` (ie, character replacement).
+**Note** : The pye editor has certain requirements of the connected terminal. For intuitive operation the `BackSpace` key should be configured to send `Ctrl+?`, otherwise the `BackSpace` key will function as `Ctrl+H` (ie: character replacement).
 
 Linux users are recommended to use `minicom`. Use `sudo minicom -s` to set the reference to [the previous tutorial](power_on.md)
 
-Windows users often use the free terminal program PuTTY. Typing Shift-Backspace will cause PuTTY to send whichever code isn't configured here as the default.
+Windows users can use [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) which supports Backspace key configuration.
+![PuTTY Backspace Configuation](./assets/Maix_pye_putty_backspace_config.png)
 
-Under Windows, too, according to their own use of the Internet search tool setting methods, such as `xshell` search `Xshell how to set backspace to del` to get results:
+
+**Note** Typing Shift-Backspace will cause PuTTY to send whichever code isn't configured as the default.
+
+Alternatively, Xshell users can use:
 
 ```
 File → Properties → Terminal → Keyboard,
