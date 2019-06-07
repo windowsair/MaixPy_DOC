@@ -6,7 +6,7 @@ This section teaches you how to edit, save and execute files.
 
 ## REPL interface
 
-To keep things simple in the previous [powering LED](led_blink.md) example, we entered code directly in the terminal at the Maix prompt, which was immediately executed upon entry. Such command line interfaces are often referred to as `REPL（Read Eval Print Loop)` where the the entered commands are immediately executed upon pressing Enter and the results get displayed. MaixPy's REPL interface operates similar to other command line interfaces except that the supported syntax is MicroPython.
+To keep things simple in the [previous example](led_blink.md), we entered code directly in the terminal at the Maix prompt, which was executed immediately upon entry.  Such interactive command line interfaces where commands are enterd and then immediately executed upon pressing Enter are referred to as [`REPL（Read Eval Print Loop)`](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop) . MaixPy's REPL interface operates similar to most other command line interfaces except that the supported syntax is MicroPython.
 
 While MaixPy's REPL interface is simple and convenient for small tasks, it soon becomes annoying to re-enter your code each time you want to run it. The answer is to save your code to a file, then execute the file.  The remainder of this page describes that process.
 
@@ -26,14 +26,16 @@ It should be noted that the root directory is only used to mount the SD card or 
 
 ## Navigating the file system
 
-In MaixPy's REPL interface and in code, you may use the following commands.
+In MaixPy's REPL interface and in code, you may use the following os commands to navigate and manage files.
 
 | Command | Description | Example |
 |---------|-------------|---------|
 |`os.chdir()`| changes the current directory | `os.chdir("/flash")` |
 |`os.listdir()` | list the files in the current directory | `os.listdir()` |
-
-
+| | list another directory | `os.listdir("path")`|
+|`os.getcwd()`| return the current working directory | `os.getcwd()`|
+|`os.rename(old_path, new_path)`| rename a file | `os.rename(old_path, new_path)`|
+|`os.remove(path)`| remove a file | `os.remove("./herring.py")`|
 
 
 
