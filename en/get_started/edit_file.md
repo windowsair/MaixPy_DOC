@@ -1,13 +1,21 @@
 Edit and execute the file
 =====
 
-## MaixPy built-in file system
+## MaixPy file system
 
-Support Flash to use `SPIFFS` (not currently support creating directories), by default assigned to `3MB` `SPIFFS` ( start at flash address `0xD00000`), boot automatically hang on to `/flash` the directory
+MaixPy has an internal file system which can access both internal and external memories.  During boot the device will mount any external memory cards formatted with the SPIFFS or FAT file systems, and add them to the interlan file system as the '/flash' or '/sd' directories respectively.  
 
-Also supports the FAT format SD (TF) card, boot automatically linked in to `/sd` the directory
+NOTES:
 
-It should be noted that the root directory is only used to mount the SD card or Flash, specific file `/flash` or `/sd` directory
+SPIFFS cards are by default assigned to `3MB` `SPIFFS` (starting at flash address `0xD00000`). When detected at boot, SPIFFS devices automatically appear as the `/flash` directory within the MaixPy's internal file system.  
+
+Currently the `SPIFFS` implementation on MaixPy does not support creating directories. 
+
+FAT formatted SD (TF) cards are supported, but FAT32 or exFAT formatted cards are not currently supported.  When detected at boot, FAT formatted sd cards will be automatically mounted and appear as the `/sd` directory in the device's internal file system.  
+
+It should be noted that the root directory is only used to mount the SD card or SPIFFS flash card.  All file operations will operate in the `/flash` or `/sd` directories depending on the format of the memory card.  One exception is the '/boot.py' file which will operate from the root directory.
+
+
 
 ## Why do I need to edit and execute files?
 
