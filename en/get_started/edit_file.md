@@ -7,14 +7,11 @@ MaixPy has an internal file system which can access both internal and external m
 
 NOTES:
 
-SPIFFS cards are by default assigned to `3MB` `SPIFFS` (starting at flash address `0xD00000`). When detected at boot, SPIFFS devices automatically appear as the `/flash` directory within the MaixPy's internal file system.  
-
-Currently the `SPIFFS` implementation on MaixPy does not support creating directories. 
+SPIFFS cards are by default assigned to `3MB` `SPIFFS` (starting at flash address `0xD00000`). When detected at boot, SPIFFS devices automatically appear as the `/flash` directory within the device's internal file system.  Currently the `SPIFFS` implementation in MaixPy does not support the creation of directories. 
 
 FAT formatted SD (TF) cards are supported, but FAT32 or exFAT formatted cards are not currently supported.  When detected at boot, FAT formatted cards will be automatically mounted and appear as the `/sd` directory in the device's internal file system.  
 
-It should be noted that the root directory is only used to mount the SD card or SPIFFS flash card.  All file operations will operate in the `/flash` or `/sd` directories depending on the format of the memory card.  
-
+It should be noted that the root directory is only used to mount the SD card or SPIFFS flash card. All file operations will operate in the `/flash` or `/sd` directories depending on the format of the memory card.  
 
 
 ## Why do I need to edit and execute files?
@@ -28,9 +25,7 @@ But in most cases, we would like to write the script to a file and then execute 
 
 ### Way A: Edit by [Micropython Editor(pye)](https://github.com/robert-hh/Micropython-Editor) that integrated in maixpy
 
-In MaixPy, we have a built-in open source editor [Micropython Editor(pye)](https://github.com/robert-hh/Micropython-Editor)
-
-Use `os.listdir()` can view the files in the current directory,
+MaixPy includes a built-in open source editor [Micropython Editor(pye)](https://github.com/robert-hh/Micropython-Editor)
 
 Use `pye("hello.py")` can create a file and enter the edit mode, keyboard shortcuts and other instructions can be found [here](https://github.com/robert-hh/Micropython-Editor/blob/master/Pyboard%20Editor.pdf)
 
@@ -42,9 +37,14 @@ print("hello maixpy")
 
 Then press the `Ctrl+S` press `Enter` button to save, according to `Ctrl+Q` exit edit
 
-**Note** : Use this editor has certain requirements for the use of serial tool, you must be `BackSpace` key as a `DEL` function, or else the `BackSpace` call is `Ctrl+H` the same function (ie, character replacement).
+Use `os.listdir()` can view the files in the current directory,
 
-Linux recommended use `minicom`, you need `sudo minicom -s` to set the reference to [the previous tutorial](power_on.md)
+
+**Note** : The pye editor has certain requirements of the connected terminal. The `BackSpace` key should be sent as a `DEL`, otherwise the `BackSpace` will function as `Ctrl+H` (ie, character replacement).
+
+Linux users are recommended to use `minicom`. Use `sudo minicom -s` to set the reference to [the previous tutorial](power_on.md)
+
+Windows users often use PuTTY. Typing Shift-Backspace will cause PuTTY to send whichever code isn't configured here as the default.
 
 Under Windows, too, according to their own use of the Internet search tool setting methods, such as `xshell` search `Xshell how to set backspace to del` to get results:
 
@@ -52,6 +52,8 @@ Under Windows, too, according to their own use of the Internet search tool setti
 File → Properties → Terminal → Keyboard,
 Change the delete and backspace sequences to ASCII 127.
 ```
+
+Putty Users 
 
 ### Way B: Read files to PC by [uPyLoader](https://github.com/BetaRavener/uPyLoader), then download to board after edit
 
