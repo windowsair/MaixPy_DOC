@@ -1,9 +1,15 @@
-Edit and execute the file
+Editing, saving and executing files
 =====
+
+## REPL interface
+
+To keep things simple in the previous [powering LED](led_blink.md) example, we entered code directly in the terminal at the Maix prompt, which was immediately executed upon entry. Such command line interfaces are often referred to as `REPL（Read Eval Print Loop)` where the the entered commands are immediately executed upon pressing Enter and the results get displayed. MaixPy's REPL interface operates similar to other command line interfaces except that the supported syntax is MicroPython.
+
+While MaixPy's REPL interface is simple and convenient for small tasks, it soon becomes annoying to re-enter your code each time you want to run it. The answer is to save your code to a file, then execute the file.  The remainder of this page describes that process.
 
 ## MaixPy file system
 
-MaixPy devices have an internal file system which can access both internal and external memories.  During boot, the device will mount any external memory cards formatted with either SPIFFS or FAT file systems, and add them to the internal file system as the '/flash' or '/sd' directories respectively.  
+MaixPy devices have an internal file system which can access both internal and external memories.  During boot, the device will mount any external memory cards formatted with either SPIFFS or FAT file systems, and add them to the internal file system as the `/flash` or `/sd` directories respectively.  
 
 NOTES:
 
@@ -11,23 +17,20 @@ SPIFFS cards are by default assigned to `3MB` `SPIFFS` (starting at flash addres
 
 FAT formatted SD (TF) cards are supported, but FAT32 or exFAT formatted cards are not currently supported.  When detected at boot, FAT formatted cards will be automatically mounted and appear as the `/sd` directory in the device's internal file system.  
 
-It should be noted that the root directory is only used to mount the SD card or SPIFFS flash card. All other file operations will happen in the `/flash` or `/sd` directories, as deterimed by the format of the memory card inserted at boot time.  
+It should be noted that the root directory is only used to mount the SD card or SPIFFS flash card. All other file operations happen in the `/flash` or `/sd` directories, as deterimed by the format of the memory card discovered at boot time.  
 
 
 ## Navigating the file system
 
 In MaixPy's REPL interface and in code, you may use the following commands.
 
-`os.chdir()` changes the current directory, for example `os.chdir("/flash")`
+| Command | Description | Example |
+|---------|-------------|---------|
+|`os.chdir()`| changes the current directory | `os.chdir("/flash")` |
+|`os.listdir()` | list the files in the current directory | `os.listdir()` |
 
-`os.listdir()` lists the files in the current directory,
 
 
-## Why do I want to edit and execute files?
-
-To keep things simple in the previous [powering LED](led_blink.md) example, we entered code directly in the terminal at the Maix prompt, which was immediately executed upon entry. Such command line interfaces are often referred to as `REPL（Read Eval Print Loop）` where the the entered commands are immediately interpreted, and their results get displayed. MaixPy's REPL interface operates similar to other command line interfaces, except that the supported syntax is MicroPython.
-
-While MaixPy's REPL interface is simple and convenient for small tasks, it soon becomes annoying to re-enter your code each time you want to run it. The answer is to save your code to a file, then execute the file.
 
 
 ## Edit and save files
