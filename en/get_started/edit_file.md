@@ -6,9 +6,9 @@ This section teaches you how to edit, save and execute files.
 
 ## REPL interface
 
-To keep things simple in the [previous example](led_blink.md), we entered code directly in the terminal at the Maix prompt, which was executed immediately upon pressing the Enter key.  Such interactive command line interfaces where commands are enterd and then immediately executed upon pressing Enter are referred to as [`REPL（Read Eval Print Loop)`](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop). MaixPy's REPL interface operates similar to most other command line interfaces except that the supported syntax is [MicroPython](http://docs.micropython.org/en/latest/reference/repl.html)
+To keep things simple in the [previous example](led_blink.md), we entered code directly in the terminal at the Maix prompt, which was executed immediately upon pressing the Enter key.  Such interactive command line interfaces are often referred to as [`REPL（Read Eval Print Loop)`](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop). MaixPy's REPL interface operates similar to most other command line interfaces except that the supported syntax is [MicroPython](http://docs.micropython.org/en/latest/reference/repl.html)
 
-While MaixPy's REPL interface is simple and convenient for small tasks, it soon becomes annoying to re-enter your code each time you want to run it. The answer is to save your code to a file, then execute the file.  The remainder of this page describes that process.
+While MaixPy's REPL interface is simple and convenient for small tasks, it soon becomes annoying to re-enter your code each time you want to run it. The solution is to save your code to a file, and then execute the file.  The remainder of this page describes that process.
 
 
 ## MaixPy file system
