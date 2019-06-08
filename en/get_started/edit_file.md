@@ -39,7 +39,10 @@ In MaixPy's REPL interface and in code the following os commands can be used to 
 
 For a complete list of os commands refer to the [MicroPython documentation](http://docs.micropython.org/en/v1.7/esp8266/library/os.html)
 
-## Edit and save files
+
+## Editing and saveing files
+
+There are a number of ways you can edit and save files.
 
 ### Way A: Edit and save files using the [pye editor](https://github.com/robert-hh/Micropython-Editor) built into MaixPy
 
@@ -73,7 +76,7 @@ Change the delete and backspace sequences to ASCII 127.
 ```
 
 
-### Way B: Read files to PC by [uPyLoader](https://github.com/BetaRavener/uPyLoader), then download to board after edit
+### Way B: Read files to PC by [uPyLoader](https://github.com/BetaRavener/uPyLoader), then download to board after editing
 
 [uPyLoader](https://github.com/BetaRavener/uPyLoader)
 
