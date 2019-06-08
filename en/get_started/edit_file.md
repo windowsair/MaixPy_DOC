@@ -34,7 +34,7 @@ In MaixPy's REPL interface and in code, you may use the following os commands to
 |`os.listdir()` | list the files in the current directory | `os.listdir()` |
 | | list another directory | `os.listdir("path")`|
 |`os.getcwd()`| return the current working directory | `os.getcwd()`|
-|`os.rename(old_path, new_path)`| rename a file | `os.rename(old_path, new_path)`|
+|`os.rename(old_path, new_path)`| rename a file | `os.rename("./blue.py", "./aaah.py")`|
 |`os.remove(path)`| remove a file | `os.remove("./herring.py")`|
 
 
