@@ -77,7 +77,7 @@ Change the delete and backspace sequences to ASCII 127.
 
 ### Method B: Read files to PC by [uPyLoader](https://github.com/BetaRavener/uPyLoader), then download to board after editing
 
-[uPyLoader](https://github.com/BetaRavener/uPyLoader)
+This method uses the [uPyLoader](https://github.com/BetaRavener/uPyLoader) utility
 
 Download the executable: [release](https://github.com/BetaRavener/uPyLoader/releases)
 
