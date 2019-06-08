@@ -75,7 +75,6 @@ File → Properties → Terminal → Keyboard,
 Change the delete and backspace sequences to ASCII 127.
 ```
 
-
 ### Method B: Read files to PC by [uPyLoader](https://github.com/BetaRavener/uPyLoader), then download to board after editing
 
 [uPyLoader](https://github.com/BetaRavener/uPyLoader)
@@ -88,7 +87,7 @@ Select the serial port and click the `Connect` button to connect the board
 
 The first time you run the software, you need to initialize it. Click `File->Init transfer files` to complete the initialization. This will create two files in the board, `__upload.py` and `__download.py`.
 
-Then double click file name to read and edit, click `save` button to download file to board
+Then double click file name to read and edit, then click the `save` button to download the file to board
 
 ### Method C: Read files to PC by [rshell](https://github.com/dhylands/rshell), edit, and then save back to board
 
@@ -105,23 +104,23 @@ Edit file
 ```python
 ls /flash
 edit /flash/boot.py
-# the edit use vim
+# the editor uses vim commands
 ```
 
 
 ## Execution of documents
 
-Once files exist on the file system they may be executed using the following methods
+Once MicroPython files exist on the file system they may be executed using the following methods
 
-### Method A: Run using `import`
+### Method A: Execute using `import`
 
-Then execute `import hello`
+Simple enter `import hello`
 
 You can see the output `hello maixpy`
 
 But be attention, `import` command can only use once, if you want to execute code more than once, please use the `Way B`
 
-### Method B: Run using `exec()`
+### Method B: Execute using `exec()`
 
 Use `exec()` to perform the functions
 
@@ -131,11 +130,11 @@ with open("hello.py") as f:
 
 ```
 
-### Method C: Run using uPyLoader
+### Method C: Execute using uPyLoader
 
 Just select the file, then click the `execute` button
 
-### Method D: Run files locally on PC using ampy
+### Method D: Execute files locally on PC using ampy
 
 [ampy](https://github.com/pycampers/ampy) 
 
