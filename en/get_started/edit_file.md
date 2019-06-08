@@ -114,20 +114,20 @@ Once MicroPython files exist on the file system they may be executed using the f
 
 ### Method A: Execute using `import`
 
-Simple enter `import hello`
+At MaixPy's REPL interface simply enter:
+`import hello` then press Enter
 
-You can see the output `hello maixpy`
+The `hello.py` file will run and should output `hello maixpy`
 
-But be attention, `import` command can only use once, if you want to execute code more than once, please use the `Way B`
+But be careful, the `import` command can only be used once.  If you want to execute the code more than once, please use `Method B` below.
 
 ### Method B: Execute using `exec()`
 
-Use `exec()` to perform the functions
+Use `exec()` in a simple program to execute your file
 
 ```python
 with open("hello.py") as f:
     exec(f.read())
-
 ```
 
 ### Method C: Execute using uPyLoader
