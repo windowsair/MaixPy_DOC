@@ -32,7 +32,7 @@ In MaixPy's REPL interface and in code, you may use the following os commands to
 |---------|-------------|---------|
 |`os.chdir()`| changes the current directory | `os.chdir("/flash")` |
 |`os.listdir()` | list the files in the current directory | `os.listdir()` |
-| | list another directory | `os.listdir("path")`|
+| | list the files in another directory | `os.listdir("/sd")`|
 |`os.getcwd()`| return the current working directory | `os.getcwd()`|
 |`os.rename(old_path, new_path)`| rename a file | `os.rename("./blue.py", "./aaah.py")`|
 |`os.remove(path)`| remove a file | `os.remove("./herring.py")`|
