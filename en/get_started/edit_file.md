@@ -48,9 +48,9 @@ There are a number of ways you can edit and save files described below as Method
 
 MaixPy includes a built-in open source editor [Micropython Editor(pye)](https://github.com/robert-hh/Micropython-Editor)
 
-Use `pye("hello.py")` can create a file and enter the edit mode, keyboard shortcuts and other instructions can be found [here](https://github.com/robert-hh/Micropython-Editor/blob/master/Pyboard%20Editor.pdf)
+At the REPL interface enter `pye("hello.py")` to create a file and enter the edit mode. Keyboard shortcuts and other instructions can be found [here](https://github.com/robert-hh/Micropython-Editor/blob/master/Pyboard%20Editor.pdf)
 
-Like we write code
+Enter the following code:
 
 ```python
 print("hello maixpy")
