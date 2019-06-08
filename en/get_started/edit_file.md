@@ -21,7 +21,7 @@ SPIFFS cards are by default assigned to `3MB` `SPIFFS` (starting at flash addres
 
 FAT formatted SD (TF) cards are supported, but FAT32 or exFAT formatted cards are not currently supported.  When detected at boot, FAT formatted cards will be automatically mounted and appear as the `/sd` directory in the device's internal file system.  
 
-It should be noted that the root directory is only used to mount the SD card or SPIFFS flash card. All other file operations happen in the `/flash` or `/sd` directories, as deterimed by the format of the memory card discovered at boot time.  
+It should be noted that the root directory is only used to mount the SD card or SPIFFS flash card. All other file operations happen in the `/flash` or `/sd` directories, as determined by the format of the memory card discovered at boot time.  
 
 
 ## Navigating the file system
@@ -56,14 +56,14 @@ Like we write code
 print("hello maixpy")
 ```
 
-Then press the `Ctrl+S` press `Enter` button to save, and `Ctrl+Q` to exit the editor.
+When you have finished editing, press `Ctrl+S` and then press `Enter` to save, and then press `Ctrl+Q` to exit the editor.
 
 **Note** : The pye editor has certain requirements of the connected terminal. For intuitive operation the `BackSpace` key should be configured to send `Ctrl+?`, otherwise the `BackSpace` key will function as `Ctrl+H` (ie: character replacement).
 
 Linux users are recommended to use `minicom`. Use `sudo minicom -s` to set the reference to [the previous tutorial](power_on.md)
 
 Windows users can use [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) which supports Backspace key configuration.
-![PuTTY Backspace Configuation](./assets/Maix_pye_putty_backspace_config.png)
+![PuTTY Backspace Configuration](./assets/Maix_pye_putty_backspace_config.png)
 
 
 **Note** Typing Shift-Backspace will cause PuTTY to send whichever code isn't configured as the default.
@@ -92,7 +92,7 @@ Then double click file name to read and edit, click `save` button to download fi
 
 ### Method C: Read files to PC by [rshell](https://github.com/dhylands/rshell), edit, and then save back to board
 
-Install [rshell](https://github.com/dhylands/rshell) fisrt according to the doc of `rshell`
+Install [rshell](https://github.com/dhylands/rshell) first according to the doc of `rshell`
 
 ```python
 sudo apt-get install python3-pip
@@ -133,9 +133,9 @@ with open("hello.py") as f:
 
 ### Method C: Run using uPyLoader
 
-Just select the file, then click `excute` button
+Just select the file, then click the `execute` button
 
-### Dethod D: Run files locally on PC with ampy
+### Method D: Run files locally on PC using ampy
 
 [ampy](https://github.com/pycampers/ampy) 
 
