@@ -72,26 +72,30 @@ while True:
 ## About this documentation
 
 Everything related to MaixPy, mainly about
-* How to get the hardware (the board).
-* How to get started with MaixPy even if you are not an expert in hardware programming.
+* How to choose and get a suitable module/development board
+* How to get started with MaixPy, even if you are not an expert in hardware programming.
 * Learn MicroPython language basics
 * Libraries (API) reference
 
 ## Let's get started
 
-To get started, we need one dev board, there are three kind of boards:
+First of all, we need to choose a development board that suits your needs. The following ones are currently available:
 
 * Dan dock with Sipeed M1(Dan) module
 
-![Dan dock](../assets/Dan_Dock.png)
+<img src="../assets/Dan_Dock.png" alt="BiT" style="width: 450px;">k.png)
 
 * Sipeed Maix BiT
 
-![BiT](../assets/BiT.png)
+<img src="../assets/BiT.png" alt="BiT" style="width: 500px;">
 
-* Sipeed Go
+* Sipeed Maix Go
 
-![Go](../assets/Go.jpg)
+<img src="../assets/Go.jpg" alt="BiT" style="width: 500px;">
+
+* Sipeed Maixduino
+
+<img src="../assets/maixduino_0.png" alt="Maixduono" style="width: 500px;">
 
 To get any of those boards, visit [Sipeed Official Website](https://sipeed.com/)
 
@@ -100,11 +104,28 @@ More hardware infomation [here](en/hardware/hardware.md)
 We can now start writing software, refer to [get started](en/get_started.md)
 
 
-## Source code
+## Video tutorial
 
-MaixPy source code [on GitHub](https://github.com/sipeed/MaixPy)
+This video will briefly introduce the basics to get started. To get more in-depth, please check the documentation.
 
-Maintained by &copy;<a href="https://www.sipeed.com" style="color: #f14c42">Sipeed</a> Co.,Ltd. More contributors [here](https://github.com/sipeed/MaixPy/graphs/contributors)
+<iframe width="800" height="600" src="//player.bilibili.com/player.html?aid=52613549&cid=92076022&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+<br / >
+<br / >
+
+
+## MaixPy source code
+
+If you want to participate in the development of MaixPy's built in features, you can download the source code and do a pull request.
+
+MaixPy source is hosted on [GitHub](https://github.com/sipeed/MaixPy)
+
+| Branch | Status |
+| ------ | ------ |
+| master | [![Build Status](https://travis-ci.org/sipeed/MaixPy.svg?branch=master)](https://travis-ci.org/sipeed/MaixPy) |
+
+
+This project was started by &copy;<a href="https://www.sipeed.com" style="color: #f14c42">Sipeed</a> Co.,Ltd. and accepts contributions from the open source community. You can see who contributed by checking the [list of contributors](https://github.com/sipeed/MaixPy/graphs/contributors)
 
 
 ## Source code of MaixPy documentation

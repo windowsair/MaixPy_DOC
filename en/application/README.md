@@ -2,8 +2,8 @@ Integrated Application
 =========
 
 
-* [pye](./pye.md): file editor integrated to Maixpy
-* [nes](./nes.md): nes game emulator
+* [pye](./pye.md): Integrated MaixPy file editor. Directly edit files on the board using the serial port.
+* [nes](./nes.md): NES game emulator
 * [lvgl](./lvgl.md): LittlvGL GUI lib
 
 
