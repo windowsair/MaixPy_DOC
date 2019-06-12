@@ -1,99 +1,82 @@
 MaixPy IDE
 =======
 
-
-
 ![helloworld-run.png](./assets/helloworld-run.png)
 
+`MaixPy` uses the `Micropython` syntax, and unlike other languages like `C`, it doesn't need to be compiled. In fact, you don't even need the IDE to use it, you can use the serial terminal.
 
-首先需要弄清： `MaixPy` 使用`Micropython` 脚本语法，所以不像 `C`语言 一样需要编译，其实不用`IDE`也能愉快使用： 使用串口终端工具，后面会介绍
+Using the `IDE` will facilitate real-time editing of the script on the computer, as well as being able to view the camera images in real time, and save files to the development board.
 
-使用 `IDE` 则会方便在电脑上实时编辑脚本并上传到开发板以及直接在开发板上执行脚本，以及在电脑上实时查看摄像头图像、保存文件到开发板等
+Of course, using the `IDE` will take some resources from the board (for the transmission and debugging), however the performance is not noticeably affected.
 
-当然， 使用 `IDE` 因为压缩、传输需要耗费一部分资源，所以性能会有所降低，但对调试来说影响不大
+## MaixPy firmware
 
+To use the `MaixPy IDE` , the firmware must be at least `v0.3.1`, otherwise it won't connect. Check the firmware and IDE version before using it, to ensure normal operation.
 
-
-## MaixPy 固件
-
-要使用`MaixPy IDE` , 固件必须是`v0.3.1` 版本以上, 否则MaixPyIDE上会连接不上， 使用前尽量检查固件版本和 IDE 版本，都更新到最新版以保障能正常使用
-
-
-## 下载安装包
+## Download the installation package
 
 [dl.sipeed.com](http://dl.sipeed.com/MAIX/MaixPy/ide/)
 
-文件列表等说明 请看 最新版本文件夹下的 `readme.txt` 文件
+Check the latest version by reading the `readme.txt` file.
 
+## Installation
 
-## 安装
+#### Using the installer (**Recommended**, simple and convenient)
 
-#### 如果是安装程序(**推荐**，简单方便)
-
-`Windows`直接双击`exe`文件运行安装程序; `Linux`命令行给运行权限然后执行
+For `Windows` run the installer directly by double-clicking the file. For `Linux` you will need to give the file permission and execute it using the command line:
 
 ```
 chmod +x maixpy-ide-linux-x86_64-0.2.2.run
 ./maixpy-ide-linux-x86_64-0.2.2.run
 ```
 
-#### 如果是压缩包(`7z`)
+#### Using a compressed package (`7z`)
 
-则解压到文件夹
+Extract the file to a folder
 
-> 如果系统不支持`7z`， 则需要 [下载 `7z`解压缩工具](https://www.7-zip.org/)，然后用`7z`
+> If your system does not support `7z`， you will need to [download `7z`](https://www.7-zip.org/) and install it.
 
-在`Linux`下也可以双击压缩包进行解压！
-
-如果需要使用终端解压， 可以参考以下命令：
+If on `Linux`, you can use the terminal to decompress the file:
 
 ```bash
 sudo apt install p7zip-full
 7z x maixpy-ide-linux-x86_64-0.2.2-installer-archive.7z -r -omaixpy-ide
-# `-o` 后面直接跟解压缩的路径, 中间没有空格.
+# `-o` is immediately followed by the decompressed path, there is no space in between.
 ```
 
-* 解压后, 执行
-  * 如果是 `Windows`： 直接双击`maixpyide`来执行，可以右键固定到开始页面或者固定到任务栏方便后面使用
-  * `Linux`： 执行
+* After decompression, execute:
+  * On `Windows`： Double-click `maixpyide` to execute. You might want to right-click and pin it to the taskbar or start menu.
+  * On `Linux`： Use the following commands:
 ```
 chmod +x setup.sh
 ./setup.sh
 ./bin/maipyide.sh
 ```
 
+## Test run
 
+Open the IDE and select the model number of the development board in the upper toolbar.
 
-## 测试运行
+`Tool-> Select Board`
 
-打开IDE, 上方工具栏里面选择开发板的型号.
-
-`Tool-> Select Board` (工具->选择开发板)
-
-点击 `connect` 连接 `MaixPy IDE`
+Click on `connect` to make a connection with the `MaixPy IDE`
 
 ![connect-icon.png](./assets/connect-icon.png)
 
-连接成功之后，链接按钮会由绿变红．
+After the connection is successful, the button will turn from green to red.
 
 ![connect-success.png](./assets/connect-success.png)
 
-连接按钮下方是运行按钮，会执行当前编辑区的`py`文件．
-
-
+Below the connection button is the `Run` button, which will execute the current `py` file opened in the editor.
 
 ![helloworld-run.png](./assets/helloworld-run.png)
 
-再次点击运行按钮(红色), 停止运行当前代码．
+Click the `Run` button again to stop the execution.
 
+## Uploading files
 
-## 上传文件
+You will find ways to upload files in the `Tool` dropdown menu.
 
-在 `Tool` 选项中可以选择发送文件
+## Note
 
-
-## 注意
-
-点击连接后，不用和终端同时使用，否则会出现串口占用无法打开
-
-
+Only open one serial port connection at a time, make sure to close the previous connection before opening a new one.

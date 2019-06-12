@@ -48,7 +48,7 @@ Extract the downloaded file to a folder, then double-click kflash_gui.exe to run
 
 Firmware files have the `.bin` or `.kfpkg` extension
 
-如何打包`kfpkg`见 [这里](http://blog.sipeed.com/p/390.html)
+To package `kfpkg` files, check this [link](http://blog.sipeed.com/p/390.html)
 
 Firmware naming instructions:
 
