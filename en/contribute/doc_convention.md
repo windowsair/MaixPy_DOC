@@ -1,13 +1,13 @@
-Document specification
+Documentation Convention
 =======
 
 Documents are built using gitbook and written in simple and efficient Markdown
 
-The documentation source is hosted on [github](https://github.com/sipeed/MaixPy_DOC)
+The documentation source code is hosted on [GitHub](https://github.com/sipeed/MaixPy_DOC)
 
 ## Markdown syntax
 
-If you never touched the basic syntax of Markdown, please take half an hour to learn, recommend the github tutorial: [github Markdown tutorial](https://guides.github.com/features/mastering-markdown/)
+If you've never used the basic syntax of Markdown, please take half an hour to learn. We recommend the GitHub tutorial: [GitHub Markdown Tutorial](https://guides.github.com/features/mastering-markdown/)
 
 In this article, we need to pay attention to the following points:
 
@@ -20,7 +20,7 @@ In this article, we need to pay attention to the following points:
 * This is list item 2
 
 ```
-And the following is not correct, it may cause the parser to parse the error format, etc.
+The following example is not correct, it may cause the parser to parse the file with errors.
 
 ```markdown
 ##This is a secondary title
@@ -52,11 +52,10 @@ text
 
 ```
 
-
 ### Link
 
 Due to the large number of pages and the need to link resources such as images, relative paths are used when writing links.
-Such as the directory structure is as follows
+The directory structure is as follows:
 ```
 Assets/                                     (put public resource files)
        |
@@ -75,7 +74,7 @@ En/
 Zh/
 ```
 
-If you want to show the images in `get_hardware.md`, put the image into the `assets` folder, use the following code to reference the image.
+If you want to show the images in `get_hardware.md`, put the image in the `assets` folder, then use the following code to reference the image:
 ```
 ![pic](assets/pic.png)
 ![pic](../../assets/pic000.png)
@@ -103,7 +102,6 @@ In Micropython, we often use deinit to represent the destructor, instead of sett
 In Micropython, we often use deinit to represent the destructor, instead of setting the default value like STM32.
 
 ---------
-
 
 ## Directory and file name
 

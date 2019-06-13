@@ -1,16 +1,13 @@
 lvgl [LittlevGL](https://littlevgl.com/)
 ===========
 
-
-refer official doc: [lvgl blog page](https://blog.littlevgl.com/2019-02-20/micropython-bindings)
-
-
+Refer to the official documentation: [lvgl blog page](https://blog.littlevgl.com/2019-02-20/micropython-bindings)
 
 ## Demo
 
-### Demo 1: Push Buttion
+### Demo 1: Buttion
 
-Create a push button
+Display a button and tap it using the touchscreen
 
 ```python
 import lvgl as lv
@@ -54,5 +51,3 @@ while True:
 		pass
 
 ```
-
-

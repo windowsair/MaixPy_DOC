@@ -1,14 +1,12 @@
-Participate in the contribution
+Contribute to the project
 =======
 
-Since it is an open source project, everyone is welcome to join in to improve MaixPy.
+Since this is an open source project, everyone is welcome to join in and improve MaixPy.
 
-Due to the large number of people, we need a common agreement (including format, style, etc.)
+Due to the large number of people, we need a code convention (including format, style, etc.)
 
-There are mainly the following aspects that can be involved:
+The following documents describe the coding convention for both the documentation and code:
 
-* [document modification](doc_convention.md)
+* [Documentation convention](doc_convention.md)
 
-* [MaixPy firmware bug fix, feature optimization, feature addition, etc.](code_convention.md)
-
-
+* [Code convention](code_convention.md)
