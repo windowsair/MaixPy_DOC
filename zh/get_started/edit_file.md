@@ -47,7 +47,18 @@ Windows 下也一样， 根据自己使用的工具上网搜设置方法， 比�
 把delete和backspace序列改为 ASCII 127即可。
 ```
 
-### 方法二： 使用工具 [uPyLoader](https://github.com/BetaRavener/uPyLoader) 读取到 PC（电脑） 上编辑后再保存到开发板
+### 方法二： 使用 MaixPy IDE
+
+打开 `MaixPy IDE`， 连接开发板
+
+编辑文件，然后在顶端`Tool`（工具）菜单中，点击`将打开的文件保存为 boot.py` 来将代码保存到开发板的`boot.py`文件，中，下次开发板开机上电会自动执行这个文件
+
+当然也可以使用顶端`Tool`(工具)菜单中的`发送文件`功能来发送文件，会保存到开发板并且文件名和电脑上的文件名相同
+
+![](../../assets/maixpyide_tool.png)
+
+
+### 方法三： 使用工具 [uPyLoader](https://github.com/BetaRavener/uPyLoader) 读取到 PC（电脑） 上编辑后再保存到开发板
 
 下载可执行文件:[release](https://github.com/BetaRavener/uPyLoader/releases)
 
@@ -60,7 +71,7 @@ Windows 下也一样， 根据自己使用的工具上网搜设置方法， 比�
 然后双机文件名即可打开文件并编辑，编辑完成后点击 `save` 来保存到开发板即可
 
 
-### 方法三： 使用工具 [rshell](https://github.com/dhylands/rshell) 读取到 PC（电脑） 上编辑后再保存到开发板
+### 方法四： 使用工具 [rshell](https://github.com/dhylands/rshell) 读取到 PC（电脑） 上编辑后再保存到开发板
 
 按照 `rshell` [项目主页](https://github.com/dhylands/rshell)的说明安装好 `rshell`
 
@@ -102,12 +113,18 @@ with open("hello.py") as f:
 
 ```
 
-### 方法三： 使用 uPyLoader 来执行
+### 方法三： 使用 `MaixPy IDE` 来执行
+
+打开文件， 然后点击执行按钮来执行
+
+![](assets/connect-success.png)
+
+### 方法四： 使用 uPyLoader 来执行
 
 连接好后选中文件， 点击 `excute` 按钮来执行文件
 
 
-### 方法四： 使用 ampy 来直接运行电脑上的文件
+### 方法五： 使用 ampy 来直接运行电脑上的文件
 
 [ampy](https://github.com/pycampers/ampy) 
 

@@ -57,21 +57,7 @@ sudo minicom
 
 要退出`minicom`， 按 `Ctrl+A` `X`，按 `Enter` 确认退出即可
 
-
-#### Screen
-
-```
-sudo apt update
-sudo apt install screen
-sudo screen /dev/ttyUSB0 115200
-```
-然后点击回车键，即可看到 MaixPy 的交互界面了
-
-`>>>`
-
-输入 `help()`，可以查看帮助
-
-要退出`screen`， 按 `Ctrl+A` `K`，然后按 `Y` 确认退出即可
+> 另外，在开发过程中可能串口号会变， 可以在执行 minicom 的时候指定串口号，这样就不用每次串口号变了都设置一遍了，比如：` minicom -D /dev/ttyUSB1 -b 115200`
 
 
 ### Windows
@@ -80,11 +66,15 @@ sudo screen /dev/ttyUSB0 115200
 
 然后选择串口模式， 然后设置串口和波特率，打开串口。
 
+![](../../assets/putty.png)
+
 然后点击回车键，即可看到 MaixPy 的交互界面了
 
 `>>>`
 
 输入 `help()`，可以查看帮助
+
+> 上图来源： [laurentopia 的上手教程](https://github.com/laurentopia/Learning-AI/wiki/MaixPy)
 
 
 

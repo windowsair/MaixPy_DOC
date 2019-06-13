@@ -115,7 +115,7 @@ while True:
 ### 例程2
 ```python
 from Maix import I2S
-from Maix import AUDIO
+from Maix import Audio
 from Maix import FFT
 import time
 fm.register(20,fm.fpioa.I2S0_IN_D0)
@@ -134,7 +134,7 @@ tx.set_sample_rate(16000)
 
 while True:
     audio = rx.record(256)
-    audio_data = audio.tobyte()
-    play_audio = AUDIO(audio_data)
+    audio_data = audio.to_bytes()
+    play_audio = Audio(audio_data)
     tx.play(play_audio)
 ```

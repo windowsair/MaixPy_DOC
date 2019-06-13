@@ -14,7 +14,7 @@ MaixPy 是将 [Micropython](http://micropython.org/) 移植到 [K210](https://ke
 
 > MicroPython 是基于 Python3 的语法做的一款解析器，包含了 Python3 的大多数基础语法， 主要运行在性能和内存有限的嵌入式芯片上。（注意 Micropython 不包含 Python3 的所有语法）
 
-> K210 在硬件上集成了机器视觉和机器听觉能力， 是一款定位 AI 和 AIOT 市场的SoC，同时也是一颗方便的MCU。 
+> K210 在硬件上集成了机器视觉和机器听觉能力， 是一款定位 AI 和 AIOT 市场的SoC，同时也是一颗方便的MCU， 性能强劲的同时却有着极低的价格。
 
 
 Micropython 让我们在 K210 上编程更加简单快捷， 我们也将源代码开源在 [github](https://github.com/sipeed/MaixPy) 上
@@ -76,38 +76,59 @@ while True:
 所有关于 MaixPy 的内容， 包括：
 * 如何选择并得到一款合适自己的模块或者开发板
 * 如何开始上手使用
-* 学习关于 Micropython 的基础知识
 * 库和接口（API）文档查询
 
 ## 让我们开始打开 MaixPy 的神奇大门吧
 
 首先我们选择一款适合自己的开发板， 目前有如下几款高性价比的开发板（核心板）：
 
-* 使用了 Sipeed M1(荔枝丹) 模块的 Dan dock
+* 使用了 Sipeed M1 模块的 Dan dock
 
-![Dan dock](../assets/Dan_Dock.png)
+<img src="../assets/Dan_Dock.png" alt="BiT" style="width: 450px;">
 
 * Sipeed Maix BiT
 
-![BiT](../assets/BiT.png)
+<img src="../assets/BiT.png" alt="BiT" style="width: 500px;">
 
-* Sipeed Go
+* Sipeed Maix Go
 
-![Go](../assets/Go.jpg)
+<img src="../assets/Go.jpg" alt="BiT" style="width: 500px;">
+
+* Sipeed Maixduino
+
+<img src="../assets/maixduino_0.png" alt="Maixduono" style="width: 500px;">
 
 
-要获得这些板子，可以访问Sipeed（矽速）官网[Sipeed official website](https://sipeed.com/)，或者[官方淘宝店](https://shop152705481.taobao.com/)
+更多硬件的资料请看 [Wiki 开发板介绍](https://wiki.sipeed.com/zh/maix/board/)
 
-更多硬件的资料点击[这里](en/hardware/hardware.md)查看
+要获得这些板子，可以访问Sipeed（矽速）官网[www.sipeed.com](https://sipeed.com/)，或者[官方淘宝店](https://shop365481095.taobao.com/)
 
-然后[开始探索如何使用MaixPy吧](en/get_started.md)
+
+然后请**仔细查看左边目录**，然后开始使用吧～～
+
+## 视频入门教程
+
+视频简单介绍了基本的上手内容，事实上文档上会更加详细， 视频只是提供一个比较直观的入门参考：
+
+<iframe width="800" height="600" src="//player.bilibili.com/player.html?aid=52613549&cid=92076022&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+建议进入[Bilibili](https://www.bilibili.com/video/av52613549?zw)登录看高清版本哦， 如果觉得节奏太慢可以右键调速滴～
+
+<br / >
+<br / >
+
 
 ## MaixPy 源码
 
-MaixPy 源码是指 运行在 K210 上的 Micropython 的解析器， 使用 `C语言` 编写，如果只是想使用MaixPy，不需要了解源码；
+`MaixPy` 源码是指 运行在 `K210` 上的 `Micropython` 的解析器， 使用 `C语言` 编写，如果只是想使用MaixPy，不需要了解源码；
 如果想参与开发MaixPy的内置功能，可以下载进行开发，欢迎大家提交`PR`
 
 MaixPy 源码托管在 [github](https://github.com/sipeed/MaixPy)
+
+|   分支     |   自动构建状态  |
+| --------- | --------------- |
+| master |  [![Build Status](https://travis-ci.org/sipeed/MaixPy.svg?branch=master)](https://travis-ci.org/sipeed/MaixPy)   |
+
 
 本项目主要由 &copy;<a href="https://www.sipeed.com" style="color: #f14c42">Sipeed</a> Co.,Ltd. 维护， 并接受来自开源社区的贡献， 具体贡献这见[贡献者列表](https://github.com/sipeed/MaixPy/graphs/contributors)
 
@@ -131,8 +152,7 @@ MaixPy 源码托管在 [github](https://github.com/sipeed/MaixPy)
 
 关于本文档或者功能或者源码方面的问题，也欢迎提交issue:
 
-* [文档 反馈](https://github.com/sipeed/MaixPy_DOC/issues)
-* [源码/功能 反馈](https://github.com/sipeed/MaixPy/issues)
+* [反馈](https://github.com/sipeed/MaixPy/issues)
 
 ------------
 

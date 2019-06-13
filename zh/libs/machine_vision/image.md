@@ -35,9 +35,9 @@ while True:
 import sensor
 import image
 import lcd
-import clock
+import time
 
-clock = clock.clock()
+clock = time.clock()
 lcd.init()
 sensor.reset()
 sensor.set_pixformat(sensor.RGB565)
@@ -59,9 +59,9 @@ while True:
 import sensor
 import image
 import lcd
-import clock
+import time
 
-clock = clock.clock()
+clock = time.clock()
 lcd.init()
 sensor.reset()
 sensor.set_pixformat(sensor.RGB565)

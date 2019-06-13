@@ -1,54 +1,83 @@
-Edit and execute the file
+Editing, saving and executing files
 =====
 
-
-## MaixPy has a built-in file system
-
-Support Flash to use `SPIFFS` (not currently support creating directories), by default assigned to `3MB` `SPIFFS` ( start at flash address `0xD00000`), boot automatically hang on to `/flash` the directory
-
-Also supports the FAT format SD (TF) card, boot automatically linked in to `/sd` the directory
-
-It should be noted that the root directory is only used to mount the SD card or Flash, specific file `/flash` or `/sd` directory
-
-## Why do I need to edit and execute the file?
-
-In the front [powering LED](led_blink.md) experiment, we performed a one directly inside the terminal entering code, so that also simple, we will enter the command executed immediately and promptly returns the data, this interaction is called `REPL（Read Eval Print Loop：Interactive interpreter）`, in this way The advantage is that it is simple and convenient, and it is very similar to the Linux terminal, except that the syntax used is replaced by the MaixPy (Micropython) syntax.
-
-But in most cases, we would like to write the script to a file and then execute the file, so that we don't have to type the code every time, which reduces a lot of trouble.
+This section teaches you how to edit, save and execute files.
 
 
-## Edit and save the file
+## REPL interface
 
-### Way A: Edit by [Micropython Editor(pye)](https://github.com/robert-hh/Micropython-Editor) that integrated in maixpy
+To keep things simple in the [previous example](led_blink.md), we entered code directly in the terminal at the Maix prompt which was executed immediately upon pressing the Enter key.  Such interactive command line interfaces are often referred to as [`REPL（Read Eval Print Loop)`](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop). MaixPy's REPL interface operates similar to most other command line interfaces except that the supported syntax is [MicroPython](http://docs.micropython.org/en/latest/reference/repl.html)
 
-In MaixPy, we have a built-in open source editor [Micropython Editor(pye)](https://github.com/robert-hh/Micropython-Editor)
+While MaixPy's REPL interface is simple and convenient for small tasks, it soon becomes annoying to re-enter your code each time you want to run it.  The solution is to save your code to a file, and then execute the file.  The remainder of this page describes that process.
 
-Use `os.listdir()` can view the files in the current directory,
 
-Use `pye("hello.py")` can create a file and enter the edit mode, keyboard shortcuts and other instructions can be found [here](https://github.com/robert-hh/Micropython-Editor/blob/master/Pyboard%20Editor.pdf)
+## MaixPy file system
 
-Like we write code
+MaixPy devices have an internal file system which can access both internal and external memories.  During boot, the device will mount any external memory cards formatted with either SPIFFS or FAT file systems, and add them to the internal file system as the `/flash` or `/sd` directories respectively.  
+
+NOTES:
+
+SPIFFS cards are by default assigned to `3MB` `SPIFFS` (starting at flash address `0xD00000`). When detected at boot, SPIFFS devices automatically appear as the `/flash` directory within the device's internal file system.  Currently the `SPIFFS` implementation in MaixPy does not support the creation of directories. 
+
+FAT formatted SD (TF) cards are supported, but FAT32 or exFAT formatted cards are not currently supported.  When detected at boot, FAT formatted cards will be automatically mounted and appear as the `/sd` directory in the device's internal file system.  
+
+It should be noted that the root directory is only used to mount the SD card or SPIFFS flash card. All other file operations happen in the `/flash` or `/sd` directories, as determined by the format of the memory card discovered at boot time.  
+
+
+## Navigating the file system
+
+In MaixPy's REPL interface and in code the following os commands can be used to navigate directories and manage files.
+
+| Command | Description | Example |
+|:------- |:----------- |:--------|
+|`os.chdir()`| changes the current directory | `os.chdir("/flash")` |
+|`os.listdir()` | list the files in the current directory | `os.listdir()` |
+| `os.listdir(path)` | list the files in another directory | `os.listdir("/sd")`|
+|`os.getcwd()`| return the current working directory | `os.getcwd()`|
+|`os.rename(old_path, new_path)`| rename a file | `os.rename("./blue.py", "./aaah.py")`|
+|`os.remove(path)`| remove a file | `os.remove("./herring.py")`|
+
+For a complete list of os commands refer to the [MicroPython documentation](http://docs.micropython.org/en/v1.7/esp8266/library/os.html)
+
+
+## Editing and saving files
+
+There are a number of ways you can edit and save files described below as Methods A through C
+
+### Method A: Edit and save files using the [pye editor](https://github.com/robert-hh/Micropython-Editor) built into MaixPy
+
+MaixPy includes a built-in open source editor [Micropython Editor(pye)](https://github.com/robert-hh/Micropython-Editor)
+
+At the REPL interface enter `pye("hello.py")` to create a file and enter the edit mode. Keyboard shortcuts and other instructions can be found [here](https://github.com/robert-hh/Micropython-Editor/blob/master/Pyboard%20Editor.pdf)
+
+Enter the following code:
 
 ```python
 print("hello maixpy")
 ```
 
-Then press the `Ctrl+S` press `Enter` button to save, according to `Ctrl+Q` exit edit
+When you have finished editing, press `Ctrl+S` and then press `Enter` to save, and then press `Ctrl+Q` to exit the editor.
 
-**Note** : Use this editor has certain requirements for the use of serial tool, you must be `BackSpace` key as a `DEL` function, or else the `BackSpace` call is `Ctrl+H` the same function (ie, character replacement).
+**Note** : The pye editor has certain requirements of the connected terminal. For intuitive operation the `BackSpace` key should be configured to send `Ctrl+?`, otherwise the `BackSpace` key will function as `Ctrl+H` (ie: character replacement).
 
-Linux recommended use `minicom`, you need `sudo minicom -s` to set the reference to [the previous tutorial](power_on.md)
+Linux users are recommended to use `minicom`. Use `sudo minicom -s` to set the reference to [the previous tutorial](power_on.md)
 
-Under Windows, too, according to their own use of the Internet search tool setting methods, such as `xshell` search `Xshell how to set backspace to del` to get results:
+Windows users can use [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) which supports Backspace key configuration.
+![PuTTY Backspace Configuration](./assets/Maix_pye_putty_backspace_config.png)
+
+
+**Note** Typing Shift-Backspace will cause PuTTY to send whichever code isn't configured as the default.
+
+Alternatively, Xshell users can use:
 
 ```
 File → Properties → Terminal → Keyboard,
 Change the delete and backspace sequences to ASCII 127.
 ```
 
-### Way B: Read files to PC by [uPyLoader](https://github.com/BetaRavener/uPyLoader), then download to board after edit
+### Method B: Read files to PC by [uPyLoader](https://github.com/BetaRavener/uPyLoader), then download to board after editing
 
-[uPyLoader](https://github.com/BetaRavener/uPyLoader)
+This method uses the [uPyLoader](https://github.com/BetaRavener/uPyLoader) utility
 
 Download the executable: [release](https://github.com/BetaRavener/uPyLoader/releases)
 
@@ -58,11 +87,11 @@ Select the serial port and click the `Connect` button to connect the board
 
 The first time you run the software, you need to initialize it. Click `File->Init transfer files` to complete the initialization. This will create two files in the board, `__upload.py` and `__download.py`.
 
-Then double click file name to read and edit, click `save` button to download file to board
+Then double click file name to read and edit, then click the `save` button to download the file to board
 
-### Way C: Read files to PC by [rshell](https://github.com/dhylands/rshell), edit, and then save back to board
+### Method C: Read files to PC by [rshell](https://github.com/dhylands/rshell), edit, and then save back to board
 
-Install [rshell](https://github.com/dhylands/rshell) fisrt according to the doc of `rshell`
+Install [rshell](https://github.com/dhylands/rshell) first according to the doc of `rshell`
 
 ```python
 sudo apt-get install python3-pip
@@ -75,37 +104,37 @@ Edit file
 ```python
 ls /flash
 edit /flash/boot.py
-# the edit use vim
+# the editor uses vim commands
 ```
 
 
-## Execution documents
+## Execution of documents
 
-Use `os.chdir()` Change directory to the directory of the current file, such as `os.chdir("/flash")`
+Once MicroPython files exist on the file system they may be executed using the following methods
 
-### Way A: `import`
+### Method A: Execute using `import`
 
-Then execute `import hello`
+At MaixPy's REPL interface simply enter:
+`import hello` then press Enter
 
-You can see the output `hello maixpy`
+The `hello.py` file will run and should output `hello maixpy`
 
-But be attention, `import` command can only use once, if you want to execute code more than once, please use the `Way B`
+But be careful, the `import` command can only be used once.  If you want to execute the code more than once, please use `Method B` below.
 
-### Way B: `exec()`
+### Method B: Execute using `exec()`
 
-Use `exec()` to perform the functions
+Use `exec()` in a simple program to execute your file
 
 ```python
 with open("hello.py") as f:
     exec(f.read())
-
 ```
 
-### Way C: Run in uPyLoader
+### Method C: Execute using uPyLoader
 
-Just select the file, then click `excute` button
+Just select the file, then click the `execute` button
 
-### Way D: Directly run files on PC with ampy
+### Method D: Execute files locally on PC using ampy
 
 [ampy](https://github.com/pycampers/ampy) 
 

@@ -11,15 +11,14 @@ MaixPy Documentation
 MaixPy ported [Micropython](http://micropython.org/) to [K210](https://kendryte.com/) (a 64-bit dual-core RISC-V CPU with hardware FPU and convolution accelerator). A project that supports MCU routine operations and integrates machine vision and microphone arrays to quickly develop intelligent applications in the `AIOT` field that are extremely cost effective and practical.
 
 
-
 > MicroPython is a lean and efficient implementation of the Python 3 programming language that includes a small subset of the Python standard library and is optimised to run on microcontrollers and in constrained environments.
 
 > K210 created for AIOT(AI+IOT) use, It's powerful performance and low cost are very competitive.
 
 
-Micropython make program on hardware(K210) easier, so we build this and open source on [github]((https://github.com/sipeed/MaixPy))
+Micropython makes programming on K210 hardware easier, the code is open source and can be found on [GitHub]((https://github.com/sipeed/MaixPy))
 
-For example if we want to find **I2C** device, we just need code:
+For example if we want to find an **I2C** device, we just need this code:
 ```python
 from machine import I2C
 
@@ -28,8 +27,7 @@ devices = i2c.scan()
 print(devices)
 ```
 
-
-If we want to make a **breathing light** by PWM, we just need code:
+Again, if we want to make a **breathing light** using PWM, we just need this code:
 ```python
 from machine import Timer,PWM
 import time
@@ -53,7 +51,7 @@ while True:
     ch.duty(duty)
 ```
 
-**Take picture**：
+To **take a picture**：
 
 ```python
 import sensor
@@ -73,15 +71,15 @@ while True:
 
 ## About this documentation
 
-Everything related to Maixpy, mainly about
-* How to get a hardware( board )
-* How to get start with MaixPy even we are not so be expert in program for hardware.
-* Learn Micropython basic knowledge
-* Libriaries(API) reference
+Everything related to MaixPy, mainly about
+* How to get the hardware (the board).
+* How to get started with MaixPy even if you are not an expert in hardware programming.
+* Learn MicroPython language basics
+* Libraries (API) reference
 
 ## Let's get started
 
-To get started, we need one dev board, there's three kind of board as follow:
+To get started, we need one dev board, there are three kind of boards:
 
 * Dan dock with Sipeed M1(Dan) module
 
@@ -95,29 +93,29 @@ To get started, we need one dev board, there's three kind of board as follow:
 
 ![Go](../assets/Go.jpg)
 
-To get these board, visit [Sipeed official website](https://sipeed.com/)
+To get any of those boards, visit [Sipeed Official Website](https://sipeed.com/)
 
 More hardware infomation [here](en/hardware/hardware.md)
 
-Then we can write software, refer to [get started](en/get_started.md)
+We can now start writing software, refer to [get started](en/get_started.md)
 
 
 ## Source code
 
-MaixPy source code [on github](https://github.com/sipeed/MaixPy)
+MaixPy source code [on GitHub](https://github.com/sipeed/MaixPy)
 
-Maintained by &copy;<a href="https://www.sipeed.com" style="color: #f14c42">Sipeed</a> Co.,Ltd. More contributor [here](https://github.com/sipeed/MaixPy/graphs/contributors)
+Maintained by &copy;<a href="https://www.sipeed.com" style="color: #f14c42">Sipeed</a> Co.,Ltd. More contributors [here](https://github.com/sipeed/MaixPy/graphs/contributors)
 
 
 ## Source code of MaixPy documentation
 
-Doumentation will be edit if code api changed,
+Doumentation will be edited if the API code is changed.
 
-source of doc on [github](https://github.com/sipeed/MaixPy_DOC)
+The source of the documentation can be found on [GitHub](https://github.com/sipeed/MaixPy_DOC)
 
-You **MUST** read [convention](contribute/doc_convention.md) before edit doc!
+You **MUST** read the [documentation convention](contribute/doc_convention.md) before editing it!
 
-|   branch  |   page build status  |
+|   Branch  |   Status  |
 | --------- | --------------- |
 | master |[![Build Status](https://travis-ci.org/sipeed/MaixPy_DOC.svg?branch=master)](https://travis-ci.org/sipeed/MaixPy_DOC) |
 | dev    |[![Build Status](https://travis-ci.org/sipeed/MaixPy_DOC.svg?branch=dev)](https://travis-ci.org/sipeed/MaixPy_DOC)    |
@@ -125,7 +123,5 @@ You **MUST** read [convention](contribute/doc_convention.md) before edit doc!
 
 ## Feedback
 
-* [Doc feedback](https://github.com/sipeed/MaixPy_DOC/issues)
+* [Documentation feedback](https://github.com/sipeed/MaixPy_DOC/issues)
 * [Code feedback](https://github.com/sipeed/MaixPy/issues)
-
-

@@ -1,11 +1,7 @@
-Get development board
+Getting a development board
 ========
 
-
-
-Get your favorite hardware from Sipeed's official Taobao store： [Taobao](https://shop365481095.taobao.com/)
-
-
+Get your favorite hardware from [Sipeed's official Taobao store](https://shop365481095.taobao.com/)
 
 ## Required hardware
 
@@ -17,23 +13,21 @@ Choose a board [here](../hardware/board.md)
 
 ![Type-C](../../assets/type_c.png)
 
-Type-C is chosen because it supports positive and negative insertion and is very friendly to development.
+Type-C is chosen because it's reversible and it's very friendly for development.
 
-Buy from Taobao official can ask if it is included, most of the current Android machines are also using Type C cable
+If you're buying from the official Taobao store, you can ask them to include it with your order. Type-C cables are also very common with Android phones.
 
 ### Screen
 
-By default, the LCD (24pin interface) of the st7789 driver chip is used with a resolution of 320x240.
+By default, the LCD (24-pin interface) of the st7789 driver chip is used with a resolution of 320x240.
 
-Buy from Taobao official can ask if it contains
+If you're buying from the official Taobao store, you can ask them to include it with your order.
 
 ### Camera
 
-Use ov2640 by default
+Uses ov2640 by default
 
-Buy from Taobao official can ask if it contains
-
-
+If you're buying from the official Taobao store, you can ask them to include it with your order.
 
 ### Micro SD Card (TF Card) (optional)
 
@@ -49,14 +43,12 @@ As shown below, the two cards on the left are not supported by the MaixPy driver
 
 ![](../../assets/TF.png)
 
-
 ### ST-Link (used to update the firmware of the STM32 on the development board Maix Go) (optional)
 
-If you purchase `Maix Go`, it integrates a `STM32` chip to simulate the 'USB to serial' tool, and simulate `JTAG`. If you want to update its firmware later, it is recommended to buy a `ST-Link` Spare
+If you purchase a `Maix Go`, it has an embedded `STM32` chip to simulate the USB-to-Serial converter, as well as `JTAG`. If you want to upgrade its firmware later on, it is recommended to buy an `ST-Link` programmer.
 
 ### JTAG Debugger (optional)
 
-`K210` This chip supports `JTAG` debugging. If you need debugging function, you need to use `JTAG` debugger. Please consult the official `Sipeed` Taobao shop.
+The `K210`  chip supports `JTAG` debugging. If you need to debug, you will need to use the `JTAG` debugger. Please check the official `Sipeed` Taobao store to buy one.
 
-If you are a `Maix Go` development board, you don't need to purchase the `JTAG` debugger separately. The `Max Go` development board has an integrated `STM32` chip that can emulate `JTAG` (`STM32` uses `CMSIS-DAP` or `open-ec` firmware), `open-ec` firmware is not currently supported, will be supported later, please refer to the `open-ec` github project home page description
-
+If you are using a `Maix Go` development board, you won't need to purchase the `JTAG` debugger separately. The `Max Go` development board already has an integrated `STM32` chip that can emulate `JTAG` (`STM32` uses `CMSIS-DAP` or `open-ec` firmware), `open-ec` firmware is currently not supported, support will be added later. Please refer to the `open-ec` GitHub project page for more information.
