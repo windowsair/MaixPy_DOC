@@ -1,13 +1,23 @@
 network
 =========
+
 该模块用于初始化各种网卡驱动，网卡具有连接路由，断开路由，查看网卡连接信息，检查是否连接等功能。
 
+使用`WiFi`请确保已经接上了天线
+
+### [esp8285](#ESP8285_Module)
 在部分开发板上带了 一个 使用`AT`方式交互的网卡模块，比如`esp8285`，与`k210`通过串口连接
 
 引脚`8`是使能脚，可以创建一个`GPIO`对象来控制它的高低电平来实现使能和失能，也可以用它复位（先低后高），复位后需要等待一小段时间才能操作，
 可以查看例程[wifi_ap_scan.py](https://github.com/sipeed/MaixPy_scripts/blob/master/network/demo_wifi_ap_scan.py)
 
-使用`WiFi`请确保已经接上了天线
+### [esp32](#ESP32_Module)
+目前在`MaixDuino`开发板中有一个 `esp32` 模块通过 `spi` 与`k210`相连
+同时也有单独的`TF`插卡式模块
+
+
+ESP8285_Module
+=========
 
 ## network.ESP8285(uart)
 
@@ -211,3 +221,39 @@ nic.enable_ap("maixpy", "12345678", 5, network.ESP8285.OPEN)
 
 参考[network目录下的例程](https://github.com/sipeed/MaixPy_scripts/tree/master/network)
 
+ESP32_Module
+=========
+
+## network.ESP32_SPI(cs,rst,rdy,mosi,miso,sclk)
+
+构造一个`ESP32_SPI`网卡对象，需要传入对应的`GPIOHS FUNC`
+
+如果传入参数数量不对，会返回错误
+
+
+### 参数
+
+* 对应引脚功能的 `fpioa_func`
+
+### 返回值
+
+* `ESP32_SPI` 网卡对象
+
+
+## ESP32_SPI
+
+### adc
+
+读取`esp32`模块的`adc`值
+
+#### 参数
+
+无
+
+#### 返回值
+
+`tunple`，5个通道的`adc`值<br>顺序是`"PIN36", "PIN39", "PIN34", "PIN35", "PIN32"`
+
+#### 例程
+
+[demo_esp32_read_adc.py](https://github.com/sipeed/MaixPy_scripts/blob/master/network/demo_esp32_read_adc.py)
