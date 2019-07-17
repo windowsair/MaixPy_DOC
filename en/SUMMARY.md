@@ -91,6 +91,7 @@ Summary
 
 - [Code compilation](advanced/compile.md)
 - [Code structure](advanced/code_struct.md)
+- [Pack spiffs](https://github.com/sipeed/MaixPy/tree/master/tools/spiffs)
 
 ## Others
 

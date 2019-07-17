@@ -79,6 +79,7 @@ Summary
 
 - [代码编译](advanced/compile.md)
 - [代码结构](advanced/code_struct.md)
+- [Pack spiffs](https://github.com/sipeed/MaixPy/tree/master/tools/spiffs)
 
 ## 其它
 
