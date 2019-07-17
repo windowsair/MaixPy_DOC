@@ -88,7 +88,7 @@ fm.register(23, fm.fpioa.GPIOHS23)
 fm.register(21, fm.fpioa.GPIOHS21)
 
 lcd.init(freq=15000000)
-nes.init(nes.JOYSTICK, cs=19, clk=18, mosi=23, miso=21)
+nes.init(nes.JOYSTICK, cs=fm.fpioa.GPIOHS19, clk=fm.fpioa.GPIOHS18, mosi=fm.fpioa.GPIOHS23, miso=fm.fpioa.GPIOHS21)
 nes.run("/sd/mario.nes")
 
 ```
