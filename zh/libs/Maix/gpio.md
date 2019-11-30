@@ -165,7 +165,7 @@ GPIO.pull(PULL)
 
   ​	• GPIO.IRQ_RISING 上升沿触发
 
-  ​	• GPIO.IRQ_RISING 下降沿触发
+  ​	• GPIO.IRQ_FALLING 下降沿触发
 
   ​	• GPIO.IRQ_BOTH  上升沿和下降沿都触发
 
@@ -221,7 +221,7 @@ GPIO.pull(PULL)
 * `GPIO.PULL_DOWN`:下拉
 * `GPIO.PULL_NONE`:即不上拉也不下拉
 * `GPIO.IRQ_RISING`:上升沿触发
-* `GPIO.IRQ_RISING`:下降沿触发
+* `GPIO.IRQ_FALLING`:下降沿触发
 * `GPIO.IRQ_BOTH`:上升沿和下降沿都触发
 
 
