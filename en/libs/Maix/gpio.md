@@ -104,7 +104,7 @@ GPIO.irq(CALLBACK_FUNC, TRIGGER_CONDITION, GPIO.WAKEUP_NOT_SUPPORT, PRORITY)
 
   • GPIO.IRQ_RISING rising edge trigger
 
-  • GPIO.IRQ_RISING falling edge trigger
+  • GPIO.GPIO.IRQ_FALLING falling edge trigger
 
   • GPIO.IRQ_BOTH is triggered on both rising and falling edges
 
