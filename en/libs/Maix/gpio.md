@@ -104,7 +104,7 @@ GPIO.irq(CALLBACK_FUNC, TRIGGER_CONDITION, GPIO.WAKEUP_NOT_SUPPORT, PRORITY)
 
   • GPIO.IRQ_RISING rising edge trigger
 
-  • GPIO.IRQ_RISING falling edge trigger
+  • GPIO.GPIO.IRQ_FALLING falling edge trigger
 
   • GPIO.IRQ_BOTH is triggered on both rising and falling edges
 
@@ -163,7 +163,7 @@ GPIO.pull(PULL)
 
   • GPIO.IRQ_RISING rising edge trigger
 
-  • GPIO.IRQ_RISING falling edge trigger
+  • GPIO.IRQ_FALLING falling edge trigger
 
   • GPIO.IRQ_BOTH is triggered on both rising and falling edges
 
@@ -219,7 +219,7 @@ no
 * `GPIO.PULL_DOWN`: drop down
 * `GPIO.PULL_NONE`: does not pull up or pull down
 * `GPIO.IRQ_RISING`: rising edge trigger
-* `GPIO.IRQ_RISING`: falling edge trigger
+* `GPIO.IRQ_FALLING`: falling edge trigger
 * `GPIO.IRQ_BOTH`: Both rising and falling edges are triggered
 
 
