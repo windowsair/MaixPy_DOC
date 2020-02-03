@@ -1,0 +1,1384 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>nes · MaixPy 文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="sipeed">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search-title/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../styles/website.css">
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="lvgl.html" />
+    
+    
+    <link rel="prev" href="pye.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+    <nav role="navigation" class="autoshow">
+        <ul class="summary">
+        <li><a href="https://www.sipeed.com" class="btn" target="_blank"><img src="/assets/icon_sipeed2.png" height="30" /></a></li>
+        <li><a href="#" class="btn" onclick="toggleLanguage()">English</a></li>        
+        
+        
+        <li class="version-link">
+            <a href="#" class="btn" style="color:#444"></i>Version: <span style="font-weight: bold; display: inline"><i class='fa fa-angle-down'></i></span></a>
+            <ul class="hovershow">
+                
+                <li><a href="/zh/" class="btn">Version: <span style="font-weight:bold; display: inline">master</span></a></li>
+                
+                <li><a href="/dev/zh/" class="btn">Version: <span style="font-weight:bold; display: inline">dev</span></a></li>
+                
+            </ul>
+        </li>                
+        
+                 
+        
+        
+        <li><a href="http://blog.sipeed.com" class="btn"><i ></i>博客</a></li>
+        
+    
+        
+        <li><a href="https://bbs.sipeed.com/" class="btn"><i ></i>论坛</a></li>
+        
+    
+        
+        <li>
+            <a href="#" class="btn"><i ></i>反馈</a>
+            <ul>
+                
+                <li><a href="https://github.com/sipeed/MaixPy_DOC/issues" class="btn">文档</a></li>
+                
+                <li><a href="https://github.com/sipeed/MaixPy/issues" class="btn">源码</a></li>
+                
+            </ul>
+        </li>                
+        
+          
+        </ul>
+    </nav>
+    
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">简介</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    关于MaixPy
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../others/what_maix_do.html">
+            
+                <a href="../others/what_maix_do.html">
+            
+                    
+                    Maix能做哪些事
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../get_started/how_to_read.html">
+            
+                <a href="../get_started/how_to_read.html">
+            
+                    
+                    如何正确阅读本文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">准备</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../get_started/get_hardware.html">
+            
+                <a href="../get_started/get_hardware.html">
+            
+                    
+                    获得开发板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="../get_started/prepare_knowledge.html">
+            
+                <a href="../get_started/prepare_knowledge.html">
+            
+                    
+                    必备基础知识
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="../get_started/maixpy_get_started_video.html">
+            
+                <a href="../get_started/maixpy_get_started_video.html">
+            
+                    
+                    上手视频教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="../get_started/upgrade_firmware.html">
+            
+                <a href="../get_started/upgrade_firmware.html">
+            
+                    
+                    更新MaixPy固件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="../get_started/maixpyide.html">
+            
+                <a href="../get_started/maixpyide.html">
+            
+                    
+                    安装MaixPyIDE
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">上手</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../get_started/power_on.html">
+            
+                <a href="../get_started/power_on.html">
+            
+                    
+                    点亮板子(开机)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../get_started/led_blink.html">
+            
+                <a href="../get_started/led_blink.html">
+            
+                    
+                    点灯工程师(LED)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="../get_started/edit_file.html">
+            
+                <a href="../get_started/edit_file.html">
+            
+                    
+                    编辑并运行文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="../get_started/upload_script.html">
+            
+                <a href="../get_started/upload_script.html">
+            
+                    
+                    上传脚本到开发板
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="../get_started/boot.html">
+            
+                <a href="../get_started/boot.html">
+            
+                    
+                    开机自动运行脚本
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">功能/库</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" data-path="../libs/standard/">
+            
+                <a href="../libs/standard/">
+            
+                    
+                    标准库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../libs/standard/cmath.html">
+            
+                <a href="../libs/standard/cmath.html">
+            
+                    
+                    cmath
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.2" data-path="../libs/standard/gc.html">
+            
+                <a href="../libs/standard/gc.html">
+            
+                    
+                    gc
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.3" data-path="../libs/standard/math.html">
+            
+                <a href="../libs/standard/math.html">
+            
+                    
+                    math
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.4" data-path="../libs/standard/sys.html">
+            
+                <a href="../libs/standard/sys.html">
+            
+                    
+                    sys
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.5" data-path="../libs/standard/ubinascii.html">
+            
+                <a href="../libs/standard/ubinascii.html">
+            
+                    
+                    ubinascii
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.6" data-path="../libs/standard/ucollections.html">
+            
+                <a href="../libs/standard/ucollections.html">
+            
+                    
+                    ucollections
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.7" data-path="../libs/standard/uctypes.html">
+            
+                <a href="../libs/standard/uctypes.html">
+            
+                    
+                    uctypes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.8" data-path="../libs/standard/uerrno.html">
+            
+                <a href="../libs/standard/uerrno.html">
+            
+                    
+                    uerrno
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.9" data-path="../libs/standard/uheapq.html">
+            
+                <a href="../libs/standard/uheapq.html">
+            
+                    
+                    uheapq
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.10" data-path="../libs/standard/ujson.html">
+            
+                <a href="../libs/standard/ujson.html">
+            
+                    
+                    ujson
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.11" data-path="../libs/standard/uos.html">
+            
+                <a href="../libs/standard/uos.html">
+            
+                    
+                    uos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.12" data-path="../libs/standard/ure.html">
+            
+                <a href="../libs/standard/ure.html">
+            
+                    
+                    ure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.13" data-path="../libs/standard/uselect.html">
+            
+                <a href="../libs/standard/uselect.html">
+            
+                    
+                    uselect
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.14" data-path="../libs/standard/usocket.html">
+            
+                <a href="../libs/standard/usocket.html">
+            
+                    
+                    usocket
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.15" data-path="../libs/standard/ustruct.html">
+            
+                <a href="../libs/standard/ustruct.html">
+            
+                    
+                    ustruct
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.16" data-path="../libs/standard/utime.html">
+            
+                <a href="../libs/standard/utime.html">
+            
+                    
+                    utime
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.1.17" data-path="../libs/standard/uzlib.html">
+            
+                <a href="../libs/standard/uzlib.html">
+            
+                    
+                    uzlib
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="../libs/machine/">
+            
+                <a href="../libs/machine/">
+            
+                    
+                    machine
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.1" data-path="../libs/machine/i2c.html">
+            
+                <a href="../libs/machine/i2c.html">
+            
+                    
+                    I2C
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2" data-path="../libs/machine/pwm.html">
+            
+                <a href="../libs/machine/pwm.html">
+            
+                    
+                    PWM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.3" data-path="../libs/machine/spi.html">
+            
+                <a href="../libs/machine/spi.html">
+            
+                    
+                    SPI
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.4" data-path="../libs/machine/timer.html">
+            
+                <a href="../libs/machine/timer.html">
+            
+                    
+                    Timer
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.5" data-path="../libs/machine/uart.html">
+            
+                <a href="../libs/machine/uart.html">
+            
+                    
+                    UART
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.6" data-path="../libs/machine/network.html">
+            
+                <a href="../libs/machine/network.html">
+            
+                    
+                    network
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="../libs/Maix/">
+            
+                <a href="../libs/Maix/">
+            
+                    
+                    Maix
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.1" data-path="../libs/Maix/fpioa.html">
+            
+                <a href="../libs/Maix/fpioa.html">
+            
+                    
+                    FPIOA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.2" data-path="../libs/Maix/gpio.html">
+            
+                <a href="../libs/Maix/gpio.html">
+            
+                    
+                    GPIO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.3" data-path="../libs/Maix/kpu.html">
+            
+                <a href="../libs/Maix/kpu.html">
+            
+                    
+                    KPU
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.4" data-path="../libs/Maix/fft.html">
+            
+                <a href="../libs/Maix/fft.html">
+            
+                    
+                    FFT
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.5" data-path="../libs/Maix/i2s.html">
+            
+                <a href="../libs/Maix/i2s.html">
+            
+                    
+                    I2S
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.6" data-path="../libs/Maix/audio.html">
+            
+                <a href="../libs/Maix/audio.html">
+            
+                    
+                    audio
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3.7" data-path="../libs/Maix/freq.html">
+            
+                <a href="../libs/Maix/freq.html">
+            
+                    
+                    freq
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="../libs/builtin_py/">
+            
+                <a href="../libs/builtin_py/">
+            
+                    
+                    内置类
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.1" data-path="../libs/builtin_py/fm.html">
+            
+                <a href="../libs/builtin_py/fm.html">
+            
+                    
+                    fpioa_manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.2" data-path="../libs/builtin_py/board_info.html">
+            
+                <a href="../libs/builtin_py/board_info.html">
+            
+                    
+                    board_info
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="../libs/machine_vision/">
+            
+                <a href="../libs/machine_vision/">
+            
+                    
+                    机器视觉
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.5.1" data-path="../libs/machine_vision/lcd.html">
+            
+                <a href="../libs/machine_vision/lcd.html">
+            
+                    
+                    lcd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.2" data-path="../libs/machine_vision/sensor.html">
+            
+                <a href="../libs/machine_vision/sensor.html">
+            
+                    
+                    sensor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.3" data-path="../libs/machine_vision/image.html">
+            
+                <a href="../libs/machine_vision/image.html">
+            
+                    
+                    image
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5.4" data-path="../libs/machine_vision/video.html">
+            
+                <a href="../libs/machine_vision/video.html">
+            
+                    
+                    video
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="../libs/peripheral_modules/">
+            
+                <a href="../libs/peripheral_modules/">
+            
+                    
+                    外设模块
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.6.1" data-path="../libs/peripheral_modules/touchscreen.html">
+            
+                <a href="../libs/peripheral_modules/touchscreen.html">
+            
+                    
+                    touchscreen
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    内置应用
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.7.1" data-path="pye.html">
+            
+                <a href="pye.html">
+            
+                    
+                    Micropython Editor
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.7.2" data-path="nes.html">
+            
+                <a href="nes.html">
+            
+                    
+                    nes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7.3" data-path="lvgl.html">
+            
+                <a href="lvgl.html">
+            
+                    
+                    lvgl
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">进阶 - 定制固件</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" data-path="../advanced/compile.html">
+            
+                <a href="../advanced/compile.html">
+            
+                    
+                    代码编译
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="../advanced/code_struct.html">
+            
+                <a href="../advanced/code_struct.html">
+            
+                    
+                    代码结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" >
+            
+                <a target="_blank" href="https://github.com/sipeed/MaixPy/tree/master/tools/spiffs">
+            
+                    
+                    Pack spiffs
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">其它</li>
+        
+        
+    
+        <li class="chapter " data-level="6.1" >
+            
+                <a target="_blank" href="https://github.com/sipeed/MaixPy_scripts">
+            
+                    
+                    示例脚本
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="../contribute/">
+            
+                <a href="../contribute/">
+            
+                    
+                    贡献
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.2.1" data-path="../contribute/doc_convention.html">
+            
+                <a href="../contribute/doc_convention.html">
+            
+                    
+                    文档风格
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2.2" data-path="../contribute/code_convention.html">
+            
+                <a href="../contribute/code_convention.html">
+            
+                    
+                    代码风格
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="../others/open_projects.html">
+            
+                <a href="../others/open_projects.html">
+            
+                    
+                    开源项目
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="sipeed-navbar navbar-collapse" id="navbar" role="navigation">
+    <ul class="nav navbar-nav">
+        <li><a href="https://www.sipeed.com" class="btn" target="_blank"><img src="/assets/icon_sipeed2.png" height="30" /></a></li>
+        <li><a href="#" class="btn autohide" onclick="toggleLanguage()">English</a></li>           
+
+    
+    <li><a href="http://blog.sipeed.com" class="btn autohide" target="_blank"><i ></i>博客</a></li>
+    
+
+    
+    <li><a href="https://bbs.sipeed.com/" class="btn autohide" target="_blank"><i ></i>论坛</a></li>
+    
+
+    
+    <li>
+        <a href="#" class="btn autohide"><i ></i>反馈</a>
+        <ul class="hovershow">
+            
+            <li><a href="https://github.com/sipeed/MaixPy_DOC/issues" class="btn" target="_blank">文档</a></li>
+            
+            <li><a href="https://github.com/sipeed/MaixPy/issues" class="btn" target="_blank">源码</a></li>
+            
+        </ul>
+    </li>                
+    
+    
+
+    
+    <li class="version-link">
+        <a class="btn" >版本 <span style="font-weight:bold"><i class='fa fa-angle-down'></i></span></a>
+        <ul class="hovershow">
+            
+            <li><a href="/zh/" class="btn">版本: <span style="font-weight:bold">master</span></a></li>
+            
+            <li><a href="/dev/zh/" class="btn">版本: <span style="font-weight:bold">dev</span></a></li>
+            
+        </ul>
+    </li>                
+    
+   
+    </ul>
+</div>
+<div class="book-header" role="navigation">
+    
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >nes</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#nes-&#x6E38;&#x620F;&#x6A21;&#x62DF;&#x5668;"><b> </b>NES &#x6E38;&#x620F;&#x6A21;&#x62DF;&#x5668;</a></li><ul><li><span class="title-icon "></span><a href="#&#x51FD;&#x6570;"><b>1. </b>&#x51FD;&#x6570;</a></li><ul><li><span class="title-icon "></span><a href="#initrctypeneskeyboard-cs-mosi-miso-clk-repeat16-vol5"><b>1.1. </b>init(rc_type=nes.KEYBOARD, cs, mosi, miso, clk, repeat=16, vol=5)</a></li><li><span class="title-icon "></span><a href="#runnes"><b>1.2. </b>run(nes)</a></li></ul><li><span class="title-icon "></span><a href="#&#x5FEB;&#x6377;&#x952E;"><b>2. </b>&#x5FEB;&#x6377;&#x952E;</a></li><ul><li><span class="title-icon "></span><a href="#&#x952E;&#x76D8;&#xFF08;&#x4E32;&#x53E3;&#xFF09;"><b>2.1. </b>&#x952E;&#x76D8;&#xFF08;/&#x4E32;&#x53E3;&#xFF09;</a></li><li><span class="title-icon "></span><a href="#&#x624B;&#x67C4;"><b>2.2. </b>&#x624B;&#x67C4;</a></li></ul><li><span class="title-icon "></span><a href="#&#x4F8B;"><b>3. </b>&#x4F8B;</a></li><li><span class="title-icon "></span><a href="#&#x4F8B;-1&#xFF1A;-&#x952E;&#x76D8;&#xFF08;&#x4E32;&#x53E3;&#xFF09;"><b>4. </b>&#x4F8B; 1&#xFF1A; &#x952E;&#x76D8;&#xFF08;&#x4E32;&#x53E3;&#xFF09;</a></li><li><span class="title-icon "></span><a href="#&#x4F8B;-2&#xFF1A;-ps2-&#x624B;&#x67C4;"><b>5. </b>&#x4F8B; 2&#xFF1A; PS2 &#x624B;&#x67C4;</a></li></ul></ul></div><a href="#nes-&#x6E38;&#x620F;&#x6A21;&#x62DF;&#x5668;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="nes-&#x6E38;&#x620F;&#x6A21;&#x62DF;&#x5668;"><a name="nes-&#x6E38;&#x620F;&#x6A21;&#x62DF;&#x5668;" class="anchor-navigation-ex-anchor" href="#nes-&#x6E38;&#x620F;&#x6A21;&#x62DF;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a> NES &#x6E38;&#x620F;&#x6A21;&#x62DF;&#x5668;</h1>
+<p>&#x7ECF;&#x5178;&#x7684; FC &#x7EA2;&#x767D;&#x673A; &#x6E38;&#x620F;&#x6A21;&#x62DF;&#x5668;&#xFF0C; &#x5E26;&#x6211;&#x4EEC;&#x56DE;&#x5230;&#x5C0F;&#x65F6;&#x5019;&#x5427;&#xFF5E;&#xFF5E;</p>
+<p>&#x6216;&#x8005;&#xFF1F; &#x8BA9;&#x6211;&#x4EEC;&#x60F3;&#x529E;&#x6CD5;&#x8BA9;&#x5B83;&#x81EA;&#x5DF1;&#x73A9;&#x81EA;&#x5DF1;&#xFF1F;</p>
+<h2 id="&#x51FD;&#x6570;"><a name="&#x51FD;&#x6570;" class="anchor-navigation-ex-anchor" href="#&#x51FD;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x51FD;&#x6570;</h2>
+<h3 id="initrctypeneskeyboard-cs-mosi-miso-clk-repeat16-vol5"><a name="initrctypeneskeyboard-cs-mosi-miso-clk-repeat16-vol5" class="anchor-navigation-ex-anchor" href="#initrctypeneskeyboard-cs-mosi-miso-clk-repeat16-vol5"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. init(rc_type=nes.KEYBOARD, cs, mosi, miso, clk, repeat=16, vol=5)</h3>
+<p>&#x521D;&#x59CB;&#x5316; <code>NES</code> &#x6A21;&#x62DF;&#x5668;</p>
+<h4 id="&#x53C2;&#x6570;"><a name="&#x53C2;&#x6570;" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x6570;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53C2;&#x6570;</h4>
+<ul>
+<li><p><code>tc_type</code>&#xFF1A; &#x9065;&#x63A7;&#x5668;&#x7C7B;&#x578B;&#xFF0C; &#x952E;&#x76D8;&#xFF08;<code>nes.KEYBOARD</code>&#xFF09;&#xFF08;&#x6CE8;&#x610F;&#x662F;&#x4E32;&#x53E3;&#x4E0E;&#x7535;&#x8111;&#x901A;&#x4FE1;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x76F4;&#x63A5;&#x63A5;USB&#x952E;&#x76D8;&#x5230;&#x5F00;&#x53D1;&#x677F;&#xFF09;&#x6216;&#x8005;&#x624B;&#x67C4;&#xFF08;<code>nes.JOYSTICK</code>&#xFF09;&#x3002; </p>
+<blockquote>
+<p>&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;<code>PS2</code>&#x624B;&#x67C4;&#xFF0C;&#x4F53;&#x9A8C;&#x4F1A;&#x66F4;&#x597D;&#xFF0C; &#x952E;&#x76D8;&#x901A;&#x8FC7;&#x4E32;&#x53E3;&#x5DE5;&#x5177;&#x8F93;&#x5165;&#x53EF;&#x80FD;&#x4E0D;&#x80FD;&#x540C;&#x65F6;&#x6309;&#x591A;&#x4E2A;&#x6309;&#x952E;&#xFF0C;&#x5F53;&#x7136;&#x4E5F;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x81EA;&#x5DF1;&#x5728;PC&#x5199;&#x4E00;&#x4E2A;&#x811A;&#x672C;&#x6765;&#x8F6C;&#x53D1;&#x952E;&#x503C;&#x5C31;&#x80FD;&#x89E3;&#x51B3;&#xFF08;&#x53BB;<a href="https://github.com/sipeed/MaixPy_scripts/tree/master/tools_on_PC" target="_blank">&#x8FD9;&#x91CC;</a>&#x627E;&#x627E;&#xFF1F;&#xFF09;</p>
+</blockquote>
+</li>
+<li><p><code>cs</code>&#xFF1A; &#x5982;&#x679C;&#x4F7F;&#x7528; <code>SPI</code> &#x63A5;&#x53E3;&#x7684; <code>PS2</code> &#x624B;&#x67C4;&#xFF0C; &#x4F20;&#x5165; <code>cs</code> &#x5916;&#x8BBE;&#x7F16;&#x53F7;&#xFF08;&#x6CE8;&#x610F;&#x4E0D;&#x662F;&#x5F15;&#x811A;&#x53F7;&#xFF0C;&#x9700;&#x8981;&#x5148;&#x6620;&#x5C04;&#x5F15;&#x811A;&#xFF09;</p>
+</li>
+<li><code>mosi</code>&#xFF1A; &#x5982;&#x679C;&#x4F7F;&#x7528; <code>SPI</code> &#x63A5;&#x53E3;&#x7684; <code>PS2</code> &#x624B;&#x67C4;&#xFF0C; &#x4F20;&#x5165; <code>mosi</code> &#x5916;&#x8BBE;&#x7F16;&#x53F7;&#xFF08;&#x6CE8;&#x610F;&#x4E0D;&#x662F;&#x5F15;&#x811A;&#x53F7;&#xFF0C;&#x9700;&#x8981;&#x5148;&#x6620;&#x5C04;&#x5F15;&#x811A;&#xFF09;</li>
+<li><code>miso</code>&#xFF1A; &#x5982;&#x679C;&#x4F7F;&#x7528; <code>SPI</code> &#x63A5;&#x53E3;&#x7684; <code>PS2</code> &#x624B;&#x67C4;&#xFF0C; &#x4F20;&#x5165; <code>miso</code> &#x5916;&#x8BBE;&#x7F16;&#x53F7;&#xFF08;&#x6CE8;&#x610F;&#x4E0D;&#x662F;&#x5F15;&#x811A;&#x53F7;&#xFF0C;&#x9700;&#x8981;&#x5148;&#x6620;&#x5C04;&#x5F15;&#x811A;&#xFF09;</li>
+<li><code>clk</code>&#xFF1A; &#x5982;&#x679C;&#x4F7F;&#x7528; <code>SPI</code> &#x63A5;&#x53E3;&#x7684; <code>PS2</code> &#x624B;&#x67C4;&#xFF0C; &#x4F20;&#x5165; <code>clk</code> &#x5916;&#x8BBE;&#x7F16;&#x53F7;&#xFF08;&#x6CE8;&#x610F;&#x4E0D;&#x662F;&#x5F15;&#x811A;&#x53F7;&#xFF0C;&#x9700;&#x8981;&#x5148;&#x6620;&#x5C04;&#x5F15;&#x811A;&#xFF09;</li>
+<li><code>repeat</code>&#xFF1A; &#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x53EA;&#x5BF9;&#x4F7F;&#x7528;&#x952E;&#x76D8;&#xFF08;/&#x4E32;&#x53E3;&#xFF09;&#x65F6;&#xFF0C; &#x6307;&#x6309;&#x952E;&#x7684;&#x91CD;&#x590D;&#x7387;</li>
+<li><code>vol</code>&#xFF1A; &#x521D;&#x59CB;&#x5316;&#x65F6;&#x7684;&#x97F3;&#x91CF;&#xFF0C; &#x540E;&#x9762;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6309;&#x952E;&#x8C03;&#x6574;</li>
+</ul>
+<h3 id="runnes"><a name="runnes" class="anchor-navigation-ex-anchor" href="#runnes"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. run(nes)</h3>
+<p>&#x8FD0;&#x884C; <code>NES</code> &#x6E38;&#x620F; <code>ROM</code></p>
+<h4 id="&#x53C2;&#x6570;_1"><a name="&#x53C2;&#x6570;_1" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x6570;_1"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53C2;&#x6570;</h4>
+<ul>
+<li><code>nes</code>&#xFF1A; &#x6E38;&#x620F; <code>ROM</code> &#x8DEF;&#x5F84;&#xFF0C; &#x6BD4;&#x5982; <code>/sd/mario.nes</code></li>
+</ul>
+<h2 id="&#x5FEB;&#x6377;&#x952E;"><a name="&#x5FEB;&#x6377;&#x952E;" class="anchor-navigation-ex-anchor" href="#&#x5FEB;&#x6377;&#x952E;"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x5FEB;&#x6377;&#x952E;</h2>
+<h3 id="&#x952E;&#x76D8;&#xFF08;&#x4E32;&#x53E3;&#xFF09;"><a name="&#x952E;&#x76D8;&#xFF08;&#x4E32;&#x53E3;&#xFF09;" class="anchor-navigation-ex-anchor" href="#&#x952E;&#x76D8;&#xFF08;&#x4E32;&#x53E3;&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>2.1. &#x952E;&#x76D8;&#xFF08;/&#x4E32;&#x53E3;&#xFF09;</h3>
+<ul>
+<li><code>&#x79FB;&#x52A8;</code> &#xFF1A; <code>W A S D</code></li>
+<li><code>A</code> &#xFF1A; <code>J</code></li>
+<li><code>B</code> &#xFF1A; <code>K</code></li>
+<li><code>start</code> &#xFF1A; <code>M</code> &#x6216;&#x8005; <code>Enter</code></li>
+<li><code>option</code>&#xFF1A; <code>N</code> &#x6216;&#x8005; <code>\</code></li>
+<li><code>&#x9000;&#x51FA;</code> &#xFF1A; <code>ESC</code></li>
+<li><code>&#x97F3;&#x91CF; -</code> &#xFF1A; <code>-</code></li>
+<li><code>&#x97F3;&#x91CF; +</code> &#xFF1A; <code>=</code></li>
+<li><code>&#x8FD0;&#x884C;&#x901F;&#x5EA6; -</code> &#xFF1A; <code>R</code></li>
+<li><code>&#x8FD0;&#x884C;&#x901F;&#x5EA6; +</code> &#xFF1A; <code>F</code></li>
+</ul>
+<h3 id="&#x624B;&#x67C4;"><a name="&#x624B;&#x67C4;" class="anchor-navigation-ex-anchor" href="#&#x624B;&#x67C4;"><i class="fa fa-link" aria-hidden="true"></i></a>2.2. &#x624B;&#x67C4;</h3>
+<ul>
+<li><code>&#x79FB;&#x52A8;</code> &#xFF1A; &#x65B9;&#x5411;&#x952E; <code>&lt;-</code> <code>^</code> <code>V</code> <code>-&gt;</code></li>
+<li><code>A</code> &#xFF1A; <code>&#x25A1;</code></li>
+<li><code>B</code> &#xFF1A; <code>&#xD7;</code></li>
+<li><code>start</code> &#xFF1A; <code>START</code></li>
+<li><code>select</code>&#xFF1A; <code>SELECT</code></li>
+<li><code>&#x9000;&#x51FA;</code> &#xFF1A; &#x6682;&#x65E0;</li>
+<li><code>&#x97F3;&#x91CF; -</code> &#xFF1A; <code>R2</code></li>
+<li><code>&#x97F3;&#x91CF; +</code> &#xFF1A; <code>R1</code></li>
+<li><code>&#x8FD0;&#x884C;&#x901F;&#x5EA6; -</code> &#xFF1A; <code>L1</code></li>
+<li><code>&#x8FD0;&#x884C;&#x901F;&#x5EA6; +</code> &#xFF1A; <code>L2</code></li>
+</ul>
+<h2 id="&#x4F8B;"><a name="&#x4F8B;" class="anchor-navigation-ex-anchor" href="#&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x4F8B;</h2>
+<h2 id="&#x4F8B;-1&#xFF1A;-&#x952E;&#x76D8;&#xFF08;&#x4E32;&#x53E3;&#xFF09;"><a name="&#x4F8B;-1&#xFF1A;-&#x952E;&#x76D8;&#xFF08;&#x4E32;&#x53E3;&#xFF09;" class="anchor-navigation-ex-anchor" href="#&#x4F8B;-1&#xFF1A;-&#x952E;&#x76D8;&#xFF08;&#x4E32;&#x53E3;&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>4. &#x4F8B; 1&#xFF1A; &#x952E;&#x76D8;&#xFF08;&#x4E32;&#x53E3;&#xFF09;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> nes, lcd
+
+lcd.init(freq=<span class="hljs-number">15000000</span>)
+nes.init(nes.KEYBOARD)
+nes.run(<span class="hljs-string">&quot;/sd/mario.nes&quot;</span>)
+</code></pre>
+<h2 id="&#x4F8B;-2&#xFF1A;-ps2-&#x624B;&#x67C4;"><a name="&#x4F8B;-2&#xFF1A;-ps2-&#x624B;&#x67C4;" class="anchor-navigation-ex-anchor" href="#&#x4F8B;-2&#xFF1A;-ps2-&#x624B;&#x67C4;"><i class="fa fa-link" aria-hidden="true"></i></a>5. &#x4F8B; 2&#xFF1A; PS2 &#x624B;&#x67C4;</h2>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> nes, lcd
+<span class="hljs-keyword">from</span> fpioa_manager <span class="hljs-keyword">import</span> fm
+
+fm.register(<span class="hljs-number">19</span>, fm.fpioa.GPIOHS19)
+fm.register(<span class="hljs-number">18</span>, fm.fpioa.GPIOHS18)
+fm.register(<span class="hljs-number">23</span>, fm.fpioa.GPIOHS23)
+fm.register(<span class="hljs-number">21</span>, fm.fpioa.GPIOHS21)
+
+lcd.init(freq=<span class="hljs-number">15000000</span>)
+nes.init(nes.JOYSTICK, cs=fm.fpioa.GPIOHS19, clk=fm.fpioa.GPIOHS18, mosi=fm.fpioa.GPIOHS23, miso=fm.fpioa.GPIOHS21)
+nes.run(<span class="hljs-string">&quot;/sd/mario.nes&quot;</span>)
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="pye.html" class="navigation navigation-prev " aria-label="Previous page: Micropython Editor">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="lvgl.html" class="navigation navigation-next " aria-label="Next page: lvgl">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"nes","level":"4.7.2","depth":2,"next":{"title":"lvgl","level":"4.7.3","depth":2,"path":"application/lvgl.md","ref":"application/lvgl.md","articles":[]},"previous":{"title":"Micropython Editor","level":"4.7.1","depth":2,"path":"application/pye.md","ref":"application/pye.md","articles":[]},"dir":"ltr"},"config":{"plugins":["my-toolbar","-lunr","-search","search-title","anchor-navigation-ex","anchorjs","sharing","splitter","edit-link","ga","expandable-chapters-small@git+https://github.com/sipeed/gitbook-plugin-expandable-chapters-small.git"],"styles":{"website":"./styles/website.css"},"pluginsConfig":{"github":{"url":"https://github.com/sipeed/MaixPy"},"splitter":{},"search":{"maxIndexSize":1000000000},"lunr":{"maxIndexSize":1000000000},"fontsettings":{"theme":"white","family":"sans","size":2},"search-title":{},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"fa fa-angle-double-right","level2Icon":"fa fa-angle-double-right","level3Icon":"fa fa-angle-double-right","showLevelIcon":true},"printLog":false,"showGoTop":true,"showLevel":true},"expandable-chapters-small":{},"my-toolbar":{"buttons":[{"label":"Github","text":" ","icon":"fa fa-github","position":"left","target":"_blank","url":"https://github.com/sipeed/MaixPy"}]},"ga":{"configuration":"auto","token":"UA-119047820-2"},"sharing":{"qq":false,"all":["weibo","facebook","google","twitter","vk"],"douban":false,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"edit-link":{"label":"","base":"https://github.com/sipeed/MaixPy_DOC/blob/master"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchorjs":{}},"theme":"default","author":"sipeed","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{"items":[{"name":"博客","link":"http://blog.sipeed.com"},{"name":"论坛","link":"https://bbs.sipeed.com/"},{"name":"反馈","links":[{"name":"文档","link":"https://github.com/sipeed/MaixPy_DOC/issues"},{"name":"源码","link":"https://github.com/sipeed/MaixPy/issues"}]}],"version":[{"name":"<i class='fa fa-angle-down'></i>","links":[{"name":"master","link":"/zh/"},{"name":"dev","link":"/dev/zh/"}]}]},"title":"MaixPy 文档","language":"zh-hans","gitbook":"*","description":"MaixPy 文档"},"file":{"path":"application/nes.md","mtime":"2019-07-17T09:59:39.268Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-17T10:00:47.046Z"},"basePath":"..","book":{"language":"zh"}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-my-toolbar/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-title/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search-title/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-anchorjs/anchor.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-anchorjs/anchor-style.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-edit-link/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script type="text/javascript">
+    function toggleLanguage () {
+            var path = location.href;
+            // console.log(path);
+            if (path.indexOf('/zh') !== -1) {
+                path = path.replace(/\/zh[\/$\s]/i, '/en/');
+            } else if (path.indexOf('/en') !== -1) {
+                path = path.replace(/\/en[\/$\s]/i, '/zh/');
+            }
+            // console.log('after: ' + path);    
+            location.assign(path);
+    }
+    </script>
+
+    </body>
+</html>
+
