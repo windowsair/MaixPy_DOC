@@ -7,12 +7,12 @@ sensor
 
 ## 方法
 
-### 单目摄像头重置函数
+### 初始化单目摄像头
 
-重置并初始化摄像头。这里会自动扫描并获取摄像头地址
+重置并初始化单目摄像头
 
 ```python
-sensor.reset() #初始化单目摄像头
+sensor.reset()
 ```
 
 #### 参数
@@ -23,12 +23,14 @@ sensor.reset() #初始化单目摄像头
 
 无
 
-### 双目摄像头重置函数
+### 重置双目摄像头
 
-芯片只有一个dvp接口，所以通过pwdn引脚来选择sensor。pwdn引脚可以通过shutdown接口来控制。指定sensor后其余操作不变。详细请见例程2
+重置并初始化双目摄像头
+
+> K210只有一个dvp接口，只能同时控制一个Sensor。我们可以借助`shudown`方法控制pwdn引脚以选择特定的Sensor。指定Sensor后其余操作不变。详见例程2
 
 ```python
-sensor.binocular_reset()#初始化双目摄像头
+sensor.binocular_reset()
 ```
 
 #### 参数
@@ -40,9 +42,9 @@ sensor.binocular_reset()#初始化双目摄像头
 无
 
 
-### 启动函数
+### 捕获图像控制
 
-启动/关闭芯片捕获图像
+启动或关闭捕获图像功能
 
 ```python
 sensor.run(enable)
@@ -50,16 +52,17 @@ sensor.run(enable)
 
 #### 参数
 
-* enable: 1表示开启，0 表示停止
+* enable: 1 表示开启 0 表示停止
 
 #### 返回值
 
-* return: 返回1
+* return: 返回 1
 
 ### 设置帧大小
 
-用于设置摄像头输出帧大小，k210最大支持VGA格式，大于VGA将无法获取图像。
-MaixPy开发板配置的屏幕是320*240分辨率，推荐设置为QVGA格式
+用于设置摄像头输出帧大小，k210最大支持VGA格式，大于VGA将无法获取图像
+
+> MaixPy开发板配置的屏幕是320*240分辨率，推荐设置为QVGA格式
 
 ```
 sensor.set_framesize(framesize)
@@ -76,7 +79,9 @@ sensor.set_framesize(framesize)
 
 ### 设置帧格式
 
-用于设置摄像头输出格式，k210支持rgb565和yuv422格式。MaixPy开发板配置的屏幕是使用rgb565设置，推荐设置为RGB565格式
+用于设置摄像头输出格式
+
+> MaixPy开发板配置的屏幕使用的是RGB565，推荐设置为RGB565格式
 
 ```
 sensor.set_pixformat(format)
@@ -85,14 +90,16 @@ sensor.set_pixformat(format)
 
 * `format`: 帧格式
 
+> 可选的帧格式有`GRAYSCALE`, `RGB565`, `YUV422`
+
 #### 返回值
 
 * `True` : 设置成功
 * `False`: 设置错误
 
-### 开始图像捕捉
+### 图像捕捉控制
 
-开启图像捕捉功能
+图像捕捉功能控制
 
 ```
 sensor.run(enable)
@@ -107,12 +114,12 @@ sensor.run(enable)
 * `False`: 设置错误
 
 
-### 获取图像
+### 拍摄图像
 
-控制摄像头捕捉图像
+使用摄像头拍摄一张照片
 
 ```
-img = sensor.snapshot()
+sensor.snapshot()
 ```
 #### 参数
 
@@ -122,7 +129,7 @@ img = sensor.snapshot()
 
 * `img`: 返回的图像对象
 
-### 关闭摄像头
+### 摄像头控制
 
 关闭摄像头/切换摄像头
 
@@ -132,10 +139,10 @@ sensor.shutdown(enable/select)
 #### 参数
 
 单目摄像头
-* `enable`: 1 表示开启摄像头 0 表示关闭摄像头
+* `enable`: True 表示开启摄像头 False 表示关闭摄像头
 
 双目摄像头
-* `select`: 通过写入0或1来切换摄像头
+* `select`: 通过写入 0 或 1 来切换摄像头
 
 #### 返回值
 
@@ -143,7 +150,7 @@ sensor.shutdown(enable/select)
 
 ### 跳帧
 
-跳过指定帧数或者跳过指定时间内的图像
+跳过指定帧数或者跳过指定时间内的图像，让相机图像在改变相机设置后稳定下来
 
 ```
 sensor.skip_frames([n,time])
@@ -154,6 +161,7 @@ sensor.skip_frames([n,time])
 
 * `time`: 跳过指定时间，单位为ms
 
+> 若 n 和 time 皆未指定，该方法跳过300毫秒的帧；若二者皆指定，该方法会跳过 n 数量的帧，但将在 time 毫秒后返回
 
 #### 返回值
 
@@ -177,6 +185,8 @@ sensor.width()
 
 
 ### 分辨率高度 
+
+获取摄像头分辨率高度
 
 ```
 sensor.height()
@@ -219,16 +229,17 @@ sensor.get_id()
 
 * `int`类型的ID
 
-### 设置彩条模式
+### 设置彩条测试模式
 
-将摄像头设置为彩条模式
+将摄像头设置为彩条测试模式
 
+> 开启彩条测试模式后，摄像头会输出一彩条图像，常用来检测摄像机总线是否连接正确。
 ```
 sensor.set_colorbar(enable)
 ```
 #### 参数
 
-* `enable`: 1 表示开启彩条模式 0 表示关闭彩条模式
+* `enable`: 1 表示开启彩条测试模式 0 表示关闭彩条测试模式
 
 #### 返回值
 
@@ -293,7 +304,9 @@ sensor.set_auto_gain(enable,gain_db)
 #### 参数
 
 * `enable`: 1 表示开启自动增益 0 表示关闭自动增益
-* `gain_db`: 关闭自动增益时，设置的摄像头固定增益值，单位为db
+* `gain_db`: 关闭自动增益时，设置的摄像头固定增益值，单位为dB
+
+> 如果需要追踪颜色，需要关闭自动增益
 
 
 #### 返回值
@@ -349,6 +362,8 @@ sensor.__write_reg(address, value)
 
 无
 
+> 请参阅摄像头数据手册以获取详细信息
+
 ### 读取寄存器
 
 读取摄像头寄存器值
@@ -365,20 +380,28 @@ sensor.__read_reg(address)
 
 * `int`类型的寄存器值
 
+> 请参阅摄像头数据手册以获取详细信息
+
+
 ## 例程
 
 
-### 例程 1 
+### 例程 1
 
 ```python
+# 单目摄像头
+
 import sensor	
 import lcd
+
 lcd.init()
+
 sensor.reset()
 sensor.set_pixformat(sensor.RGB565)
 sensor.set_framesize(sensor.QVGA)
 sensor.run(1)
-while 1:
+
+while True:
     img = sensor.snapshot()
     lcd.display(img)
 ```
@@ -386,26 +409,33 @@ while 1:
 ### 例程 2
 
 ```python
+# 双目摄像头
+
 import sensor
 import image
 import lcd
 import time
+
 lcd.init()
+
 sensor.binocular_reset()
-sensor.shutdown(False)#选择sensor并初始化
+sensor.shutdown(0)  # 选中sensor 0
 sensor.set_pixformat(sensor.RGB565)
 sensor.set_framesize(sensor.QVGA)
-sensor.shutdown(True)#选择sensor并初始化
+
+sensor.shutdown(1)  # 选中sensor 1
 sensor.set_pixformat(sensor.RGB565)
 sensor.set_framesize(sensor.QVGA)
 sensor.run(1)
+
 while True:
-    sensor.shutdown(False) #选择sensor
-    img=sensor.snapshot()
+    sensor.shutdown(0)  # 选中sensor 0
+    img = sensor.snapshot()
     lcd.display(img)
     time.sleep_ms(100)
-    sensor.shutdown(True) #选择sensor
-    img=sensor.snapshot()
+
+    sensor.shutdown(1)  # 选中sensor 1
+    img = sensor.snapshot()
     lcd.display(img)
     time.sleep_ms(100)
 ```
