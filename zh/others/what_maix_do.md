@@ -16,6 +16,10 @@ Powerful Maix Board(k210) Can Do
 
 <iframe width="600" height="350" src="//player.bilibili.com/player.html?aid=50442796&cid=88307224&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
+* 人脸识别
+
+<iframe width="600" height="350" src="//player.bilibili.com/player.html?aid=77466790&amp;cid=132521878&amp;page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
 * 识别颜色值、找形状、找直线、面部识别等
 
 <iframe width="600" height="350" src="//player.bilibili.com/player.html?aid=48652548&cid=85200171&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>

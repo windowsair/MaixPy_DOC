@@ -7,7 +7,7 @@ MaixPy IDE
 
 Using the `IDE` will facilitate real-time editing of the script on the computer, as well as being able to view the camera images in real time, and save files to the development board.
 
-Of course, using the `IDE` will take some resources from the board (for the transmission and debugging), however the performance is not noticeably affected.
+Of course, using the `IDE` will take some resources from the board (for the transmission and debugging), 
 
 ## MaixPy firmware
 
@@ -17,7 +17,7 @@ To use the `MaixPy IDE` , the firmware must be at least `v0.3.1`, otherwise it w
 
 [dl.sipeed.com](http://dl.sipeed.com/MAIX/MaixPy/ide/)
 
-Check the latest version by reading the `readme.txt` file.
+Check the latest version by reading the `readme.txt` file. Use CDN link if download too slowly.
 
 ## Installation
 
@@ -79,4 +79,15 @@ You will find ways to upload files in the `Tool` dropdown menu.
 
 ## Note
 
-Only open one serial port connection at a time, make sure to close the previous connection before opening a new one.
+Only open one serial port connection at a time, make sure to close the previous connection before opening a new one. 
+
+And try to upgrade firmware or IDE if connect fail.
+
+## Find the cause according to the error message
+
+When the program runs error, a message box will prompt the error, but the error information may not be complete, please **find more detailed error information in the terminal output**
+
+If necessary, disconnect the IDE and run the program using the serial terminal(maybe you need save as file then run this file) only to view the print for troubleshooting
+
+If you submit an issue (bbs, group, github issue, etc.), in order to resolve the issue quickly, be sure to bring the complete information described above
+

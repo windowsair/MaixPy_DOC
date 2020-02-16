@@ -5,13 +5,15 @@ Get your favorite hardware from [Sipeed's official Taobao store](https://shop365
 
 ## Required hardware
 
-### 一A development board
+### A development board
 
-Choose a board [here](../hardware/board.md)
+See boards in [Wiki](https://wiki.sipeed.com/zh/maix/board/)
+
+And get your favorite hardware from [Sipeed's official Taobao store](https://shop365481095.taobao.com/) or from [Seeed Studio](https://www.seeedstudio.com/catalogsearch/result/?cat=&q=sipeed)
 
 ### USB Type C cable
 
-![Type-C](../../assets/type_c.png)
+<img src="../../assets/type_c.png" height="300" alt="type_c">
 
 Type-C is chosen because it's reversible and it's very friendly for development.
 
@@ -25,7 +27,7 @@ If you're buying from the official Taobao store, you can ask them to include it 
 
 ### Camera
 
-MaixPy devices support the ov2640 camera by default, and are often bundled with  Maix devices.  The ov2640 cameras bundled with Maix device are typically offered with two different lens options; a larger focusable fisheye lens, or a smaller fixed-focus lens.
+MaixPy devices support the ov2640 camera by default(or gc0328 or ov7740), and are often bundled with  Maix devices.  The ov2640 cameras bundled with Maix device are typically offered with two different lens options; a larger focusable fisheye lens, or a smaller fixed-focus lens.
 
 If you're buying from the official Taobao store, you can order a specific camera with your order.
 
@@ -37,7 +39,7 @@ When purchasing a memory card, try to choose a new fast Micro SD card, such as a
 
 Of course, the quality of SD cards on the market is uneven, and the SPI mode may not be compatible. Try to buy a regular card. Or maybe you should customize the driver code ~~
 
-As shown below, the two cards on the left are not supported by the MaixPy driver. Both the middle and the right cards are supported, but the class10 card in the middle is the fastest.
+As shown below, the two cards on the left are not supported by the MaixPy driver. Both the middle and the right cards are supported, but the class10 card in the middle is the fastest(and tested maximum capacity is 128GB).
 
 ![](../../assets/TF.png)
 

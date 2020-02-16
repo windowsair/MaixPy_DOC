@@ -60,7 +60,7 @@ When you have finished editing, press `Ctrl+S` and then press `Enter` to save, a
 
 **Note** : The pye editor has certain requirements of the connected terminal. For intuitive operation the `BackSpace` key should be configured to send `Ctrl+?`, otherwise the `BackSpace` key will function as `Ctrl+H` (ie: character replacement).
 
-Linux users are recommended to use `minicom`. Use `sudo minicom -s` to set the reference to [the previous tutorial](power_on.md)
+Linux users are recommended to use `minicom`. Use `sudo minicom -s` to set the reference to [the previous tutorial](serial_tools.md)
 
 Windows users can use [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) which supports Backspace key configuration.
 ![PuTTY Backspace Configuration](./assets/Maix_pye_putty_backspace_config.png)

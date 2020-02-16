@@ -2,13 +2,16 @@ MaixPy Documentation
 ======
 
 <div class="title_pic">
+    <img src="../assets/maixpy.png" height="60">
     <img src="../assets/micropython.png"><img src="../assets/icon_sipeed2.png"  height="60">
 </div>
 
+> Currently the only official document website: [maixpy.sipeed.com](https://maixpy.sipeed.com)
+> Development board information: [dl.sipeed.com](http://dl.sipeed.com), [wiki.sipeed.com](https://wiki.sipeed.com)
 
 ## What is MaixPy
 
-MaixPy ported [Micropython](http://micropython.org/) to [K210](https://kendryte.com/) (a 64-bit dual-core RISC-V CPU with hardware FPU and convolution accelerator). A project that supports MCU routine operations and integrates machine vision and microphone arrays to quickly develop intelligent applications in the `AIOT` field that are extremely cost effective and practical.
+MaixPy ported [Micropython](http://micropython.org/) to [K210](https://kendryte.com/) (a 64-bit dual-core RISC-V CPU with hardware FPU、FFT、sha256 and convolution accelerator). A project that supports MCU routine operations and integrates machine vision and microphone arrays to quickly develop intelligent applications in the `AIOT` field that are extremely cost effective and practical.
 
 
 > MicroPython is a lean and efficient implementation of the Python 3 programming language that includes a small subset of the Python standard library and is optimised to run on microcontrollers and in constrained environments.
@@ -77,7 +80,7 @@ Everything related to MaixPy, mainly about
 * Learn MicroPython language basics
 * Libraries (API) reference
 
-## Let's get started
+## Boards supported MaixPy
 
 First of all, we need to choose a development board that suits your needs. The following ones are currently available:
 
@@ -97,21 +100,7 @@ First of all, we need to choose a development board that suits your needs. The f
 
 <img src="../assets/maixduino_0.png" alt="Maixduono" style="width: 500px;">
 
-To get any of those boards, visit [Sipeed Official Website](https://sipeed.com/)
-
-More hardware infomation [here](en/hardware/hardware.md)
-
-We can now start writing software, refer to [get started](en/get_started.md)
-
-
-## Video tutorial
-
-This video will briefly introduce the basics to get started. To get more in-depth, please check the documentation.
-
-<iframe width="800" height="600" src="//player.bilibili.com/player.html?aid=52613549&cid=92076022&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-
-<br / >
-<br / >
+To get any of those boards or more boards, visit [Sipeed Wiki](https://wiki.sipeed.com/zh/maix/board/)
 
 
 ## MaixPy source code
@@ -144,5 +133,5 @@ You **MUST** read the [documentation convention](contribute/doc_convention.md) b
 
 ## Feedback
 
-* [Documentation feedback](https://github.com/sipeed/MaixPy_DOC/issues)
-* [Code feedback](https://github.com/sipeed/MaixPy/issues)
+* [Feedback](https://github.com/sipeed/MaixPy/issues)
+

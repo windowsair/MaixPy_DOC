@@ -8,13 +8,13 @@ Sensor module for camera configuration and image capture, etc., used to control 
 
 Reset and initialize the camera. This will automatically scan and get the camera address
 ```
-import sensor
 sensor.reset()
 ```
 
 #### Parameters
 
-no
+* `freq`: Set the clock frequency of sensor. The higher the frequency, the higher the frame rate, but the picture quality may be worse. The default is `24MHz`. If the camera has colored spots (ov7740), you can lower it appropriately, such as` 20MHz`
+* `set_regs`: Allows the program to write camera registers. The default is` True`. If you need a custom reset sequence, you can set it to False, and then use the `sensor.__ write_reg(addr, value)` function to customize the write register sequence
 
 #### return value
 
@@ -22,10 +22,9 @@ no
 
 ### Start function
 
-Start the camera
+Start or stop the camera
 
 ```
-import sensor
 sensor.run(enbale)
 ```
 
@@ -43,12 +42,13 @@ It is used to set the camera output frame size. The k210 supports VGA format at 
 The screen of the MaixPy development board is 320*240 resolution, and the recommended setting is QVGA format.
 
 ```
-sensor.set_framesize(framesize)
+sensor.set_framesize(framesize[, set_regs=True])
 ```
 
 #### Parameters
 
 * `framesize`: frame size
+* `set_regs`: Allows the program to write camera registers. The default is` True`. If you need a custom sequence, you can set it to False, and then use the `sensor.__ write_reg(addr, value)` function to customize the write register sequence
 
 #### return value
 
@@ -60,11 +60,12 @@ sensor.set_framesize(framesize)
 Used to set the camera output format, k210 supports rgb565 and yuv422 formats. The screen of the MaixPy development board configuration is set using rgb565, and the recommended setting is RGB565 format.
 
 ```
-sensor.set_pixformat(format)
+sensor.set_pixformat(format[, set_regs=True])
 ```
 #### Parameters
 
 * `format`: frame format
+* `set_regs`: Allows the program to write camera registers. The default is` True`. If you need a custom sequence, you can set it to False, and then use the `sensor.__ write_reg(addr, value)` function to customize the write register sequence
 
 #### return value
 

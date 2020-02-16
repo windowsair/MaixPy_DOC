@@ -1,107 +1,38 @@
-Code structure
+Code frame structure
 ========
 
-This article mainly introduces the `k210-freertos` folder in the port directory of Micropython code, which is the code structure of the kendryte210 platform.
-
-## Introduction to the directory
-
-Briefly introduce files and directories in `k210-freertos`
-
-### file
-
-#### Code File
-
-`main.c` is outside the code of the program entry. If the contributing developer needs to modify the main function, we can edit it in this file.
-
-#### Script file
-
-Under normal circumstances, please do not modify the script file to avoid accidents.
-
-`config.sh` is a configuration script that needs to be used at compile time. It mainly uses export to configure variables in the shell environment to make the compilation work normally.
-
-`build.sh` is used to compile the code, please see the code compilation section for code compilation.
-
-`clean_inc.sh` for all mk files generated during compilation
-
-`flash.sh` is used to program in linux environment
-
-#### mk file
-
-The mk file is an intermediate file generated during the compilation process and is generally used for the path containing the code file.
-
-### folder
-
-#### Code Folder
-
-The following directory is all the code for storing `MaixPy`
-
-`mpy_support` stores MicroPython code related to Openmv
-
-`platform` stores platform-related code such as sdk, drivers, etc.
-
-`third_party` stores portable third-party code, such as spiffs
-
-#### Other folders
-
-`output` stores the compiled output file
-
-`tools` to store the tool scripts needed for the development process, such as the package file system
-
-`build` stores the .o file during compilation. All the code folders have a build folder, which is used to store .o files.
-
-`inc` stores the mk file in the middle of each subdirectory. Generally, the files in this directory are not modified.
-
-`docs` for storing documents and routine demos
 
 
-## Directory details
+## Directory Introduction
 
-Below we will detail the directories we use frequently during the development process to facilitate developers to develop faster.
+| Directory | Subdirectory | Subdirectory2 | Subdirectory3 | Brief | 
+| -- | -- | -- | -- | -- |
+|  assets  |  |  | | Resource like image |
+|  projects  |  | | | Project dir| 
+|  tools | | | | tools |
+| components|┐ | | | component |
+|               | └-boards | | | code for board specific |
+|               | └-drivers | | | driver code |
+|               | └-micropython |┐ | |  Micropython related|
+|               |                |└-core | | micropython source code |
+|               |                |└-port|┐ | maixpy port code |
+|               |                |          |└-builtin_py | maixpy defualt builtin script |
+|               |                |          |└-include | headers |
+|               |                |          |└-src | modules |
+|               | └-spiffs | | | SPIFFS |
+|               | └-utils | | | utils|
 
-### mpy_support
 
-The `mpy_support` folder is used to store all the code related to micropython, including micropython all platform porting code, such as mpconfigport.h, mpconfigboard.h, and so on. Also stores all micropython standard modules such as os, time, etc., as well as common hardware modules such as SPI, IIC, etc.
 
-#### standard_lib
 
-`standard_lib` is used to store the standard library code of micropython, such as machine, socket, os, etc. Each module has its own separate folder, and the `include` folder stores all the header files. You can refer to this when developing standard modules.
 
-#### omv
+## Add code
 
-`omv` stores the code related to the openmv port. If you need to develop modules such as lcd, sensor, and image, you can modify the files in the directory.
+The project is organized using `CMake`, and the project supports multiple configurable options (` Kconfig`)
 
-#### Maix
+* If you do not add folders and configuration items, you can add files to the existing folder for compilation.
+* If you need to add modules, you can modify `CMakeLists.txt` to add content, you can refer to [c_cpp_project_framework] (https://github.com/Neutree/c_cpp_project_framework) with less content
+* If you need to add configuration items, you can modify the `Kconfig` file to achieve the purpose. All configuration items will generate macro definitions and add them to` global_config.h` (generated file) at compile time, and in `CmakeLists.txt` This macro definition can be used in files.
+> For example, `config BOARD_M5STICK` is defined in Kconfig, and CMakeLists.txt can determine whether to compile specific code by judging whether CONFIG_BOARD_M5STICK is true. When compiling, you can choose whether to check by `python3 project.py menuconfig`
 
-`Maix` stores the code of the platform feature function, such as FPIOA function, which is rare in other platforms, so we store the relevant code of FPIOA in the Maix directory. Functions that may be developed later, such as I2S and KPU, are stored here.
 
-#### builtin-py
-
-`builtin-py` stores the Python files built into MaixPy. Micropython supports compiling Python files into firmware. We store all the Python files we want to build in here so that they can be compiled into the firmware. Functions such as fm and board_info are implemented using the Python files here.
-
-### platform
-
-Platform stores all platform related code, such as sdk, driver, etc.
-
-#### sdk
-
-`sdk` stores the software development kit for kendryte210. In general, we don't need to modify the code here.
-
-#### drivers
-
-`drivers` store code for common peripherals on the development board, such as lcd, flash, sd card, etc.
-
-### third_party
-
-`third_party` stores all third-party porting code. If you need to use other third-party libraries or functions during development, you need to store the code in this directory.
-
-#### spiffs
-
-`spiffs` stores the porting code of the spiffs file system. During the open process, if you need to modify the configuration of the spiffs file system, you can find the configuration file and modify it in this directory.
-
-### tools
-
-`tool` is a self-written function script used in the development process, such as packaging the file system, removing redundant arrays in the firmware, etc. If you write your own script during development, you need to put the script in this directory.
-
-### output
-
-The `output` directory stores all the final results of the compilation, including the static library generated by each code folder and third-party code, the output binary file and the elf file, where we burn the binary .bin file.
