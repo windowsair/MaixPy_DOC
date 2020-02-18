@@ -59,6 +59,6 @@ The K210 has no USB peripherals, so it can only communicate with the IDE using a
 
 * Change to a better camera, for example `ov7740` will have a higher frame rate than` ov2640`. But the premise is that the camera circuit must be compatible with the circuit of the development board
 * Increase the camera clock frequency(`sensor.reset(freq=)`), but be careful not to be too high, it will make the picture worse
-* You can compile the source code yourself, open the camera double buffer, the frame rate will increase, but correspondingly, the memory consumption will also increase (about 384k)
+* You can compile the source code yourself, turn on the camera's double buffering option (by default), and `sensor.reset (dual_buff = True)`, the frame rate will increase, but the corresponding memory will also increase (about 384KiB)
 
 

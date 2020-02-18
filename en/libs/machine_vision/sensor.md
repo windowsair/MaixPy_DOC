@@ -7,14 +7,15 @@ Sensor module for camera configuration and image capture, etc., used to control 
 ### Reset function
 
 Reset and initialize the camera. This will automatically scan and get the camera address
-```
-sensor.reset()
+```python
+sensor.reset([freq=24000000, set_regs=True, dual_buff=False])
 ```
 
 #### Parameters
 
 * `freq`: Set the clock frequency of sensor. The higher the frequency, the higher the frame rate, but the picture quality may be worse. The default is `24MHz`. If the camera has colored spots (ov7740), you can lower it appropriately, such as` 20MHz`
 * `set_regs`: Allows the program to write camera registers. The default is` True`. If you need a custom reset sequence, you can set it to False, and then use the `sensor.__ write_reg(addr, value)` function to customize the write register sequence
+* `dual_buff`: Allowing double buffering will increase the frame rate, but the memory footprint will also increase (about 384KiB)
 
 #### return value
 

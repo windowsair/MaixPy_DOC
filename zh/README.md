@@ -7,7 +7,7 @@ MaixPy 文档
 </div>
 
 
-> 目前唯一文档官网： [maixpy.sipeed.com](https://maixpy.sipeed.com)
+> 目前唯一文档官网： [maixpy.sipeed.com](https://maixpy.sipeed.com)</br>
 > 开发板资料： [dl.sipeed.com](http://dl.sipeed.com), [wiki.sipeed.com](https://wiki.sipeed.com)
 
 ## 什么是 MaixPy

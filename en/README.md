@@ -6,7 +6,7 @@ MaixPy Documentation
     <img src="../assets/micropython.png"><img src="../assets/icon_sipeed2.png"  height="60">
 </div>
 
-> Currently the only official document website: [maixpy.sipeed.com](https://maixpy.sipeed.com)
+> Currently the only official document website: [maixpy.sipeed.com](https://maixpy.sipeed.com)</br>
 > Development board information: [dl.sipeed.com](http://dl.sipeed.com), [wiki.sipeed.com](https://wiki.sipeed.com)
 
 ## What is MaixPy

@@ -36,6 +36,7 @@ Summary
     - [ucollections](libs/standard/ucollections.md) 
     - [uctypes](libs/standard/uctypes.md)
     - [uerrno](libs/standard/uerrno.md) 
+    - [uhashlib](libs/standard/uhashlib.md)
     - [uheapq](libs/standard/uheapq.md)
     - [ujson](libs/standard/ujson.md)
     - [uos](libs/standard/uos.md) 
