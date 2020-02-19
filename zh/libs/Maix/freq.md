@@ -1,4 +1,4 @@
-freq
+Maix.freq
 ========
 
 频率模块，支持程序修改 cpu 和 kpu 频率
@@ -7,7 +7,7 @@ freq
 
 
 
-### frq.set(cpu, pll1, kpu_div)
+### freq.set(cpu, pll1, kpu_div)
 
 设置 cpu 或者 kpu 频率，设置完后会自动重启生效
 

@@ -2,15 +2,17 @@ MaixPy 文档
 ======
 
 <div class="title_pic">
+    <img src="../assets/maixpy.png" height="60">
     <img src="../assets/micropython.png"><img src="../assets/icon_sipeed2.png"  height="60">
 </div>
 
 
-
+> 目前唯一文档官网： [maixpy.sipeed.com](https://maixpy.sipeed.com)</br>
+> 开发板资料： [dl.sipeed.com](http://dl.sipeed.com), [wiki.sipeed.com](https://wiki.sipeed.com)
 
 ## 什么是 MaixPy
 
-MaixPy 是将 [Micropython](http://micropython.org/) 移植到 [K210](https://kendryte.com/)（ 一款64位双核带硬件FPU和卷积加速器的 RISC-V CPU,  ） 的一个项目， 支持 MCU 常规操作， 更集成了机器视觉和麦克风阵列， 以快速开发具有极低成本和体积实用的 `AIOT` 领域智能应用。
+MaixPy 是将 [Micropython](http://micropython.org/) 移植到 [K210](https://kendryte.com/)（ 一款64位双核带硬件FPU、卷积加速器、FFT、sha256的 RISC-V CPU,  ） 的一个项目， 支持 MCU 常规操作， 更集成了机器视觉和麦克风阵列， 以快速开发具有极低成本和体积实用的 `AIOT` 领域智能应用。
 
 > MicroPython 是基于 Python3 的语法做的一款解析器，包含了 Python3 的大多数基础语法， 主要运行在性能和内存有限的嵌入式芯片上。（注意 Micropython 不包含 Python3 的所有语法）
 
@@ -78,7 +80,7 @@ while True:
 * 如何开始上手使用
 * 库和接口（API）文档查询
 
-## 让我们开始打开 MaixPy 的神奇大门吧
+## 可以运行MaixPy的开发板
 
 首先我们选择一款适合自己的开发板， 目前有如下几款高性价比的开发板（核心板）：
 
@@ -106,17 +108,6 @@ while True:
 
 然后请**仔细查看左边目录**，然后开始使用吧～～
 
-## 视频入门教程
-
-视频简单介绍了基本的上手内容，事实上文档上会更加详细， 视频只是提供一个比较直观的入门参考：
-
-<iframe width="800" height="600" src="//player.bilibili.com/player.html?aid=52613549&cid=92076022&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-
-建议进入[Bilibili](https://www.bilibili.com/video/av52613549?zw)登录看高清版本哦， 如果觉得节奏太慢可以右键调速滴～
-
-<br / >
-<br / >
-
 
 ## MaixPy 源码
 
@@ -136,7 +127,7 @@ MaixPy 源码托管在 [github](https://github.com/sipeed/MaixPy)
 
 修改代码后，文档也会随之更新，
 
-文档源码托管在 [github](https://github.com/sipeed/MaixPy_DOC)
+文档源码托管在 [github](https://github.com/sipeed/MaixPy_DOC)，如果文档有错别字或者改进可以提交PR，
 
 注意： 在编辑文档前**必须**看[文档编写规范](contribute/doc_convention.md) 
 

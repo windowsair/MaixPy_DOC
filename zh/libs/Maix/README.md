@@ -7,4 +7,6 @@ Maix库
 * [KPU](kpu.md)
 * [FFT](fft.md)
 * [I2S](i2s.md)
-* [audio](audio.md) 
+* [Audio](audio.md) 
+* [freq](freq.md)
+* [utils](utils.md)

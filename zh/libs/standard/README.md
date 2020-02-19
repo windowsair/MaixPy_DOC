@@ -9,6 +9,7 @@
 * [ucollections](ucollections.md)
 * [uctypes](uctypes.md)
 * [uerrno](uerrno.md)
+* [uhashlib](uhashlib.md)
 * [uheapq](uheapq.md)
 * [ujson](ujson.md)
 * [uos](uos.md)

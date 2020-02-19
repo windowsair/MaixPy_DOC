@@ -1,5 +1,7 @@
-点亮设备，第一次接触MaixPy
-========
+开机
+====
+
+
 
 ## 连接硬件
 
@@ -13,70 +15,74 @@
 
 如果没有发现设备， 需要确认有没有装驱动以及接触是否良好
 
+## 检查固件版本
 
-## 使用串口工具
+使用串口终端打开串口，然后复位，看输出的版本信息，与[github](https://github.com/sipeed/MaixPy/releases) 或者 [master 分支](http://dl.sipeed.com/MAIX/MaixPy/release/master/) 的固件版本对比，根据当前版本情况考虑升级到最新版本
 
+比如：
+```
+[MaixPy] init end
 
-### Linux
+ __  __              _____  __   __  _____   __     __
+|  \/  |     /\     |_   _| \ \ / / |  __ \  \ \   / /
+| \  / |    /  \      | |    \ V /  | |__) |  \ \_/ /
+| |\/| |   / /\ \     | |     > <   |  ___/    \   /
+| |  | |  / ____ \   _| |_   / . \  | |         | |
+|_|  |_| /_/    \_\ |_____| /_/ \_\ |_|         |_|
 
-使用`minicom` 或者 `screen`等工具即可
+Official Site : https://www.sipeed.com
+Wiki          : https://maixpy.sipeed.com
 
-#### minicom
+MicroPython v0.5.0-12-g284ce83 on 2019-12-31; Sipeed_M1 with kendryte-k210
+Type "help()" for more information.
+```
+这里版本是`v0.5.0-12-g284ce83`， 也可以使用下面的代码查看版本
+```
+import sys
+sys.implementation.version
+```
+
+## 执行代码
+
+* 打开串口终端后，按开发板的复位按钮就可以看到打印的开机信息了，会输出
+```
+>>> 
+```
+即在等待我们输入代码，如果没有这个符号，可能是有开机自动运行的程序正在运行，可以按`Ctrl+C`来取消正在运行的程序
+
+* 然后输入程序执行
+```
+>>> print("hello world")
+hello world
+>>> 
+```
+
+## 粘贴执行多行代码
+
+当我们有多行代码是从其它地方复制过来的，比如
+```python
+import os
+f = os.listdir()
+print(f)
+```
+
+* 先复制好代码
+* 串口终端按`Ctrl+E`
+* 粘贴代码
+* 按`Ctrl+D`(注意如果之前没有按`Ctrl+E`则是软件复位命令，MaixPy会软复位)，然后就可以看到所有代码执行了
+
+```python
+>>> 
+paste mode; Ctrl-C to cancel, Ctrl-D to finish
+=== import os
+=== f = os.listdir()
+=== print(f)
+['boot.py','main.py', 'freq.conf']
+>>> 
 
 ```
-sudo apt update
-sudo apt install minicom
-sudo minicom -s
-# 然后根据提示设置串口号以及波特率为 115200 等，不懂可以利用搜索工具搜索
-# 设置 Backspace 为 DEL 功能
-# 设置 linewrap 为 Yes
-sudo minicom
-```
 
-注意 minicom 的默认配置文件保存需要 sudo 权限，所以使用`sudo minicom -s`
-
-![minicom setting](../../assets/minicom_setting.png)
-
-![minicom setting2](../../assets/minicom_setting2.png)
-
-这里按 `A` 即可设置设备
-
-按 `E` 即可设置波特率， 波特率需要设置为 `115200`
-
-![minicom setting3](../../assets/minicom_setting3.png)
-
-这里按 `A` 和 `R` 将设置切换为图中的设置一样， 第一个是为了后面使用 `pye` 编辑器快捷键不冲突， 第二个自动换行的设置是为了能显示完全输出
-
-设置完后保存退出，下次就不需要再设置了，只需要执行 `sudo minicom` 即可, 如果不想每次都使用`sudo`命令， 执行`sudo usermod -a -G dialout $(whoami)` 将自己添加到`dialout`用户组即可，可能需要注销或者重启才能生效，注意`sudo minicom -s` 如果使用默认配置文件还是需要 `sudo`
-
-进入`minicom`后点击回车键，即可看到 MaixPy 的交互界面了
-
-![minicom](../../assets/minicom.png)
-
-输入 `help()`，可以查看帮助
-
-要退出`minicom`， 按 `Ctrl+A` `X`，按 `Enter` 确认退出即可
-
-> 另外，在开发过程中可能串口号会变， 可以在执行 minicom 的时候指定串口号，这样就不用每次串口号变了都设置一遍了，比如：` minicom -D /dev/ttyUSB1 -b 115200`
-
-
-### Windows
-
-使用如 [putty](https://www.putty.org/) [xshell](https://xshell.en.softonic.com/) 等工具
-
-然后选择串口模式， 然后设置串口和波特率，打开串口。
-
-![](../../assets/putty.png)
-
-然后点击回车键，即可看到 MaixPy 的交互界面了
-
-`>>>`
-
-输入 `help()`，可以查看帮助
-
-> 上图来源： [laurentopia 的上手教程](https://github.com/laurentopia/Learning-AI/wiki/MaixPy)
-
-
+> 如果数据量比较大，串口可能丢失数据，会导致提示语法错误，可以多试几次
 
 
 

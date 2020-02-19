@@ -1,6 +1,7 @@
 fpioa_manager
 ===============
-fpioa_manager：简称`fm`，该模块用于注册芯片内部功能和引脚，帮助用户管理内部功能和引脚，如果功能和引脚已经被注册，将无法使用该内部功能和引脚。
+
+fpioa_manager：简称`fm`，该模块用于注册芯片内部功能和引脚，帮助用户管理内部功能和引脚
 
 fm 实际上是使用 `Fpioa_Manager` 类定义的一个对象， 使用 `Micropython` 编写并集成带固件中， 源码看 [fpioa_manager.py](https://github.com/sipeed/MaixPy/blob/master/ports/k210-freertos/mpy_support/builtin-py/fpioa_manager.py)
 
@@ -11,20 +12,20 @@ fm 实际上是使用 `Fpioa_Manager` 类定义的一个对象， 使用 `Microp
 注册引脚和功能
 
 ```
-fm.register(pin,function)
+fm.register(pin,function，[force=True])
 ```
 #### 参数
 
-该方法必须传入2个参数，不然将返回空值
+该方法必须传入至少2个参数，不然将返回空值
 
 * `pin`: 功能映射引脚
 * `function` : 芯片功能
+* `force`: 强制分配，如果为`True`，则可以多次对同一个引脚注册;`False`则不允许同一引脚多次注册。默认为`True`是为了方便`IDE`多次运行程序使用
 
 #### 返回值
 
 该方法具有2个返回值，
-* 参数错误返回  `None,None`
-* 设置成功返回  `pin,function`
+* 设置成功返回  1
 * 设置失败返回  `reg_pin,reg_func`，表示的是已经被注册的引脚和功能
 
 ### 注销函数
@@ -43,9 +44,8 @@ fm.unregister(pin,function)
 
 #### 返回值
 
-* 参数错误返回 `None,None`
 * 设置成功返回 `pin,function`，表示被注销的引脚和功能
-* 设置失败返回 `0,0`
+* 设置失败返回 0
 
 ## 例程 
 
@@ -54,8 +54,8 @@ from fpioa_manager import fm, board_info
 
 fm.register(board_info.WIFI_RX,fm.fpioa.UART2_TX)
 fm.register(board_info.WIFI_RX,fm.fpioa.UART2_TX)#再注册一次
-fm.register(board_info.WIFI_RX,fm.fpioa.SPI0_SS0)#注册同个引脚
-fm.register(board_info.WIFI_RX,fm.fpioa.SPI0_SS0)#注册同个功能
+fm.register(board_info.WIFI_RX,fm.fpioa.SPI0_SS0, force=False)#注册同个引脚
+fm.register(board_info.WIFI_RX,fm.fpioa.SPI0_SS0, force=False)#注册同个功能
 fm.unregister(board_info.WIFI_RX,fm.fpioa.UART2_TX)#注销功能和引脚
 fm.register(board_info.WIFI_RX,fm.fpioa.UART2_TX)
 fm.unregister(function = fm.fpioa.UART2_TX)#注销功能
@@ -65,14 +65,14 @@ fm.unregister(pin = board_info.WIFI_RX)#注销引脚
 
 ## 附录
 
-以下引脚已经在MaxiPy开机启动时注册，请用户注意
+以下引脚已经在 MaxiPy 开机启动时注册，请注意
 
 ### SD卡
-* `功能`：SPI1_SCLK/SPI1_D0/SPI1_D1/GPIOHS7/SPI0_SS1
+* `功能`：SPI1_SCLK/SPI1_D0/SPI1_D1/GPIOHS29/SPI0_SS1
 * `引脚`：PIN25/PIN26/PIN27/PIN28/PIN29
 
 ### LCD
-* `功能`：SPI0_SS3/SPI0_SCLK/GPIOHS1/GPIOHS2
+* `功能`：SPI0_SS3/SPI0_SCLK/GPIOHS30/GPIOHS31
 * `引脚`：PIN36/PIN37/PIN38/PIN39
 
 ### sensor

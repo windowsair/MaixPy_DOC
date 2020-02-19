@@ -12,6 +12,11 @@ Other Modules:
 
 * [touchscreen](./touchscreen.md): Touchscreen related operation, like get click status or get click coordinate
 
+* [ws2812](./ws2812.md): WS2812 LED
+* [Thermal infrared temperature sensor](./htpa.md)
+* [Ultrasonic](./ultrasonic.md)
+* [Grove chainable RGB LED](./grove_chainable_rgb_led.md)
+
 
 
 

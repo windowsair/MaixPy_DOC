@@ -12,12 +12,14 @@ sensor
 重置并初始化单目摄像头
 
 ```python
-sensor.reset()
+sensor.reset([freq=24000000, set_regs=True, dual_buff=False])
 ```
 
 #### 参数
 
-无
+* `freq`: 设置摄像头时钟频率，频率越高帧率越高，但是画质可能更差。默认 `24MHz`， 如果摄像头有彩色斑点（ov7740)，可以适当调低比如 `20MHz`
+* `set_regs`: 允许程序写摄像头寄存器，默认为 `True`。 如果需要自定义复位序列，可以设置为`False`，然后使用`sensor.__write_reg(addr, value)` 函数自定义写寄存器序列
+* `dual_buff`: 允许使用双缓冲，会增高帧率，但是内存占用也会增加（大约为384KiB)
 
 #### 返回值
 
@@ -44,7 +46,7 @@ sensor.binocular_reset()
 
 ### 捕获图像控制
 
-启动或关闭捕获图像功能
+启动或关闭捕获图像功能(默认经过`复位`，`设置帧大小`，`设置像素格式`后会自动启动摄像头，不调用`run(1)`也会开始采集图像)
 
 ```python
 sensor.run(enable)
@@ -65,12 +67,13 @@ sensor.run(enable)
 > MaixPy开发板配置的屏幕是320*240分辨率，推荐设置为QVGA格式
 
 ```
-sensor.set_framesize(framesize)
+sensor.set_framesize(framesize[, set_regs=True])
 ```
 
 #### 参数
 
 * `framesize`: 帧大小
+* `set_regs`: 允许程序写摄像头寄存器，默认为 `True`。 如果需要自定义设置帧大小的序列，可以设置为`False`，然后使用`sensor.__write_reg(addr, value)` 函数自定义写寄存器序列
 
 #### 返回值
 
@@ -84,11 +87,12 @@ sensor.set_framesize(framesize)
 > MaixPy开发板配置的屏幕使用的是RGB565，推荐设置为RGB565格式
 
 ```
-sensor.set_pixformat(format)
+sensor.set_pixformat(format[, set_regs=True])
 ```
 #### 参数
 
 * `format`: 帧格式
+* `set_regs`: 允许程序写摄像头寄存器，默认为 `True`。 如果需要自定义设置像素格式的序列，可以设置为`False`，然后使用`sensor.__write_reg(addr, value)` 函数自定义写寄存器序列
 
 > 可选的帧格式有`GRAYSCALE`, `RGB565`, `YUV422`
 

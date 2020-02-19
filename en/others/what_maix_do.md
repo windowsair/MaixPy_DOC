@@ -4,6 +4,10 @@ Powerful Maix Board(k210) Can Do
 Most of them integrated to MaixPy, or some of them include in [Maixduino](https://Maixduino.sipeed.com) or from other developers
 
 
+* Face recognition
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hS_mcGptXeo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 * draw picture Turorial
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/el6CB-h9Lo0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

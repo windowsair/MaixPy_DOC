@@ -4,9 +4,9 @@
 
 ## MaixPy 内置了文件系统
 
-支持 Flash 使用的 `SPIFFS`（目前不支持创建目录）， 默认分配了 `3MB` 给 `SPIFF`（从`flash` `0xD00000`地址开始 `3M`）， 开机自动挂在到 `/flash` 目录下
+支持 Flash 使用的 `SPIFFS`（目前不支持创建目录）， 默认分配了 `3MB` 给 `SPIFF`（从`flash` `0xD00000`地址开始 `3M`）， 开机自动挂载到 `/flash` 目录下
 
-也支持 FAT 格式的 SD （TF）卡 ，开机自动挂在到 `/sd` 目录下
+也支持 FAT 格式的 Micro SD （TF）卡 ，开机自动挂在到 `/sd` 目录下
 
 需要注意的是， 根目录只是用来挂载 Flash 或者 SD 卡， 具体的文件在 `/flash` 或者 `/sd` 目录下
 
@@ -38,7 +38,7 @@ print("hello maixpy")
 
 **注意**： 使用这款编辑器对使用的串口工具有一定要求， 必须将 `BackSpace` 按键设置为 `DEL` 功能， 否则按 `BackSpace` 调用的是 `Ctrl+H` 一样的功能（即字符替换）。
 
-Linux 下推荐使用 `minicom`， 需要使用 `sudo minicom -s` 来设置，参考[前面的教程](power_on.md)
+Linux 下推荐使用 `minicom`， 需要使用 `sudo minicom -s` 来设置，参考[前面的教程](serial_tools.md)
 
 Windows 下也一样， 根据自己使用的工具上网搜设置方法， 比如 `xshell` 搜 `xshell如何设置backspace为del` 得到结果：
 
