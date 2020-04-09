@@ -6,14 +6,15 @@
         "my-toolbar",
         "-lunr",
         "-search",
-        "search-title",
+        "-search-title",
+        "search-pro",
         "anchor-navigation-ex",
         "anchorjs",
         "sharing",
         "splitter",
         "edit-link",
         "ga",
-        "expandable-chapters-small@git+https://github.com/sipeed/gitbook-plugin-expandable-chapters-small.git"
+        "chapter-fold"
     ],
     "styles": {
         "website": "./styles/website.css"
@@ -37,7 +38,7 @@
         "search": {
             "maxIndexSize": 1000000000
         },
-        
+
         "lunr": {
             "maxIndexSize": 1000000000
         },

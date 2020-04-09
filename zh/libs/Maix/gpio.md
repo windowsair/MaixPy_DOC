@@ -56,13 +56,13 @@ class GPIO(ID,MODE,PULL,VALUE)
   ​	• GPIO.OUT就是输出模式
 
 * `PULL`： GPIO上下拉模式
-* 
+*
   ​	• GPIO.PULL_UP 上拉
-  
+
   ​	• GPIO.PULL_DOWN 下拉
-  
+
   ​	• GPIO.PULL_NONE  即不上拉也不下拉
-  
+
 
 ## 方法
 
@@ -87,7 +87,7 @@ GPIO.value([value])
 
 ### irq
 
-配置一个中断处理程序，当pin的触发源处于活动状态时调用它。如果管脚模式为pin.in，则触发源是管脚上的外部值。
+配置一个中断处理程序，当 `pin` 的触发源处于活动状态时调用它。如果管脚模式为 pin.in，则触发源是管脚上的外部值。
 
 ```python
 GPIO.irq(CALLBACK_FUNC,TRIGGER_CONDITION,GPIO.WAKEUP_NOT_SUPPORT,PRORITY)
@@ -96,13 +96,11 @@ GPIO.irq(CALLBACK_FUNC,TRIGGER_CONDITION,GPIO.WAKEUP_NOT_SUPPORT,PRORITY)
 #### 参数
 
 
-* `CALLBACK_FUNC`：回调函数，当中断触发的时候被调用，他拥有两个参数，GPIO和PIN_NUM
+* `CALLBACK_FUNC`：中断回调函数，当中断触发的时候被调用，一个入口函数 `pin_num`
 
-  ​	• GPIO返回的是GPIO对象
+  ​	• PIN_NUM 返回的是触发中断的 GPIO 引脚号(只有GPIOHS支持中断，所以这里的引脚号也是GPIOHS的引脚号)
 
-  ​	• PIN_NUM返回的是触发中断的GPIO引脚号(只有GPIOHS支持中断，所以这里的引脚号也是GPIOHS的引脚号)
-
-* `TRIGGER_CONDITION`：当GPIO引脚处于这个状态时触发中断
+* `TRIGGER_CONDITION`：GPIO 引脚的中断触发模式
 
   ​	• GPIO.IRQ_RISING 上升沿触发
 
@@ -143,9 +141,9 @@ GPIO.mode(MODE)
 
 * MODE
 
-  ​	• GPIO.IN就是输入模式
+  ​	• `GPIO.IN` 就是输入模式
 
-  ​	• GPIO.OUT就是输出模式
+  ​	• `GPIO.OUT` 就是输出模式
 
 #### 返回值
 
@@ -163,11 +161,11 @@ GPIO.pull(PULL)
 
 * PULL
 
-  ​	• GPIO.IRQ_RISING 上升沿触发
+  ​	• `GPIO.IRQ_RISING` 上升沿触发
 
-  ​	• GPIO.IRQ_FALLING 下降沿触发
+  ​	• `GPIO.IRQ_FALLING` 下降沿触发
 
-  ​	• GPIO.IRQ_BOTH  上升沿和下降沿都触发
+  ​	• `GPIO.IRQ_BOTH`  上升沿和下降沿都触发
 
 #### 返回值
 
@@ -194,7 +192,7 @@ GPIO.pull(PULL)
 * `GPIOHS8`: GPIOHS8
 * `GPIOHS9`: GPIOHS9
 * `GPIOHS10`: GPIOHS10
-* `GPIOHS11`: GPIOHS11  
+* `GPIOHS11`: GPIOHS11
 * `GPIOHS12`: GPIOHS12
 * `GPIOHS13`: GPIOHS13
 * `GPIOHS14`: GPIOHS14
@@ -216,21 +214,24 @@ GPIO.pull(PULL)
 * `GPIOHS30`: GPIOHS30
 * `GPIOHS31`: GPIOHS31
 * `GPIO.IN`: 输入模式
-* `GPIO.OUT`:输出模式
-* `GPIO.PULL_UP`:上拉
-* `GPIO.PULL_DOWN`:下拉
-* `GPIO.PULL_NONE`:即不上拉也不下拉
-* `GPIO.IRQ_RISING`:上升沿触发
+* `GPIO.OUT`: 输出模式
+* `GPIO.PULL_UP`: 上拉
+* `GPIO.PULL_DOWN`: 下拉
+* `GPIO.PULL_NONE`: 即不上拉也不下拉
+* `GPIO.IRQ_RISING`: 上升沿触发
 * `GPIO.IRQ_FALLING`:下降沿触发
-* `GPIO.IRQ_BOTH`:上升沿和下降沿都触发
+* `GPIO.IRQ_BOTH`: 上升沿和下降沿都触发
 
 
 
-### DEMO1
+### DEMO1: 点亮 LED
 
 ```python
 import utime
 from Maix import GPIO
+from board import board_info
+from fpioa_manager import fm
+
 fm.register(board_info.LED_R,fm.fpioa.GPIO0)
 led_r=GPIO(GPIO.GPIO0,GPIO.OUT)
 utime.sleep_ms(500)
@@ -238,33 +239,55 @@ led_r.value()
 fm.unregister(board_info.LED_R,fm.fpioa.GPIO0)
 ```
 
-### DEMO2
+### DEMO2: 按键按下点亮 LED
 
 ```python
 import utime
 from Maix import GPIO
+from board import board_info
+from fpioa_manager import fm
+
 fm.register(board_info.LED_R,fm.fpioa.GPIO0)
-led_r=GPIO(GPIO.GPIO0,GPIO.IN)
-utime.sleep_ms(500)
-led_r.value()
-fm.unregister(board_info.LED_R,fm.fpioa.GPIO0)
+led_b = GPIO(GPIO.GPIO0,GPIO.OUT)
+led_b.value(1)
+
+fm.register(board_info.BOOT_KEY, fm.fpioa.GPIOHS1)
+key = GPIO(GPIO.GPIOHS1, GPIO.IN)
+
+utime.sleep_ms(100)
+while True:
+    if key.value() == 0: # 等待按键按下
+        led_b.value(0)
+        utime.sleep_ms(1000)
+        break
+    utime.sleep_ms(10)
+
+
+led_b.value(1)
+
+fm.unregister(board_info.LED_R,fm.fpioa.GPIOHS0)
+fm.unregister(board_info.BOOT_KEY,fm.fpioa.GPIOHS1)
 ```
 
-### DEMO3
+### DEMO3: 在 3 秒内等待按键触发中断
 
 ```python
 import utime
 from Maix import GPIO
-def test_irq(GPIO,pin_num):
-    print("key",pin_num,"\n")
+from board import board_info
+from fpioa_manager import fm
 
-fm.register(board_info.BOOT_KEY,fm.fpioa.GPIOHS0)
-key=GPIO(GPIO.GPIOHS0,GPIO.IN,GPIO.PULL_NONE)
-utime.sleep_ms(500)
-key.value()
-key.irq(test_irq,GPIO.IRQ_BOTH,GPIO.WAKEUP_NOT_SUPPORT,7)
+def test_irq(pin_num):
+    print("key", pin_num, "\n")
 
-key.disirq()
+fm.register(board_info.BOOT_KEY, fm.fpioa.GPIOHS0)
+key = GPIO(GPIO.GPIOHS0, GPIO.IN, GPIO.PULL_NONE)
+
+utime.sleep_ms(100)
+key.irq(test_irq, GPIO.IRQ_BOTH, GPIO.WAKEUP_NOT_SUPPORT,7)
+utime.sleep_ms(3000) # 在 3 秒内等待触发
+
+key.disirq() # 禁用中断
 fm.unregister(board_info.BOOT_KEY,fm.fpioa.GPIOHS0)
 ```
 
